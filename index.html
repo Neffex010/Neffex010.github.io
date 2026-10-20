@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luis Enrique Cabrera García | Portafolio</title>
+  <meta name="description"
+    content="Portafolio personal de Luis Enrique Cabrera García. Estudiante de Ingeniería en TICs y Técnico en Programación.">
+  <meta name="author" content="Luis Enrique Cabrera García">
+
+  <!-- Vista previa al compartir (Open Graph / Twitter) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Portafolio — Luis Enrique Cabrera García">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:title" content="Luis Enrique Cabrera García | Portafolio">
+  <meta property="og:description"
+    content="Estudiante de Ingeniería en TICs y Técnico en Programación. Front-end, IA y redes.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Luis Enrique Cabrera García | Portafolio">
+  <meta name="twitter:description"
+    content="Estudiante de Ingeniería en TICs y Técnico en Programación. Front-end, IA y redes.">
+  <!-- Al publicar, añade aquí og:url y og:image con la URL absoluta del sitio. -->
+
+  <meta name="color-scheme" content="light dark">
+  <script>
+    (function () {
+      var theme = "";
+      try {
+        var stored = localStorage.getItem("theme");
+        if (stored === "dark" || stored === "light") theme = stored;
+      } catch (e) { /* almacenamiento bloqueado */ }
+      if (!theme) {
+        theme =
+          window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark" : "light";
+      }
+      document.documentElement.dataset.theme = theme;
+      document.documentElement.style.colorScheme = theme;
+    })();
+  </script>
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='14'%20fill='%230c9b8e'/%3E%3Ctext%20x='32'%20y='42'%20font-family='monospace'%20font-size='26'%20font-weight='700'%20fill='white'%20text-anchor='middle'%3ELE%3C/text%3E%3C/svg%3E">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <!-- ============================================
+       1. HEADER / NAVEGACIÓN
+  ============================================= -->
+  <header class="header">
+    <nav class="nav container">
+      <a href="#inicio" class="nav__logo">Luis Enrique</a>
+
+      <ul class="nav__menu" id="nav-menu">
+        <li><a class="nav__link" href="#inicio">Inicio</a></li>
+        <li><a class="nav__link" href="#sobre-mi">Sobre mí</a></li>
+        <li><a class="nav__link" href="#formacion">Formación</a></li>
+        <li><a class="nav__link" href="#proyectos">Proyectos</a></li>
+        <li><a class="nav__link" href="#habilidades">Habilidades</a></li>
+        <li><a class="nav__link" href="#contacto">Contacto</a></li>
+      </ul>
+
+      <div class="nav__actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema" aria-pressed="false"
+          title="Cambiar tema">
+          <svg class="icon icon--sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5" />
+            <line x1="12" y1="1" x2="12" y2="3" />
+            <line x1="12" y1="21" x2="12" y2="23" />
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+            <line x1="1" y1="12" x2="3" y2="12" />
+            <line x1="21" y1="12" x2="23" y2="12" />
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+          </svg>
+          <svg class="icon icon--moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
+        </button>
+
+        <button class="nav__toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false"
+          aria-controls="nav-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ============================================
+         2. HERO / INICIO
+    ============================================= -->
+    <section id="inicio" class="hero">
+      <div class="container hero__content" data-scale>
+        <h1 class="hero__title" data-parallax="0.18">Luis Enrique Cabrera García</h1>
+        <p class="hero__subtitle" data-parallax="0.1">Estudiante de Ingeniería en TIC | Técnico en Programación |
+          Integración de IA & Dev Web</p>
+        <p class="hero__role" id="hero-role" aria-hidden="true">Desarrollo Web</p>
+        <a href="#proyectos" class="btn">Ver mis proyectos<span class="btn__arrow" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </span></a>
+
+        <div class="hero__bento">
+          <div class="hero__tile">
+            <span class="hero__tile-label">Stack</span>
+            <span class="hero__tile-value">HTML · CSS · JS</span>
+          </div>
+          <div class="hero__tile">
+            <span class="hero__tile-label">Enfoque</span>
+            <span class="hero__tile-value">IA &amp; Web</span>
+          </div>
+          <div class="hero__tile">
+            <span class="hero__tile-label">Base</span>
+            <span class="hero__tile-value">Pachuca, MX</span>
+          </div>
+        </div>
+      </div>
+
+      <a href="#sobre-mi" class="hero__scroll" aria-label="Bajar a Sobre mí">
+        <span>Scroll</span>
+        <span class="hero__scroll-arrow" aria-hidden="true">↓</span>
+      </a>
+    </section>
+
+    <!-- ============================================
+         3. SOBRE MÍ
+    ============================================= -->
+    <section id="sobre-mi" class="section sobre-mi">
+      <div class="container sobre-mi__grid">
+        <div class="sobre-mi__panel">
+          <span class="sobre-mi__monogram" aria-hidden="true">LE</span>
+          <div class="sobre-mi__id">
+            <span class="sobre-mi__name">Luis Enrique Cabrera García</span>
+            <span class="sobre-mi__role">Front-end · IA · Redes</span>
+          </div>
+        </div>
+        <div class="sobre-mi__text">
+          <h2 class="section__title" data-scrub>Sobre mí</h2>
+          <p class="section__text">
+            Estudiante de Ingeniería en Tecnologías de la Información y Comunicaciones en el Instituto Tecnológico de
+            Pachuca y Técnico en Programación titulado por el CBTIS 8.
+          </p>
+          <p class="section__text">
+            Cuenta con formación en desarrollo web front-end, integración de IA, soporte técnico, redes, infraestructura
+            tecnológica y nube con AWS. Mi perfil combina programación, atención al cliente, e-commerce y solución de
+            problemas técnicos.
+          </p>
+
+          <div class="sobre-mi__meta">
+            <div class="meta-tile">
+              <span class="meta-tile__label">Formación</span>
+              <span class="meta-tile__value">ITP · CBTIS 8</span>
+            </div>
+            <div class="meta-tile">
+              <span class="meta-tile__label">Nube</span>
+              <span class="meta-tile__value">AWS Cloud</span>
+            </div>
+            <div class="meta-tile">
+              <span class="meta-tile__label">Foco</span>
+              <span class="meta-tile__value">IA &amp; Web</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         4. FORMACIÓN
+    ============================================= -->
+    <section id="formacion" class="section formacion">
+      <div class="container">
+        <h2 class="section__title" data-scrub>Formación</h2>
+
+        <div class="timeline">
+          <div class="timeline__line" aria-hidden="true"></div>
+          <ol class="timeline__list">
+            <li class="timeline__item">
+              <span class="timeline__dot" aria-hidden="true"></span>
+              <div class="timeline__card">
+                <p class="timeline__period">En curso</p>
+                <h3 class="timeline__title">Ingeniería en Tecnologías de la Información y Comunicaciones</h3>
+                <p class="timeline__place">Instituto Tecnológico de Pachuca</p>
+                <p class="timeline__desc">Estudios superiores enfocados en redes, infraestructura, nube AWS y desarrollo
+                  de software.</p>
+              </div>
+            </li>
+
+            <li class="timeline__item">
+              <span class="timeline__dot" aria-hidden="true"></span>
+              <div class="timeline__card">
+                <p class="timeline__period">Certificación</p>
+                <h3 class="timeline__title">AWS Academy — Cloud Foundations</h3>
+                <p class="timeline__place">AWS Academy</p>
+                <p class="timeline__desc">Fundamentos de la nube: cómputo, almacenamiento, redes, seguridad y modelos de
+                  costos en AWS.</p>
+              </div>
+            </li>
+
+            <li class="timeline__item">
+              <span class="timeline__dot" aria-hidden="true"></span>
+              <div class="timeline__card">
+                <p class="timeline__period">Titulado</p>
+                <h3 class="timeline__title">Técnico en Programación</h3>
+                <p class="timeline__place">CBTIS 8</p>
+                <p class="timeline__desc">Base técnica en lógica de programación, bases de datos y desarrollo de
+                  aplicaciones.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         5. PROYECTOS
+    ============================================= -->
+    <section id="proyectos" class="section proyectos">
+      <div class="container">
+        <h2 class="section__title" data-scrub>Proyectos</h2>
+
+        <div class="projects__grid">
+          <article class="project-card">
+            <div class="project-card__img">
+              <img src="./assets/proyecto1.png" alt="Simulador de Entrevistas Laborales con IA" width="800" height="600" loading="lazy" decoding="async">
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">Simulador de Entrevistas Laborales con IA</h3>
+              <p class="project-card__desc">Implementación e integración de APIs de Inteligencia Artificial (incluyendo
+                ChatGPT) para simular entrevistas de trabajo dinámicas e interactivas.</p>
+              <div class="project-card__tech" aria-label="Tecnologías utilizadas">
+                <span>JavaScript</span><span>HTML</span><span>CSS</span><span>OpenAI API</span>
+              </div>
+              <div class="project-card__links">
+                <a href="https://simuladorentre.netlify.app/" class="btn btn--small" target="_blank" rel="noopener noreferrer" title="Abrir la demo del simulador">Demo<span class="btn__arrow" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M5 12h14M13 6l6 6-6 6" />
+                    </svg>
+                  </span></a>
+                <a href="https://github.com/Neffex010/SimuladorEntrevistas" class="btn btn--small btn--ghost" target="_blank" rel="noopener noreferrer" title="Ver el código en GitHub">Código<span class="btn__arrow" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M5 12h14M13 6l6 6-6 6" />
+                    </svg>
+                  </span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-card__img">
+              <img src="./assets/projecto2.png" alt="Galactic - Swarm" width="800" height="600" loading="lazy" decoding="async">
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">Aplicaciones Web Interactivas (Canvas 2D)</h3>
+              <p class="project-card__desc">Desarrollo de aplicaciones web interactiva aprovechando la manipulación
+                directa de HTML5 Canvas 2D y lógica orientada a eventos.</p>
+              <div class="project-card__tech" aria-label="Tecnologías utilizadas">
+                <span>Canvas 2D</span><span>JavaScript</span><span>HTML5</span>
+              </div>
+              <div class="project-card__links">
+                <a href="https://neffex010.github.io/Galactic-Swarm/" class="btn btn--small" target="_blank" rel="noopener noreferrer" title="Abrir la demo">Demo<span class="btn__arrow" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M5 12h14M13 6l6 6-6 6" />
+                    </svg>
+                  </span></a>
+                <a href="https://github.com/Neffex010/Galactic-Swarm" class="btn btn--small btn--ghost" target="_blank" rel="noopener noreferrer" title="Ver el código en GitHub">Código<span class="btn__arrow" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M5 12h14M13 6l6 6-6 6" />
+                    </svg>
+                  </span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-card__img">
+              <img src="./assets/proyecto3.png" alt="Chat IA | Ciberseguridad" width="800" height="600" loading="lazy" decoding="async">
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">Chat IA | Ciberseguridad</h3>
+              <p class="project-card__desc">Asistente conversacional con IA enfocado en ciberseguridad: detección de
+                riesgos, buenas prácticas de protección de datos y educación del usuario final.</p>
+              <div class="project-card__tech" aria-label="Tecnologías utilizadas">
+                <span>OpenAI API</span><span>JavaScript</span><span>HTML</span><span>Seguridad</span>
+              </div>
+              <div class="project-card__links">
+                <a href="#" class="btn btn--small" title="Enlace pendiente de publicación">Demo<span class="btn__arrow" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M5 12h14M13 6l6 6-6 6" />
+                    </svg>
+                  </span></a>
+                <a href="#" class="btn btn--small btn--ghost" title="Enlace pendiente de publicación">Código<span class="btn__arrow" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M5 12h14M13 6l6 6-6 6" />
+                    </svg>
+                  </span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-card__img">
+              <img src="./assets/proyecto4.png" alt="Box Training 3D" width="800" height="600" loading="lazy" decoding="async">
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">Box Training 3Ds</h3>
+              <p class="project-card__desc">Diseño de topologías y segmentación de redes en Cisco Packet Tracer con
+                servidores Linux y despliegue de servicios básicos.</p>
+              <div class="project-card__tech" aria-label="Tecnologías utilizadas">
+                <span>Packet Tracer</span><span>Linux</span><span>AWS</span>
+              </div>
+              <div class="project-card__links">
+                <a href="https://neffex010.github.io/2.6-Examen-Tema-2.-Programaci-n-y-desarrollo-de-aplicaciones-en-escenarios-virtuales/" class="btn btn--small" target="_blank" rel="noopener noreferrer" title="Abrir la demo">Demo<span class="btn__arrow" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M5 12h14M13 6l6 6-6 6" />
+                    </svg>
+                  </span></a>
+                <a href="https://github.com/Neffex010/2.6-Examen-Tema-2.-Programaci-n-y-desarrollo-de-aplicaciones-en-escenarios-virtuales" class="btn btn--small btn--ghost" target="_blank" rel="noopener noreferrer" title="Ver el código en GitHub">Código<span class="btn__arrow" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M5 12h14M13 6l6 6-6 6" />
+                    </svg>
+                  </span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-card__img">
+              <img src="assets/proyecto5.jpg" alt="Chatbot de Atención al Cliente con IA" width="800" height="600" loading="lazy" decoding="async">
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">Chatbot de Atención al Cliente con IA</h3>
+              <p class="project-card__desc">Asistente conversacional basado en OpenAI para responder consultas frecuentes
+                de e-commerce y derivar casos a soporte humano.</p>
+              <div class="project-card__tech" aria-label="Tecnologías utilizadas">
+                <span>OpenAI API</span><span>JavaScript</span><span>E-commerce</span>
+              </div>
+              <div class="project-card__links">
+                <a href="#" class="btn btn--small" title="Enlace pendiente de publicación">Demo<span class="btn__arrow" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M5 12h14M13 6l6 6-6 6" />
+                    </svg>
+                  </span></a>
+                <a href="#" class="btn btn--small btn--ghost" title="Enlace pendiente de publicación">Código<span class="btn__arrow" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M5 12h14M13 6l6 6-6 6" />
+                    </svg>
+                  </span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-card__img">
+              <img src="assets/proyecto6.jpg" alt="Sistema de Gestión de Inventarios" width="800" height="600" loading="lazy" decoding="async">
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">Sistema de Gestión de Inventarios</h3>
+              <p class="project-card__desc">Aplicación de escritorio en C# con base de datos SQL para control de
+                existencias, entradas y salidas en almacén.</p>
+              <div class="project-card__tech" aria-label="Tecnologías utilizadas">
+                <span>C#</span><span>SQL</span><span>Python</span>
+              </div>
+              <div class="project-card__links">
+                <a href="#" class="btn btn--small" title="Enlace pendiente de publicación">Demo<span class="btn__arrow" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M5 12h14M13 6l6 6-6 6" />
+                    </svg>
+                  </span></a>
+                <a href="#" class="btn btn--small btn--ghost" title="Enlace pendiente de publicación">Código<span class="btn__arrow" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M5 12h14M13 6l6 6-6 6" />
+                    </svg>
+                  </span></a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="bento-strip">
+          <div class="bento-tile bento-tile--cta">
+            <span class="bento-tile__label">Disponible</span>
+            <p class="bento-tile__lead">¿Trabajamos juntos?</p>
+            <a href="#contacto" class="btn btn--small">Contacto<span class="btn__arrow" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         6. HABILIDADES
+    ============================================= -->
+    <section id="habilidades" class="section habilidades">
+      <div class="container">
+        <h2 class="section__title" data-scrub>Habilidades</h2>
+
+        <div class="skills__tags">
+          <span class="skill-tag">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M10 4c-2 0-3 .8-3 2.4v2.2c0 1.6-1 2.4-3 2.4v1c2 0 3 .8 3 2.4v2.2c0 1.6 1 2.4 3 2.4" />
+              <path d="M14 4c2 0 3 .8 3 2.4v2.2c0 1.6 1 2.4 3 2.4v1c-2 0-3 .8-3 2.4v2.2c0 1.6-1 2.4-3 2.4" />
+            </svg>
+            JavaScript
+          </span>
+          <span class="skill-tag">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M8 6l6 6-6 6" />
+              <path d="M15 18h5" />
+            </svg>
+            HTML5
+          </span>
+          <span class="skill-tag">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M7 4 5 20M19 4l-2 16M9 9h10M5 15h10" />
+            </svg>
+            CSS3
+          </span>
+          <span class="skill-tag">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="10" cy="10" r="5" />
+              <circle cx="14" cy="14" r="5" />
+            </svg>
+            Python
+          </span>
+          <span class="skill-tag">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M14 8a4 4 0 1 0 0 8" />
+              <path d="M15 12h5M17 10v4" />
+            </svg>
+            C#
+          </span>
+          <span class="skill-tag">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M7 8h9v6a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V8z" />
+              <path d="M16 9h2a3 3 0 0 1 0 6h-2" />
+              <path d="M10 3c0 1-1 1.5-1 2.5M14 3c0 1-1 1.5-1 2.5" />
+            </svg>
+            Java
+          </span>
+          <span class="skill-tag">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 7l5 5-5 5" />
+              <path d="M11 17h9" />
+            </svg>
+            Linux
+          </span>
+          <span class="skill-tag">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M8 17a4.5 4.5 0 0 1 .7-8.95A5.5 5.5 0 0 1 19 10.2 3.5 3.5 0 0 1 17.8 17z" />
+              <path d="M12 11v5M10 13.5l2 2 2-2" />
+            </svg>
+            AWS Cloud
+          </span>
+          <span class="skill-tag">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="8" />
+              <circle cx="12" cy="12" r="3.2" />
+              <path d="M4.5 4.5l5.4 5.4M19.5 4.5l-5.4 5.4M4.5 19.5l5.4-5.4M19.5 19.5l-5.4-5.4" />
+            </svg>
+            Cisco Packet Tracer
+          </span>
+          <span class="skill-tag">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="9" cy="12" r="4.5" />
+              <circle cx="15" cy="12" r="4.5" />
+            </svg>
+            Odoo
+          </span>
+          <span class="skill-tag">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 4c4 3 6 6 4 11-1.2 3.2-7.4 3-8.4 0-1-4 1-8 4.4-11z" />
+            </svg>
+            Wix
+          </span>
+        </div>
+
+        <ul class="skills__list">
+          <li class="skill-item">Desarrollo web front-end, conocimientos de back-end y manipulación de HTML5 Canvas 2D.
+          </li>
+          <li class="skill-item">Manejo de Linux, máquinas virtuales e infraestructura en la nube con AWS (AWS Academy
+            Cloud Foundations).</li>
+          <li class="skill-item">Diseño de redes con Cisco Packet Tracer y mantenimiento preventivo/correctivo de PC.
+          </li>
+          <li class="skill-item">Configuración de plataformas empresariales (Odoo) y creadores web (Wix) para
+            e-commerce.</li>
+          <li class="skill-item">Implementación e integración de APIs de Inteligencia Artificial (ChatGPT / OpenAI).
+          </li>
+          <li class="skill-item">Atención al cliente con comunicación técnica clara y efectiva.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================================
+         7. CONTACTO
+    ============================================= -->
+    <section id="contacto" class="section contacto">
+      <div class="container">
+        <h2 class="section__title" data-scrub>Contacto</h2>
+
+        <form class="contact__form" action="mailto:cabrera.luisenrique008@gmail.com" method="post" enctype="text/plain">
+          <div class="form__field">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required autocomplete="name">
+          </div>
+
+          <div class="form__field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="tu@email.com" required autocomplete="email">
+          </div>
+
+          <div class="form__field">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje…" required></textarea>
+          </div>
+
+          <button type="submit" class="btn">Enviar mensaje<span class="btn__arrow" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </span></button>
+          <p class="form__status" id="form-status" role="status" aria-live="polite" hidden></p>
+        </form>
+
+        <div class="social">
+          <a href="https://github.com/Neffex010" class="social__link" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21" />
+            </svg>
+            <span>GitHub</span>
+          </a>
+          <a href="https://linkedin.com" class="social__link" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+              <rect x="2" y="9" width="4" height="12" />
+              <circle cx="4" cy="4" r="2" />
+            </svg>
+            <span>LinkedIn</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================
+       8. FOOTER
+  ============================================= -->
+  <footer class="footer">
+    <p class="footer__text">© <span id="year"></span> Luis Enrique Cabrera García. Todos los derechos reservados.</p>
+    <a href="#inicio" class="footer__top">↑ Volver arriba</a>
+  </footer>
+
+  <script src="js/core.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/smooth.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/contact.js"></script>
+  <script src="js/split.js"></script>
+  <script src="js/reveal.js"></script>
+  <script src="js/marquee.js"></script>
+  <script src="js/motion.js"></script>
+  <script src="js/cursor.js"></script>
+  <script src="js/tilt.js"></script>
+  <script src="js/progress.js"></script>
+  <script src="js/timeline.js"></script>
+  <script src="js/scramble.js"></script>
+  <script src="js/intro.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>

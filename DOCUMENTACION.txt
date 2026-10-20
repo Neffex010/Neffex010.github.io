@@ -1,0 +1,265 @@
+====================================================================
+PORTFOLIO — LUIS ENRIQUE CABRERA GARCÍA
+GUÍA COMPLETA DE ARQUITECTURA, MANTENIMIENTO Y ESCALAMIENTO
+====================================================================
+Actualizado: 2026
+
+--------------------------------------------------------------------
+0) RESUMEN EJECUTIVO
+--------------------------------------------------------------------
+Sitio estático de una sola página (index.html) sin librerías, sin
+build y sin servidor. Todo el movimiento se orquesta con VANILLA JS
+(clases POO) y un ÚNICO requestAnimationFrame central (ticker).
+
+Tecnologías: HTML5 + CSS3 + JavaScript moderno (class, const/let).
+Funciona abriendo index.html con doble clic (file://) o en cualquier
+hosting estático (GitHub Pages, Netlify, Vercel).
+
+Reglas de diseño (NO las rompas):
+  - Un solo easing: cubic-bezier(0.16, 1, 0.3, 1)  (var: --ease)
+  - Animar SOLO: transform / opacity / clip-path / filter
+  - Cero glassmorphism (sin backdrop-filter)
+  - Cero librerías externas (sin GSAP, sin jQuery, sin Bootstrap)
+  - Respetar prefers-reduced-motion SIEMPRE
+  - Móvil (<768px o puntero táctil): sin smooth scroll, sin parallax,
+    sin cursor personalizado, sin tilt, sin preloader
+
+--------------------------------------------------------------------
+1) ESTRUCTURA DE ARCHIVOS
+--------------------------------------------------------------------
+portfolio/
+├─ index.html          Semántica + contenido + scripts en orden
+├─ assets/             perfil.jpg, proyecto1.jpg, proyecto2.jpg,
+│                      proyecto3.jpg  (si faltan, el placeholder
+│                      animado "is-broken" los sustituye)
+├─ css/
+│  └─ styles.css       TODO el CSS (tokens, temas y sistemas)
+└─ js/
+   ├─ core.js          Namespace + config + utils + ticker único
+   ├─ theme.js         Tema claro/oscuro
+   ├─ smooth.js        Smooth scroll (lerp + skew)
+   ├─ nav.js           Menú, anclas, scroll-spy, header, año, imgs
+   ├─ contact.js       Formulario mailto + feedback
+   ├─ split.js         Text split + scrub de títulos
+   ├─ reveal.js        Revelados con clip-path + stagger
+   ├─ motion.js        Parallax multi-capa + scale del hero
+   ├─ marquee.js       Cinta infinita de skills
+   ├─ cursor.js        Cursor personalizado + magnético
+   ├─ tilt.js          Tilt 3D + spotlight en tarjetas
+   ├─ progress.js      Barra de progreso de scroll
+   ├─ timeline.js      Línea que se dibuja en Formación
+   ├─ intro.js         Preloader + entrada del hero (typewriter)
+   └─ app.js           Bootstrap: instancia todo (App.init)
+
+--------------------------------------------------------------------
+2) HTML — SECCIONES (en orden)
+--------------------------------------------------------------------
+1. HEADER / NAV    -> logo, enlaces (Inicio, Sobre mí, Formación,
+                      Proyectos, Habilidades, Contacto), toggle de
+                      tema, hamburguesa (móvil).
+2. HERO (#inicio)  -> título (se divide palabra por palabra),
+                      subtítulo, rol con typewriter (#hero-role),
+                      CTA "Ver mis proyectos".
+3. SOBRE MÍ        -> foto sticky con parallax + texto. La foto
+                      revela en horizontal (wipe L->R).
+4. FORMACIÓN       -> timeline vertical con 3 hitos:
+                      1) ITP — Ingeniería en TICs (En curso)
+                      2) AWS Academy — Cloud Foundations (Certificación)
+                      3) CBTIS 8 — Técnico en Programación (Titulado)
+5. PROYECTOS       -> grid de tarjetas (la primera es destacada).
+6. HABILIDADES     -> tags con SVG + lista de aptitudes.
+7. CONTACTO        -> formulario mailto + redes sociales.
+8. FOOTER          -> copyright dinámico + "Volver arriba".
+
+Nuevas secciones se agregan dentro de <main>, con <section id="...">
+y un <li><a href="#..."> en la nav. El scroll-spy y los reveals se
+encargan solos siempre que el id exista y exista el enlace.
+
+--------------------------------------------------------------------
+3) CSS — CÓMO SE ORGANIZA STYLES.CSS
+--------------------------------------------------------------------
+Índice de bloques (comentarios /// en el propio archivo):
+  1  Tokens + temas          (variables :root y [data-theme="dark"])
+  2  Base / tipografía       (reset, body, scrollbar, selección)
+  3  Utilidades              (.container, .btn, .section, ...)
+  4  Header / nav            (estado is-scrolled, sin blur)
+  5  Hero                    (+ animación hero-in gateada por body.is-loaded)
+  6  Sobre mí                (sticky + reveal horizontal de la foto)
+  7  Formación               (timeline: línea, dots, tarjetas)
+  8  Proyectos               (grid, tilt, spotlight, placeholder aurora)
+  9  Habilidades             (tags + lista)
+  10 Contacto                (form + social)
+  11 Footer
+  12 Preloader + scroll progress
+  13 Text split + scrub
+  14 Relevamiento (clip-path reveals)
+  15 Marquee
+  16 Cursor personalizado + magnético
+  17 Smooth scroll (class js-smooth)
+  18 Accesibilidad / reduced motion / responsive
+
+Tokens de color (edítalos aquí para cambiar toda la identidad):
+  --c-bg, --c-bg-alt, --c-surface, --c-text, --c-text-2,
+  --c-accent (verde turquesa), --c-accent-2, --c-line.
+  Hay versiones para claro (por defecto) y oscuro (html[data-theme="dark"]).
+
+Fuentes: Inter Tight (display) + Inter (texto) vía Google Fonts.
+Fondo ambiental: resplandores radiales animados (body::before) +
+rejilla de puntos (body::after). No es glassmorphism.
+
+--------------------------------------------------------------------
+4) JS — ARQUITECTURA (la parte IMPORTANTE)
+--------------------------------------------------------------------
+Todo vive en el namespace global  window.Portfolio.
+
+core.js:
+  - Portfolio.utils: $, $$, clamp, rafThrottle, supportsBgClipText.
+  - Portfolio.config: config.reducedMotion (bool),
+    config.desktop  = matchMedia("(min-width: 768px)"),
+    config.fine     = matchMedia("(hover: hover) and (pointer: fine)").
+  - Portfolio.ticker: ÚNICO requestAnimationFrame. Los sistemas que
+    necesitan movement añaden su fn con ticker.add(fn). Se pausa
+    cuando la pestaña queda en background (visibilitychange).
+  - Portfolio.willChangeObserver: pone will-change: transform solo
+    cuando un elemento está cerca del viewport.
+
+Patrón de cada módulo:
+  Portfolio.Nombre = class {
+    constructor(opciones) { ... guarda refs y estado ... }
+    metodos() { ... lógica ... }
+    init() { ... añade listeners / ticker.add / observers ... }
+  };
+
+Bootstrap (app.js -> Portfolio.App.init) crea las instancias en un
+orden pensado para sus dependencias:
+  Theme -> SmoothScroll (solo desktop) -> Nav -> Contact -> TextSplit
+  -> Reveal -> Marquee -> Motion -> Cursor -> Tilt -> Progress
+  -> Timeline -> Intro.
+
+Dependencias que se pasan por constructor (inj. de dependencias):
+  - smooth  -> Nav (anclas) y Motion (skew del hero). Es null en
+               móvil; los consumidores ya lo manejan (this.smooth ?).
+  - textSplit -> Reveal (divide títulos de sección) e Intro (hero).
+
+Cómo fluye CADA ORQUESTACIÓN (no hay que tocar nada para que sigan):
+  - Smooth: rueda -> state.target; frame() hace lerp y window.scrollTo();
+    expone .skew (usado por el scale del hero).
+  - Reveal: IntersectionObserver añade [data-reveal] -> .is-in; al
+    terminar la transición se quita [data-reveal] para no chocar con
+    los hovers. Doble red de seguridad: barrido por scroll + todo
+    visible a los 3 segundos.
+  - TextSplit: divide palabras (<span.split-word><inner>); los títulos
+    con data-scrub se "encienden" palabra por palabra según scroll
+    (solo si el navegador soporta background-clip: text).
+  - Intro/Preloader: cuenta 00->100 (easeOutCubic, total=1200ms),
+    hace wipe con clip-path y añade body.is-loaded (el CSS dispara la
+    animación del hero), luego divide el título y arranca el typewriter.
+  - Cursor: dot + ring sobre el navegador; targets magnéticos.
+  - Tilt: solo si la tarjeta ya terminó su reveal.
+
+--------------------------------------------------------------------
+5) ACCESIBILIDAD Y REDUCED MOTION
+--------------------------------------------------------------------
+Cada gate respeta prefers-reduced-motion:
+  - Reduced motion => : No smooth, no reveals (todo visible), no
+    parallax, no cursor, no marquee, no scrub, no preloader,
+    no typewriter (texto estático) y transiciones CSS a 0.01ms.
+  - Móvil => no smooth, no parallax, no cursor, no tilt.
+  - El HTML mantiene aria-labels (títulos divididos conservan el texto
+    original en aria-label), aria-pressed en el toggle, roles en los
+    estados del formulario.
+
+--------------------------------------------------------------------
+6) CÓMO CAMBIAR COSAS COMUNES (recetas rápidas)
+--------------------------------------------------------------------
+Cambiar tema / colores / tipografía:
+  - Edit: css/styles.css -> secciones 1 y 2 (tokens :root y dark).
+
+Cambiar duración del preloader:
+  - js/intro.js: bus "total = 1200" (milisegundos del contador).
+  - css/styles.css: ".preloader" transition (wipe de salida).
+
+Cambiar velocidades/easing global:
+  - --t (0.45s ease) en :root. Para un efecto concreto, su propio
+    transition en styles.css.
+
+Añadir un PROYECTO:
+  1) index.html -> sección Proyectos -> copiar un <article class="project-card">
+  2) Cambiar img (poner la imagen en assets/), título y descripción.
+  3) Poner "Demo"/"Código" reales (hoy están en href="#" pendientes).
+
+Añadir una HABILIDAD:
+  - index.html -> .skills__tags -> copiar un <span class="skill-tag">
+    con su SVG. El marquee de la parte inferior SE ACTUALIZA SOLO
+    (se construye desde los .skill-tag existentes).
+
+Añadir un hito en la TIMELINE:
+  - index.html -> #formacion -> copiar un <li class="timeline__item">.
+
+Añadir una SECCIÓN completa:
+  1) index.html: <section id="nueva">
+  2) Nav: <li><a href="#nueva">
+  3) Estilos en styles.css (usa el patrón de otra sección).
+  El scroll-spy y los reveals lo detectan automáticamente.
+
+Añadir un MÓDULO JS (nuevo efecto):
+  A. Crear js/miModulo.js con: Portfolio.MiModulo = class {...init()...};
+  B. index.html: <script src="js/miModulo.js"></script> ANTES de app.js.
+  C. app.js: const x = new Portfolio.MiModulo({ deps }); x.init();
+  D. CSS: estilos del módulo dentro de styles.css (bloque numerado).
+
+Quitar un efecto (sin romper nada):
+  - Comentar su init() en app.js (Fx: cursor.init()) y quitar su
+    <script> opcional. Sin CSS dañino ya que casi todo es progresivo.
+
+--------------------------------------------------------------------
+7) GOTCHAS Y REGLAS QUE EVITAN BUGS
+--------------------------------------------------------------------
+- ORDEN DE SCRIPTS OBLIGATORIO: core.js primero, app.js último.
+  Si un módulo falta o el orden cambia, el sitio falla (ReferenceError).
+- Con doble clic (file://) NO usar import/export (ES Modules): por eso
+  se usan scripts clásicos + namespace. Si algún día montas un build
+  (Vite/webpack), puedes migrar a ES Modules sin cambiar la lógica.
+- El ticker se pausa en background: no hay animaciones invisibles.
+- No animar propiedades de layout (width/height/top): solo transform/
+  opacity/clip-path/filter. Layout thrashing se evita leyendo rects
+  antes de escribir.
+- body.is-loading (html.is-loading) congela el scroll durante el
+  preloader; se quita al terminar.
+- Imágenes faltantes: clase .is-broken muestra un placeholder con
+  aurora y número (01/02/03) en lugar de icono roto. Sube tus
+  imágenes reales en assets/ para que se vea mejor.
+- El marquee usa tags tomados AL CARGAR la página: si cambias las
+  skills, recarga el navegador.
+- No dupliques body.js-anim / body.is-loaded: son "switch" globales
+  que usa el CSS para progressive enhancement.
+
+--------------------------------------------------------------------
+8) DEPLOY / HOSTING
+--------------------------------------------------------------------
+Al ser 100% estático y con rutas relativas, sirve en:
+  - GitHub Pages (https://<user>.github.io/<repo>/)
+  - Netlify / Vercel (drop/document de la carpeta)
+  - Cualquier servidor web (Apache, nginx, hosting común)
+Consejos:
+  - Si la página vive en subcarpeta (ej. /repo/), las rutas relativas
+    (css/, js/, assets/) ya funcionan; NO uses "/css/..." absolutas.
+  - Sube las imágenes reales para quitar los placeholders.
+  - El formulario de contacto usa mailto: (abre el cliente de correo).
+    Para un formulario 100% server-less puedes usar Formspree y
+    cambiar action="https://formspree.io/f/TU_ID" (debe ir HTTPS).
+
+--------------------------------------------------------------------
+9) HOJA DE RUTA SUGERIDA PARA ESCALAR
+--------------------------------------------------------------------
+  - Reemplazar el placeholder de 3 proyectos por más proyectos reales
+    (y habilitar el enlace "Código" a tu GitHub real).
+  - Añadir una sección de testimonios/referencias.
+  - Modo "proyecto destacado": podrías agregar un <video> o un
+    <iframe> embebido de una demo en la tarjeta featured.
+  - Migrar a ES Modules cuando decidas añadir un bundler.
+  - Si quieres analytics: añadir un snippet (usuario propio) en la
+    sección <head>.
+====================================================================
+FIN DE LA DOCUMENTACIÓN
+====================================================================
