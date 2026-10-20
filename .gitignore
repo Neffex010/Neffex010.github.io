@@ -1,6 +1,7 @@
 # Herramientas locales / configuración del agente
 .opencode/
 .omo/
+.playwright-mcp/
 
 # Dependencias
 node_modules/

@@ -546,6 +546,41 @@ html[data-theme="dark"] .icon--moon { display: block; }
   font-size: 1.05rem;
 }
 
+/* Badge de disponibilidad + acciones del hero */
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--c-accent);
+}
+
+.hero__badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--c-accent);
+  animation: status-pulse 2.4s var(--ease) infinite;
+}
+
+@keyframes status-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--c-accent) 45%, transparent); }
+  50%      { box-shadow: 0 0 0 7px color-mix(in srgb, var(--c-accent) 0%, transparent); }
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.hero__actions .btn { margin-top: 0; }
+
 /* Bento mini-strip del hero */
 .hero__bento {
   display: grid;
@@ -620,7 +655,9 @@ html[data-theme="dark"] .icon--moon { display: block; }
 .hero__role {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.55rem;
+  min-width: 12rem;
   padding: 0.42rem 1.05rem;
   font-family: var(--font-mono);
   font-size: 0.78rem;
@@ -710,6 +747,26 @@ body.is-loaded .hero__content {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--c-text-2);
+}
+
+.sobre-mi__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 0.35rem;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--c-text-2);
+}
+
+.sobre-mi__status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--c-accent);
+  flex-shrink: 0;
 }
 
 .sobre-mi__text { padding-top: 0.75rem; }
@@ -911,6 +968,36 @@ body.is-loaded .hero__content {
     gap: 1.5rem;
   }
   .projects__grid > * { grid-column: span 2; }
+}
+
+/* Proyecto destacado: 4 columnas + portada panorámica.
+   Los otros 4 proyectos completan la retícula (2 + 2 + 2). */
+@media (min-width: 1024px) {
+  .projects__grid > .project-card--featured { grid-column: span 4; }
+  .project-card--featured .project-card__img { aspect-ratio: 16 / 9; }
+}
+
+@media (min-width: 620px) and (max-width: 1023px) {
+  .projects__grid > .project-card--featured { grid-column: span 6; }
+}
+
+.project-card__kicker {
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--c-accent);
+}
+
+.project-card__note {
+  margin-top: 0.85rem;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--c-text-2);
+  opacity: 0.75;
 }
 
 .project-card {
@@ -1165,6 +1252,38 @@ img.is-broken { opacity: 0; }
   margin-bottom: 3rem;
 }
 
+/* Habilidades agrupadas por área (el marquee sigue tomando todos
+   los .skill-tag automáticamente). */
+.skills__groups {
+  display: grid;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.skill-group__title {
+  margin-bottom: 0.85rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-text-2);
+}
+
+.skill-group .skills__tags {
+  justify-content: flex-start;
+  margin-bottom: 0;
+  gap: 0.55rem;
+}
+
+@media (min-width: 900px) {
+  .skills__groups {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2.25rem 3rem;
+  }
+  .skill-group:last-child { grid-column: span 2; }
+}
+
 .skill-tag {
   display: inline-flex;
   align-items: center;
@@ -1257,6 +1376,70 @@ img.is-broken { opacity: 0; }
   display: flex;
   flex-direction: column;
   gap: 2rem;
+}
+
+/* Correo directo + copiar (reduce la fricción del mailto) */
+.contact__direct {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.55rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.contact__direct-label {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-text-2);
+}
+
+.contact__email {
+  font-size: clamp(1.05rem, 3vw, 1.55rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--c-text);
+  text-decoration: underline;
+  text-decoration-color: var(--c-accent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+  overflow-wrap: anywhere;
+  transition: color 0.3s var(--ease);
+}
+
+.contact__email:hover { color: var(--c-accent); }
+
+.copy-btn {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--c-text-2);
+  padding: 0.45rem 0.8rem;
+  border: 1px solid var(--c-line);
+  border-radius: var(--radius-sm);
+  transition: color 0.3s var(--ease), border-color 0.3s var(--ease),
+              background-color 0.3s var(--ease);
+}
+
+.copy-btn:hover {
+  color: var(--c-accent);
+  border-color: var(--c-accent);
+}
+
+.copy-btn.is-copied {
+  color: var(--c-on-accent);
+  background: var(--c-accent);
+  border-color: var(--c-accent);
+}
+
+.form__note {
+  margin-top: -1rem;
+  font-size: 0.82rem;
+  color: var(--c-text-2);
+  opacity: 0.8;
 }
 
 .form__field {
@@ -1753,6 +1936,7 @@ html.js-smooth {
 .skill-tag:focus-visible,
 .skill-item:focus-visible,
 .social__link:focus-visible,
+.copy-btn:focus-visible,
 .footer__top:focus-visible {
   outline: 2px solid var(--c-accent);
   outline-offset: 3px;
@@ -1779,4 +1963,16 @@ html.js-smooth {
   .cursor-dot,
   .cursor-ring,
   .cursor-label { display: none; }
+
+  .hero__badge-dot { animation: none; }
+}
+
+/* En pantallas estrechas los dos CTA del hero se apilan */
+@media (max-width: 560px) {
+  .hero__actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+  .hero__actions .btn { width: 100%; }
 }

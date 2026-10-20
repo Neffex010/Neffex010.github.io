@@ -4,7 +4,8 @@ Sitio personal estático de una sola página para presentar proyectos de desarro
 integración de IA, soporte técnico e infraestructura.
 
 - **Stack:** HTML5, CSS3 y JavaScript puro (sin frameworks ni build).
-- **Publicado en:** GitHub Pages.
+- **Sitio en vivo:** https://neffex010.github.io/
+- **Publicado en:** GitHub Pages (deploy automático desde `main`).
 - **Idioma:** español.
 
 ## Estructura

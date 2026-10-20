@@ -17,8 +17,29 @@ Portfolio.Contact = class {
     this.status.hidden = false;
   }
 
+  setupCopyEmail() {
+    const btn = this.utils.$("#copy-email");
+    if (!btn) return;
+    const email = btn.dataset.copy || "";
+    btn.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(email);
+        const prev = btn.textContent;
+        btn.textContent = "¡Copiado!";
+        btn.classList.add("is-copied");
+        setTimeout(() => {
+          btn.textContent = prev;
+          btn.classList.remove("is-copied");
+        }, 1800);
+      } catch (e) {
+        btn.textContent = "Selecciona y copia";
+      }
+    });
+  }
+
   init() {
     if (!this.form || !this.status) return;
+    this.setupCopyEmail();
     this.form.addEventListener("submit", (event) => {
       // La validación nativa (required/type=email) corta antes del submit.
       if (!this.form.reportValidity()) return;

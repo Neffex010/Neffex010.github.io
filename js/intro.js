@@ -26,10 +26,10 @@ Portfolio.Intro = class {
     if (!this.roleEl || this.config.reducedMotion) return;
 
     const roles = [
-      "Desarrollo Web",
+      "Front-end & IA",
       "Integración de IA",
       "Redes y Nube",
-      "Soporte Técnico",
+      "Back-end .NET",
     ];
     let ri = 0, ci = roles[0].length, deleting = true;
     this.roleEl.textContent = roles[0];

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://neffex010.github.io/sitemap.xml

@@ -29,9 +29,11 @@ Reglas de diseño (NO las rompas):
 --------------------------------------------------------------------
 portfolio/
 ├─ index.html          Semántica + contenido + scripts en orden
-├─ assets/             perfil.jpg, proyecto1.jpg, proyecto2.jpg,
-│                      proyecto3.jpg  (si faltan, el placeholder
-│                      animado "is-broken" los sustituye)
+├─ assets/             Portadas JPG optimizadas: entrevistalab.jpg,
+│                      net-tools.jpg, manualidades-lua.jpg,
+│                      galactic-swarm.jpg, clima.jpg + og-cover.jpg
+│                      (1200x630). Si falta una, el placeholder
+│                      animado "is-broken" la sustituye.
 ├─ css/
 │  └─ styles.css       TODO el CSS (tokens, temas y sistemas)
 └─ js/
@@ -60,13 +62,15 @@ portfolio/
 2. HERO (#inicio)  -> título (se divide palabra por palabra),
                       subtítulo, rol con typewriter (#hero-role),
                       CTA "Ver mis proyectos".
-3. SOBRE MÍ        -> foto sticky con parallax + texto. La foto
-                      revela en horizontal (wipe L->R).
-4. FORMACIÓN       -> timeline vertical con 3 hitos:
+3. SOBRE MÍ        -> tarjeta de identidad sticky (monograma +
+                      datos) + texto en primera persona.
+4. TRAYECTORIA     -> timeline vertical con 4 hitos:
                       1) ITP — Ingeniería en TICs (En curso)
-                      2) AWS Academy — Cloud Foundations (Certificación)
-                      3) CBTIS 8 — Técnico en Programación (Titulado)
-5. PROYECTOS       -> grid de tarjetas (la primera es destacada).
+                      2) Manualidades Lua — Desarrollo freelance
+                      3) AWS Academy — Cloud Foundations (Certificación)
+                      4) CBTIS 8 — Técnico en Programación (Titulado)
+5. PROYECTOS       -> 5 proyectos reales. La primera tarjeta usa
+                      .project-card--featured (4 de 6 columnas).
 6. HABILIDADES     -> tags con SVG + lista de aptitudes.
 7. CONTACTO        -> formulario mailto + redes sociales.
 8. FOOTER          -> copyright dinámico + "Volver arriba".
@@ -103,7 +107,7 @@ Tokens de color (edítalos aquí para cambiar toda la identidad):
   --c-accent (verde turquesa), --c-accent-2, --c-line.
   Hay versiones para claro (por defecto) y oscuro (html[data-theme="dark"]).
 
-Fuentes: Inter Tight (display) + Inter (texto) vía Google Fonts.
+Fuentes: Inter Tight (display) + JetBrains Mono (etiquetas) vía Google Fonts.
 Fondo ambiental: resplandores radiales animados (body::before) +
 rejilla de puntos (body::after). No es glassmorphism.
 
@@ -185,12 +189,14 @@ Cambiar velocidades/easing global:
 
 Añadir un PROYECTO:
   1) index.html -> sección Proyectos -> copiar un <article class="project-card">
-  2) Cambiar img (poner la imagen en assets/), título y descripción.
-  3) Poner "Demo"/"Código" reales (hoy están en href="#" pendientes).
+  2) Cambiar img (JPG 1280x800 en assets/), título y descripción.
+  3) Poner "Demo"/"Código" reales. Si no hay demo pública, dejar solo
+     "Código" + <p class="project-card__note">Demo no publicada</p>.
+  4) Para destacar uno: añadir la clase project-card--featured.
 
 Añadir una HABILIDAD:
-  - index.html -> .skills__tags -> copiar un <span class="skill-tag">
-    con su SVG. El marquee de la parte inferior SE ACTUALIZA SOLO
+  - index.html -> .skills__groups -> .skills__tags -> copiar un <span class="skill-tag">
+    El marquee de la parte inferior SE ACTUALIZA SOLO
     (se construye desde los .skill-tag existentes).
 
 Añadir un hito en la TIMELINE:
@@ -252,11 +258,11 @@ Consejos:
 --------------------------------------------------------------------
 9) HOJA DE RUTA SUGERIDA PARA ESCALAR
 --------------------------------------------------------------------
-  - Reemplazar el placeholder de 3 proyectos por más proyectos reales
-    (y habilitar el enlace "Código" a tu GitHub real).
-  - Añadir una sección de testimonios/referencias.
-  - Modo "proyecto destacado": podrías agregar un <video> o un
-    <iframe> embebido de una demo en la tarjeta featured.
+  - [Hecho] 5 proyectos reales con enlaces verificados.
+  - [Hecho] Tarjeta destacada (.project-card--featured) + SEO/OG.
+  - Pendiente: testimonios/referencias de clientes o profesores.
+  - Pendiente: preview en video/GIF de cada demo al hover.
+  - Pendiente: versión en inglés (nivel actual B1).
   - Migrar a ES Modules cuando decidas añadir un bundler.
   - Si quieres analytics: añadir un snippet (usuario propio) en la
     sección <head>.
