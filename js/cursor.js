@@ -26,15 +26,35 @@ Portfolio.Cursor = class {
     this.ringScale = 1;
   }
 
+  // Suelta un elemento magnético con una vuelta suave: activa la
+  // transición de transform solo durante el regreso y luego la retira.
+  release(m) {
+    m.on = false;
+    if (!m.el.style.transform) return;
+    m.el.classList.add("is-unmagnetizing");
+    void m.el.offsetWidth; // fija la transición antes de borrar el transform
+    m.el.style.transform = "";
+    clearTimeout(m.timer);
+    m.timer = setTimeout(() => {
+      m.el.classList.remove("is-unmagnetizing");
+      m.timer = 0;
+    }, 320);
+  }
+
+  // Si el puntero vuelve a entrar, cancelamos la vuelta en curso.
+  engage(m) {
+    if (m.timer) {
+      clearTimeout(m.timer);
+      m.timer = 0;
+    }
+    m.el.classList.remove("is-unmagnetizing");
+  }
+
   // Devuelve los elementos magnéticos a su estado base. Sin esto, al
   // salir de la ventana (o cambiar de pestaña) el último transform
   // inline se queda aplicado y el texto no vuelve a la normalidad.
   resetMagnets() {
-    this.magnetic.forEach((m) => {
-      if (!m.on && !m.el.style.transform) return;
-      m.on = false;
-      m.el.style.transform = "";
-    });
+    this.magnetic.forEach((m) => this.release(m));
     this.overCard = false;
     this.ringScale = 1;
     this.body.classList.remove("is-over-card");
@@ -79,12 +99,11 @@ Portfolio.Cursor = class {
       // vecino seguía desplazado aunque ya no estuviera hovered, y su
       // texto no volvía a la normalidad al pasar a otro enlace.
       if (!m.el.matches(":hover")) {
-        if (m.on) {
-          m.on = false;
-          m.el.style.transform = "";
-        }
+        if (m.on) this.release(m);
         return;
       }
+
+      if (m.el.classList.contains("is-unmagnetizing")) this.engage(m);
 
       const r = m.el.getBoundingClientRect();
       const cx = r.left + r.width / 2;
@@ -96,7 +115,8 @@ Portfolio.Cursor = class {
       near = true;
       m.on = true;
       // Atracción hacia el puntero (no repulsión): el elemento sigue
-      // al cursor y al salir vuelve solo por la transición CSS.
+      // al cursor y, al salir, release() lo devuelve con una vuelta
+      // suave en lugar de un salto seco.
       m.el.style.transform = `translate(${((this.x - cx) * pull * 0.18).toFixed(1)}px, ${((this.y - cy) * pull * 0.18).toFixed(1)}px) scale(${(1 + pull * 0.03).toFixed(3)})`;
     });
 

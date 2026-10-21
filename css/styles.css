@@ -219,7 +219,7 @@ body::after {
               color var(--t), border-color var(--t), box-shadow var(--t);
 }
 
-.btn:hover {
+.has-hover .btn:hover {
   background: var(--c-accent-2);
   box-shadow: var(--shadow-brutal-sm);
   transform: translate(3px, 3px);
@@ -236,7 +236,7 @@ body::after {
   color: var(--c-text);
 }
 
-.btn--ghost:hover {
+.has-hover .btn--ghost:hover {
   background: var(--c-bg);
   border-color: var(--c-accent);
   color: var(--c-accent);
@@ -263,7 +263,7 @@ body::after {
 
 .btn__arrow svg { width: 15px; height: 15px; }
 
-.btn:hover .btn__arrow,
+.has-hover .btn:hover .btn__arrow,
 .btn:focus-visible .btn__arrow { transform: translateX(5px); }
 
 .section {
@@ -340,7 +340,7 @@ body.is-scrolled .header {
   transition: transform var(--t), opacity var(--t);
 }
 
-.nav__logo:hover { transform: scale(1.02); }
+.has-hover .nav__logo:hover { transform: scale(1.02); }
 
 .nav__menu {
   display: flex;
@@ -358,7 +358,7 @@ body.is-scrolled .header {
   transition: transform var(--t), color 0.3s var(--ease);
 }
 
-.nav__link:hover {
+.has-hover .nav__link:hover {
   color: var(--c-text);
   transform: scale(1.02);
 }
@@ -394,7 +394,7 @@ body.is-scrolled .header {
 }
 
 .theme-toggle .icon { width: 17px; height: 17px; }
-.theme-toggle:hover { color: var(--c-text); transform: scale(1.08); }
+.has-hover .theme-toggle:hover { color: var(--c-text); transform: scale(1.08); }
 
 .icon--moon { display: none; }
 html[data-theme="dark"] .icon--sun { display: none; }
@@ -635,7 +635,7 @@ html[data-theme="dark"] .icon--moon { display: block; }
   transition: color var(--t);
 }
 
-.hero__scroll:hover { color: var(--c-accent); }
+.has-hover .hero__scroll:hover { color: var(--c-accent); }
 
 .hero__scroll-arrow {
   display: inline-block;
@@ -1014,7 +1014,7 @@ body.is-loaded .hero__content {
               box-shadow var(--t);
 }
 
-.project-card:hover {
+.has-hover .project-card:hover {
   transform: translate(-2px, -2px);
   border-color: var(--c-accent);
   box-shadow: 8px 8px 0 var(--c-shadow);
@@ -1088,7 +1088,7 @@ img.is-broken { opacity: 0; }
   transition: transform 0.7s var(--ease);
 }
 
-.project-card:hover .project-card__img img { transform: scale(1.04); }
+.has-hover .project-card:hover .project-card__img img { transform: scale(1.04); }
 
 .project-card__body {
   display: flex;
@@ -1132,7 +1132,7 @@ img.is-broken { opacity: 0; }
   transition: color 0.3s var(--ease), border-color 0.3s var(--ease);
 }
 
-.project-card:hover .project-card__tech span {
+.has-hover .project-card:hover .project-card__tech span {
   color: var(--c-text);
   border-color: color-mix(in srgb, var(--c-accent) 40%, var(--c-line));
 }
@@ -1308,7 +1308,7 @@ img.is-broken { opacity: 0; }
   opacity: 0.85;
 }
 
-.skill-tag:hover {
+.has-hover .skill-tag:hover {
   color: var(--c-accent);
   border-color: var(--c-accent);
   transform: translate(-2px, -2px);
@@ -1361,7 +1361,7 @@ img.is-broken { opacity: 0; }
   flex-shrink: 0;
 }
 
-.skill-item:hover {
+.has-hover .skill-item:hover {
   transform: translate(2px, 2px);
   border-color: var(--c-accent);
   box-shadow: none;
@@ -1409,7 +1409,7 @@ img.is-broken { opacity: 0; }
   transition: color 0.3s var(--ease);
 }
 
-.contact__email:hover { color: var(--c-accent); }
+.has-hover .contact__email:hover { color: var(--c-accent); }
 
 .copy-btn {
   font-family: var(--font-mono);
@@ -1424,7 +1424,7 @@ img.is-broken { opacity: 0; }
               background-color 0.3s var(--ease);
 }
 
-.copy-btn:hover {
+.has-hover .copy-btn:hover {
   color: var(--c-accent);
   border-color: var(--c-accent);
 }
@@ -1551,12 +1551,12 @@ img.is-broken { opacity: 0; }
   transition: transform 0.45s var(--ease);
 }
 
-.social__link:hover {
+.has-hover .social__link:hover {
   color: var(--c-accent);
   transform: scale(1.02);
 }
 
-.social__link:hover::after { transform: scaleX(1); }
+.has-hover .social__link:hover::after { transform: scaleX(1); }
 
 /* Confort táctil en móvil: área ≥44px en enlaces inline */
 @media (max-width: 768px) {
@@ -1590,7 +1590,7 @@ img.is-broken { opacity: 0; }
   transition: color 0.3s var(--ease), transform var(--t);
 }
 
-.footer__top:hover {
+.has-hover .footer__top:hover {
   color: var(--c-accent);
   transform: translateY(-2px);
 }
@@ -1774,7 +1774,7 @@ body.js-anim [data-reveal].sobre-mi__panel.is-in {
 /* Segunda fila en sentido contrario */
 .marquee__track--rev { animation-direction: reverse; }
 
-.marquee:hover .marquee__track { animation-play-state: paused; }
+.has-hover .marquee:hover .marquee__track { animation-play-state: paused; }
 
 .marquee__set {
   display: flex;
@@ -1902,6 +1902,18 @@ body.has-cursor .social__link,
 body.has-cursor .footer__top {
   will-change: transform;
   transition-property: background-color, color, border-color;
+}
+
+/* Al soltar el elemento, el JS borra el transform inline. Esta clase
+   reactiva la transición de transform solo durante esa vuelta para
+   que el texto aterrice suave en vez de saltar de golpe. */
+body.has-cursor .btn.is-unmagnetizing,
+body.has-cursor .nav__link.is-unmagnetizing,
+body.has-cursor .social__link.is-unmagnetizing,
+body.has-cursor .footer__top.is-unmagnetizing {
+  transition: transform 0.28s var(--ease), background-color 0.28s var(--ease),
+              color 0.28s var(--ease), border-color 0.28s var(--ease),
+              box-shadow 0.28s var(--ease);
 }
 
 /* ============================================================

@@ -58,6 +58,14 @@ Portfolio.Tilt = class {
       { passive: true }
     );
 
+    // Al salir de una tarjeta y detener el ratón tampoco llega otro
+    // pointermove: hay que soltar el tilt en el propio pointerleave.
+    grid.querySelectorAll(".project-card").forEach((card) => {
+      card.addEventListener("pointerleave", () => {
+        card.classList.remove("is-tilt");
+      });
+    });
+
     // Al salir de la ventana no llega pointermove: sin este reset la
     // última tarjeta quedaba inclinada (y su texto torcido).
     window.addEventListener(
