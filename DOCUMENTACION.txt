@@ -47,16 +47,16 @@ portfolio/
    ├─ motion.js        Parallax multi-capa + scale del hero
    ├─ marquee.js       Cinta infinita de skills
    ├─ cursor.js        Cursor personalizado + magnético
-   ├─ tilt.js          Tilt 3D + spotlight en tarjetas
+   ├─ tilt.js          Tilt 3D en tarjetas
    ├─ progress.js      Barra de progreso de scroll
-   ├─ timeline.js      Línea que se dibuja en Formación
+   ├─ timeline.js      Línea que se dibuja en Trayectoria
    ├─ intro.js         Preloader + entrada del hero (typewriter)
    └─ app.js           Bootstrap: instancia todo (App.init)
 
 --------------------------------------------------------------------
 2) HTML — SECCIONES (en orden)
 --------------------------------------------------------------------
-1. HEADER / NAV    -> logo, enlaces (Inicio, Sobre mí, Formación,
+1. HEADER / NAV    -> logo, enlaces (Inicio, Sobre mí, Trayectoria,
                       Proyectos, Habilidades, Contacto), toggle de
                       tema, hamburguesa (móvil).
 2. HERO (#inicio)  -> título (se divide palabra por palabra),
@@ -71,7 +71,7 @@ portfolio/
                       4) CBTIS 8 — Técnico en Programación (Titulado)
 5. PROYECTOS       -> 5 proyectos reales. La primera tarjeta usa
                       .project-card--featured (4 de 6 columnas).
-6. HABILIDADES     -> tags con SVG + lista de aptitudes.
+6. HABILIDADES     -> tags de texto agrupados por área + lista de aptitudes.
 7. CONTACTO        -> formulario mailto + redes sociales.
 8. FOOTER          -> copyright dinámico + "Volver arriba".
 
@@ -88,9 +88,9 @@ encargan solos siempre que el id exista y exista el enlace.
   3  Utilidades              (.container, .btn, .section, ...)
   4  Header / nav            (estado is-scrolled, sin blur)
   5  Hero                    (+ animación hero-in gateada por body.is-loaded)
-  6  Sobre mí                (sticky + reveal horizontal de la foto)
-  7  Formación               (timeline: línea, dots, tarjetas)
-  8  Proyectos               (grid, tilt, spotlight, placeholder aurora)
+  6  Sobre mí                (sticky + tarjeta de identidad sin foto)
+  7  Trayectoria             (timeline: línea, dots, tarjetas)
+  8  Proyectos               (grid, tilt, destacado, placeholder aurora)
   9  Habilidades             (tags + lista)
   10 Contacto                (form + social)
   11 Footer
