@@ -57,5 +57,19 @@ Portfolio.Tilt = class {
       },
       { passive: true }
     );
+
+    // Al salir de la ventana no llega pointermove: sin este reset la
+    // última tarjeta quedaba inclinada (y su texto torcido).
+    window.addEventListener(
+      "pointerout",
+      (e) => {
+        if (!e.relatedTarget) reset();
+      },
+      { passive: true }
+    );
+    window.addEventListener("blur", reset);
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) reset();
+    });
   }
 };

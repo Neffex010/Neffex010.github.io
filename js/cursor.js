@@ -26,12 +26,27 @@ Portfolio.Cursor = class {
     this.ringScale = 1;
   }
 
+  // Devuelve los elementos magnéticos a su estado base. Sin esto, al
+  // salir de la ventana (o cambiar de pestaña) el último transform
+  // inline se queda aplicado y el texto no vuelve a la normalidad.
+  resetMagnets() {
+    this.magnetic.forEach((m) => {
+      if (!m.on && !m.el.style.transform) return;
+      m.on = false;
+      m.el.style.transform = "";
+    });
+    this.overCard = false;
+    this.ringScale = 1;
+    this.body.classList.remove("is-over-card");
+  }
+
   frame(dt) {
     if (
       !this.config.desktop.matches ||
       !this.config.fine.matches ||
       this.config.reducedMotion
     ) {
+      this.resetMagnets();
       this.body.classList.remove("has-cursor", "has-cursor-visible");
       return;
     }
@@ -39,6 +54,7 @@ Portfolio.Cursor = class {
     // Nunca ocultamos el cursor nativo salvo que el personalizado
     // ya sea visible (primera posición conocida del puntero).
     if (!this.visible) {
+      this.resetMagnets();
       this.body.classList.remove("has-cursor");
       return;
     }
@@ -59,6 +75,17 @@ Portfolio.Cursor = class {
 
     let near = false;
     this.magnetic.forEach((m) => {
+      // Solo se magnetiza el elemento bajo el puntero. Antes, un enlace
+      // vecino seguía desplazado aunque ya no estuviera hovered, y su
+      // texto no volvía a la normalidad al pasar a otro enlace.
+      if (!m.el.matches(":hover")) {
+        if (m.on) {
+          m.on = false;
+          m.el.style.transform = "";
+        }
+        return;
+      }
+
       const r = m.el.getBoundingClientRect();
       const cx = r.left + r.width / 2;
       const cy = r.top + r.height / 2;
@@ -66,14 +93,11 @@ Portfolio.Cursor = class {
       const radius = Math.max(r.width, r.height) + 90;
       const pull = this.utils.clamp(1 - dist / radius, 0, 1);
 
-      if (pull > 0) {
-        near = true;
-        m.on = true;
-        m.el.style.transform = `translate(${((cx - this.x) * pull * 0.22).toFixed(1)}px, ${((cy - this.y) * pull * 0.22).toFixed(1)}px) scale(${(1 + pull * 0.03).toFixed(3)})`;
-      } else if (m.on) {
-        m.on = false;
-        m.el.style.transform = "";
-      }
+      near = true;
+      m.on = true;
+      // Atracción hacia el puntero (no repulsión): el elemento sigue
+      // al cursor y al salir vuelve solo por la transición CSS.
+      m.el.style.transform = `translate(${((this.x - cx) * pull * 0.18).toFixed(1)}px, ${((this.y - cy) * pull * 0.18).toFixed(1)}px) scale(${(1 + pull * 0.03).toFixed(3)})`;
     });
 
     this.ringScale += ((near ? 1.7 : 1) - this.ringScale) * (1 - Math.exp(-10 * dt));
@@ -122,11 +146,26 @@ Portfolio.Cursor = class {
       (e) => {
         if (!e.relatedTarget) {
           this.visible = false;
+          this.resetMagnets();
           this.body.classList.remove("has-cursor-visible");
         }
       },
       { passive: true }
     );
+
+    // Cambio de pestaña/ventana: mismo reset para que ningún texto
+    // quede escalado o desplazado al volver.
+    window.addEventListener("blur", () => {
+      this.visible = false;
+      this.resetMagnets();
+      this.body.classList.remove("has-cursor", "has-cursor-visible");
+    });
+    document.addEventListener("visibilitychange", () => {
+      if (!document.hidden) return;
+      this.visible = false;
+      this.resetMagnets();
+      this.body.classList.remove("has-cursor", "has-cursor-visible");
+    });
     window.addEventListener(
       "pointerover",
       (e) => {
