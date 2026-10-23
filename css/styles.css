@@ -384,6 +384,34 @@ body.is-scrolled .header {
   gap: 0.5rem;
 }
 
+/* CTA de contacto: visible solo cuando el menú ya es horizontal. */
+.nav__cta {
+  display: none;
+  align-items: center;
+  padding: 0.55rem 0.9rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--c-on-accent);
+  background: var(--c-accent);
+  border: 2px solid var(--c-text);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-brutal-sm);
+  transition: transform var(--t), box-shadow var(--t), background-color var(--t);
+}
+
+.has-hover .nav__cta:hover {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+  background: var(--c-accent-2);
+}
+
+@media (min-width: 900px) {
+  .nav__cta { display: inline-flex; }
+}
+
 .theme-toggle {
   display: grid;
   place-items: center;

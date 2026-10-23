@@ -75,7 +75,7 @@ Portfolio.Intro = class {
 
     const count = this.utils.$(".preloader__count", overlay);
     const fill = this.utils.$(".preloader__bar-fill", overlay);
-    const total = 1200;
+    const total = 600;
     const t0 = performance.now();
     let done = false;
 
@@ -107,9 +107,9 @@ Portfolio.Intro = class {
     };
     requestAnimationFrame(tick);
 
-    // Garantía dura: jamás quedarse más de 3s.
+    // Garantía dura: jamás quedarse más de 2s.
     setTimeout(() => {
       if (!done) finish();
-    }, 3000);
+    }, 2000);
   }
 };
