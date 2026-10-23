@@ -845,7 +845,11 @@ body.is-loaded .hero__content {
 
 .timeline__line.is-in::after { transform: scaleY(1); }
 
-.timeline__list { display: flex; flex-direction: column; }
+.timeline__list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
 
 .timeline__item {
   position: relative;
@@ -905,6 +909,37 @@ body.is-loaded .hero__content {
   color: var(--c-text-2);
   font-size: 0.95rem;
   max-width: 48ch;
+}
+
+/* Desktop: 2x2 sin línea vertical. Cada hito es una ficha compacta;
+   en móvil se conserva la línea de tiempo vertical. */
+@media (min-width: 900px) {
+  .timeline {
+    max-width: none;
+    padding-left: 0;
+  }
+
+  .timeline__line,
+  .timeline__dot { display: none; }
+
+  .timeline__list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem 2rem;
+  }
+
+  .timeline__item { padding-bottom: 0; }
+
+  .timeline__card {
+    height: 100%;
+    padding: 1.25rem 1.5rem;
+    background: var(--c-bg-alt);
+    border: 2px solid var(--c-text);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-brutal-sm);
+  }
+
+  .timeline__desc { max-width: none; }
 }
 
 /* ------------------------------------------------------------
