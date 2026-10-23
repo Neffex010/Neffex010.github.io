@@ -56,23 +56,30 @@ portfolio/
 --------------------------------------------------------------------
 2) HTML — SECCIONES (en orden)
 --------------------------------------------------------------------
-1. HEADER / NAV    -> logo, enlaces (Inicio, Sobre mí, Trayectoria,
-                      Proyectos, Habilidades, Contacto), toggle de
-                      tema, hamburguesa (móvil).
+1. HEADER / NAV    -> logo, enlaces (Inicio, Proyectos, Sobre mí,
+                      Trayectoria, Habilidades, Contacto), CTA
+                      "Hablemos" (desktop), toggle de tema,
+                      hamburguesa (móvil).
 2. HERO (#inicio)  -> título (se divide palabra por palabra),
                       subtítulo, rol con typewriter (#hero-role),
                       CTA "Ver mis proyectos".
-3. SOBRE MÍ        -> tarjeta de identidad sticky (monograma +
-                      datos) + texto en primera persona.
-4. TRAYECTORIA     -> timeline vertical con 4 hitos:
+3. PROYECTOS       -> 5 proyectos reales en dos niveles:
+                      3 tarjetas con portada (destacada a ancho
+                      completo en desktop) + 2 filas compactas sin
+                      imagen (.mini-project).
+4. SOBRE MÍ        -> tarjeta de identidad sticky en desktop +
+                      2 párrafos. En móvil se oculta la tarjeta.
+5. TRAYECTORIA     -> 4 hitos: timeline vertical en móvil y
+                      rejilla 2x2 en desktop.
                       1) ITP — Ingeniería en TICs (En curso)
                       2) Manualidades Lua — Desarrollo freelance
                       3) AWS Academy — Cloud Foundations (Certificación)
                       4) CBTIS 8 — Técnico en Programación (Titulado)
-5. PROYECTOS       -> 5 proyectos reales. La primera tarjeta usa
-                      .project-card--featured (4 de 6 columnas).
-6. HABILIDADES     -> tags de texto agrupados por área + lista de aptitudes.
-7. CONTACTO        -> formulario mailto + redes sociales.
+6. HABILIDADES     -> 3 grupos de tags: Front-end, IA y datos,
+                      Infraestructura y herramientas. El marquee se
+                      construye con todos los .skill-tag.
+7. CONTACTO        -> email + copiar y formulario mailto en dos
+                      columnas (desktop); redes sociales debajo.
 8. FOOTER          -> copyright dinámico + "Volver arriba".
 
 Nuevas secciones se agregan dentro de <main>, con <section id="...">
@@ -88,10 +95,10 @@ encargan solos siempre que el id exista y exista el enlace.
   3  Utilidades              (.container, .btn, .section, ...)
   4  Header / nav            (estado is-scrolled, sin blur)
   5  Hero                    (+ animación hero-in gateada por body.is-loaded)
-  6  Sobre mí                (sticky + tarjeta de identidad sin foto)
-  7  Trayectoria             (timeline: línea, dots, tarjetas)
-  8  Proyectos               (grid, tilt, destacado, placeholder aurora)
-  9  Habilidades             (tags + lista)
+  6  Sobre mí                (sticky + tarjeta de identidad; oculta en móvil)
+  7  Trayectoria             (timeline vertical en móvil / rejilla 2x2 en desktop)
+  8  Proyectos               (3 tarjetas con portada + filas compactas, tilt)
+  9  Habilidades             (3 grupos de tags)
   10 Contacto                (form + social)
   11 Footer
   12 Preloader + scroll progress
@@ -155,7 +162,7 @@ Cómo fluye CADA ORQUESTACIÓN (no hay que tocar nada para que sigan):
   - TextSplit: divide palabras (<span.split-word><inner>); los títulos
     con data-scrub se "encienden" palabra por palabra según scroll
     (solo si el navegador soporta background-clip: text).
-  - Intro/Preloader: cuenta 00->100 (easeOutCubic, total=1200ms),
+  - Intro/Preloader: cuenta 00->100 (easeOutCubic, total=600ms),
     hace wipe con clip-path y añade body.is-loaded (el CSS dispara la
     animación del hero), luego divide el título y arranca el typewriter.
   - Cursor: dot + ring sobre el navegador; targets magnéticos.
@@ -180,19 +187,27 @@ Cambiar tema / colores / tipografía:
   - Edit: css/styles.css -> secciones 1 y 2 (tokens :root y dark).
 
 Cambiar duración del preloader:
-  - js/intro.js: bus "total = 1200" (milisegundos del contador).
+  - js/intro.js: bus "total = 600" (milisegundos del contador).
   - css/styles.css: ".preloader" transition (wipe de salida).
 
 Cambiar velocidades/easing global:
   - --t (0.45s ease) en :root. Para un efecto concreto, su propio
     transition en styles.css.
 
-Añadir un PROYECTO:
-  1) index.html -> sección Proyectos -> copiar un <article class="project-card">
+Añadir un PROYECTO con portada:
+  1) index.html -> sección Proyectos -> .projects__grid -> copiar un
+     <article class="project-card">
   2) Cambiar img (JPG 1280x800 en assets/), título y descripción.
   3) Poner "Demo"/"Código" reales. Si no hay demo pública, dejar solo
      "Código" + <p class="project-card__note">Demo no publicada</p>.
-  4) Para destacar uno: añadir la clase project-card--featured.
+  4) Solo debe haber un .project-card--featured: en desktop ocupa el
+     ancho completo y se muestra en horizontal (portada + ficha).
+
+Añadir un PROYECTO compacto (sin portada):
+  1) index.html -> .projects__more-list -> copiar un
+     <li class="mini-project">
+  2) Título, descripción de una línea y enlaces Demo/Código con
+     aria-label (hay varios "Demo" en la página).
 
 Añadir una HABILIDAD:
   - index.html -> .skills__groups -> .skills__tags -> copiar un <span class="skill-tag">
