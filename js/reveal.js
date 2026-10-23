@@ -21,7 +21,7 @@ Portfolio.Reveal = class {
       ".section__title, .section__text, .sobre-mi__panel, " +
         ".timeline__item, .project-card, .mini-project, .skill-tag, .form__field, " +
         ".contact__form .btn, .social__link, .footer__top, " +
-        ".hero__tile, .meta-tile, .bento-tile"
+        ".hero__tile, .bento-tile"
     );
   }
 
