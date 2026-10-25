@@ -1046,7 +1046,6 @@ body.is-loaded .hero__content {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--c-text-2);
-  opacity: 0.75;
 }
 
 .project-card {
@@ -1552,7 +1551,7 @@ img.is-broken { opacity: 0; }
 .form__field input::placeholder,
 .form__field textarea::placeholder {
   color: var(--c-text-2);
-  opacity: 0.55;
+  opacity: 1;
 }
 
 .form__field input:focus,

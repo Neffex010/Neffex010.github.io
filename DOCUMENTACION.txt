@@ -197,7 +197,7 @@ Cambiar velocidades/easing global:
 Añadir un PROYECTO con portada:
   1) index.html -> sección Proyectos -> .projects__grid -> copiar un
      <article class="project-card">
-  2) Cambiar img (JPG 1280x800 en assets/), título y descripción.
+  2) Cambiar img (JPG 1440x900 o 1280x800 en assets/), título y descripción.
   3) Poner "Demo"/"Código" reales. Si no hay demo pública, dejar solo
      "Código" + <p class="project-card__note">Demo no publicada</p>.
   4) Solo debe haber un .project-card--featured: en desktop ocupa el
