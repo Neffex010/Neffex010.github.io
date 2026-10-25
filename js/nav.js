@@ -27,6 +27,18 @@ Portfolio.Nav = class {
     }
   }
 
+  /* Desplaza a un hash respetando la altura del header. */
+  scrollToHash(hash) {
+    if (!hash || hash === "#") return;
+    const target = this.utils.$(hash);
+    if (!target) return;
+    const offset = this.header ? this.header.offsetHeight : 64;
+    const top =
+      target.getBoundingClientRect().top + window.pageYOffset - offset;
+    if (this.smooth) this.smooth.goto(top);
+    else window.scrollTo({ top, behavior: "smooth" });
+  }
+
   /* Anclas: usan el motor de smooth, o scroll nativo. */
   setupAnchors() {
     this.utils.$$('a[href^="#"]').forEach((link) => {
@@ -35,11 +47,7 @@ Portfolio.Nav = class {
         event.preventDefault();
         const target = this.utils.$(link.hash);
         if (!target) return;
-        const offset = this.header ? this.header.offsetHeight : 64;
-        const top =
-          target.getBoundingClientRect().top + window.pageYOffset - offset;
-        if (this.smooth) this.smooth.goto(top);
-        else window.scrollTo({ top, behavior: "smooth" });
+        this.scrollToHash(link.hash);
         this.closeMenu();
         // Mantiene la URL en sincronía: enlace directo y botón atrás.
         if (window.location.hash !== link.hash) {
@@ -50,6 +58,13 @@ Portfolio.Nav = class {
           }
         }
       });
+    });
+  }
+
+  /* Atrás/adelante: el navegador cambia el hash pero no scrollea solo. */
+  setupHistory() {
+    window.addEventListener("popstate", () => {
+      if (window.location.hash) this.scrollToHash(window.location.hash);
     });
   }
 
@@ -152,6 +167,7 @@ Portfolio.Nav = class {
   init() {
     if (this.yearEl) this.yearEl.textContent = new Date().getFullYear();
     this.setupAnchors();
+    this.setupHistory();
     this.setupMenu();
     this.setupScrollSpy();
     this.setupBrokenImages();
