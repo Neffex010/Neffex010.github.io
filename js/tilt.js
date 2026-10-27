@@ -33,7 +33,13 @@ Portfolio.Tilt = class {
     const reset = () =>
       grid
         .querySelectorAll(".is-tilt")
-        .forEach((c) => c.classList.remove("is-tilt"));
+        .forEach((c) => {
+          c.classList.remove("is-tilt");
+          c.style.removeProperty("--rx");
+          c.style.removeProperty("--ry");
+          c.style.removeProperty("--sx");
+          c.style.removeProperty("--sy");
+        });
 
     document.addEventListener(
       "pointermove",
@@ -60,9 +66,15 @@ Portfolio.Tilt = class {
 
     // Al salir de una tarjeta y detener el ratón tampoco llega otro
     // pointermove: hay que soltar el tilt en el propio pointerleave.
+    // Se limpian también las variables inline para que no queden valores
+    // stale (--rx/--ry/--sx/--sy) que alterarían la sombra al re-entrar.
     grid.querySelectorAll(".project-card").forEach((card) => {
       card.addEventListener("pointerleave", () => {
         card.classList.remove("is-tilt");
+        card.style.removeProperty("--rx");
+        card.style.removeProperty("--ry");
+        card.style.removeProperty("--sx");
+        card.style.removeProperty("--sy");
       });
     });
 
