@@ -1,0 +1,585 @@
+{
+  "viewport": {
+    "w": 1440,
+    "h": 900,
+    "cw": 1428,
+    "ch": 900
+  },
+  "doc": {
+    "scrollHeight": 5611,
+    "scrollWidth": 1428,
+    "screens": 6.23
+  },
+  "sections": {
+    "inicio": {
+      "h": 900.2,
+      "w": 1428.2,
+      "top": 0,
+      "bottom": 900.2,
+      "left": 0,
+      "right": 1428.2
+    },
+    "proyectos": {
+      "h": 1419.8,
+      "w": 1428.2,
+      "top": 900.2,
+      "bottom": 2319.9,
+      "left": 0,
+      "right": 1428.2
+    },
+    "sobre-mi": {
+      "h": 850.2,
+      "w": 1428.2,
+      "top": 2319.9,
+      "bottom": 3170.2,
+      "left": 0,
+      "right": 1428.2
+    },
+    "formacion": {
+      "h": 673.8,
+      "w": 1428.2,
+      "top": 3170.2,
+      "bottom": 3843.9,
+      "left": 0,
+      "right": 1428.2
+    },
+    "habilidades": {
+      "h": 548.9,
+      "w": 1428.2,
+      "top": 3843.9,
+      "bottom": 4392.8,
+      "left": 0,
+      "right": 1428.2
+    },
+    "contacto": {
+      "h": 841.2,
+      "w": 1428.2,
+      "top": 4613,
+      "bottom": 5454.3,
+      "left": 0,
+      "right": 1428.2
+    }
+  },
+  "footer": {
+    "h": 157.1,
+    "w": 1428.2,
+    "top": 5454.3,
+    "bottom": 5611.4,
+    "left": 0,
+    "right": 1428.2
+  },
+  "marquee": {
+    "h": 220.2,
+    "w": 1428.2,
+    "top": 4392.8,
+    "bottom": 4613,
+    "left": 0,
+    "right": 1428.2
+  },
+  "hero": {
+    "h": {
+      "h": 900.2,
+      "w": 1428.2,
+      "top": 0,
+      "bottom": 900.2,
+      "left": 0,
+      "right": 1428.2
+    },
+    "offsetHeight": 900,
+    "fits": true,
+    "content": {
+      "h": 706.4,
+      "w": 1200,
+      "top": 80.9,
+      "bottom": 787.3,
+      "left": 114.1,
+      "right": 1314.1
+    },
+    "title": {
+      "h": 213.4,
+      "w": 1200,
+      "top": 282.3,
+      "bottom": 495.7,
+      "left": 114.1,
+      "right": 1314.1
+    },
+    "titleLines": {
+      "rects": 10,
+      "uniqueTops": 4,
+      "clusters": 2
+    },
+    "titleClip": {
+      "sw": 1200,
+      "cw": 1200,
+      "sh": 227,
+      "ch": 213,
+      "okX": true,
+      "okY": false,
+      "overflow": "visible",
+      "overflowX": "visible",
+      "overflowY": "visible"
+    },
+    "titleLineHeight": "106.72px",
+    "badge": {
+      "h": 17.4,
+      "w": 312.6,
+      "top": 120.9,
+      "bottom": 138.3,
+      "left": 114.1,
+      "right": 426.7
+    },
+    "subtitle": {
+      "h": 69.1,
+      "w": 549.5,
+      "top": 470.6,
+      "bottom": 539.7,
+      "left": 114.1,
+      "right": 663.5
+    },
+    "role": {
+      "h": 36.4,
+      "w": 211.2,
+      "top": 504.8,
+      "bottom": 541.2,
+      "left": 114.1,
+      "right": 325.3
+    },
+    "actions": {
+      "h": 60.2,
+      "w": 425.2,
+      "top": 577.2,
+      "bottom": 637.4,
+      "left": 114.1,
+      "right": 539.3
+    },
+    "bento": {
+      "h": 101.8,
+      "w": 368,
+      "top": 685.4,
+      "bottom": 787.3,
+      "left": 114.1,
+      "right": 482.1,
+      "display": "grid"
+    },
+    "scrollIndicator": {
+      "h": 16.9,
+      "w": 70.1,
+      "top": 855.3,
+      "bottom": 872.2,
+      "left": 679,
+      "right": 749.1
+    },
+    "splitWords": [
+      {
+        "i": 0,
+        "text": "Luis",
+        "wrapper": {
+          "top": -482,
+          "bottom": -361.4,
+          "h": 120.6
+        },
+        "inner": {
+          "top": -482,
+          "bottom": -375.3,
+          "h": 106.7
+        },
+        "innerOverflowBottom": -13.92,
+        "wrapperOverflow": "hidden"
+      },
+      {
+        "i": 1,
+        "text": "Enrique",
+        "wrapper": {
+          "top": -482,
+          "bottom": -361.4,
+          "h": 120.6
+        },
+        "inner": {
+          "top": -482,
+          "bottom": -375.3,
+          "h": 106.7
+        },
+        "innerOverflowBottom": -13.92,
+        "wrapperOverflow": "hidden"
+      },
+      {
+        "i": 2,
+        "text": "Cabrera",
+        "wrapper": {
+          "top": -482,
+          "bottom": -361.4,
+          "h": 120.6
+        },
+        "inner": {
+          "top": -482,
+          "bottom": -375.3,
+          "h": 106.7
+        },
+        "innerOverflowBottom": -13.92,
+        "wrapperOverflow": "hidden"
+      },
+      {
+        "i": 3,
+        "text": "García",
+        "wrapper": {
+          "top": -375.3,
+          "bottom": -254.7,
+          "h": 120.6
+        },
+        "inner": {
+          "top": -375.3,
+          "bottom": -268.6,
+          "h": 106.7
+        },
+        "innerOverflowBottom": -13.92,
+        "wrapperOverflow": "hidden"
+      }
+    ]
+  },
+  "sectionTitles": [
+    {
+      "i": 0,
+      "text": "Proyectos",
+      "h": 82.6,
+      "w": 1200,
+      "top": 1012.9,
+      "bottom": 1095.6,
+      "left": 114.1,
+      "right": 1314.1,
+      "sw": 1200,
+      "cw": 1200,
+      "sh": 83,
+      "ch": 83,
+      "okX": true,
+      "okY": true,
+      "overflow": "visible",
+      "overflowX": "visible",
+      "overflowY": "visible"
+    },
+    {
+      "i": 1,
+      "text": "Sobre mí",
+      "h": 104,
+      "w": 611.6,
+      "top": 2444.7,
+      "bottom": 2548.6,
+      "left": 702.5,
+      "right": 1314.1,
+      "sw": 612,
+      "cw": 612,
+      "sh": 104,
+      "ch": 104,
+      "okX": true,
+      "okY": true,
+      "overflow": "visible",
+      "overflowX": "visible",
+      "overflowY": "visible"
+    },
+    {
+      "i": 2,
+      "text": "Trayectoria",
+      "h": 82.6,
+      "w": 1200,
+      "top": 3282.9,
+      "bottom": 3365.5,
+      "left": 114.1,
+      "right": 1314.1,
+      "sw": 1200,
+      "cw": 1200,
+      "sh": 83,
+      "ch": 83,
+      "okX": true,
+      "okY": true,
+      "overflow": "visible",
+      "overflowX": "visible",
+      "overflowY": "visible"
+    },
+    {
+      "i": 3,
+      "text": "Habilidades",
+      "h": 82.6,
+      "w": 1200,
+      "top": 3956.7,
+      "bottom": 4039.3,
+      "left": 114.1,
+      "right": 1314.1,
+      "sw": 1200,
+      "cw": 1200,
+      "sh": 83,
+      "ch": 83,
+      "okX": true,
+      "okY": true,
+      "overflow": "visible",
+      "overflowX": "visible",
+      "overflowY": "visible"
+    },
+    {
+      "i": 4,
+      "text": "Contacto",
+      "h": 82.6,
+      "w": 1200,
+      "top": 4725.8,
+      "bottom": 4808.4,
+      "left": 114.1,
+      "right": 1314.1,
+      "sw": 1200,
+      "cw": 1200,
+      "sh": 83,
+      "ch": 83,
+      "okX": true,
+      "okY": true,
+      "overflow": "visible",
+      "overflowX": "visible",
+      "overflowY": "visible"
+    }
+  ],
+  "projects": {
+    "grid": {
+      "h": 740.5,
+      "w": 1200,
+      "top": 1123.5,
+      "bottom": 1864.1,
+      "left": 114.1,
+      "right": 1314.1
+    },
+    "more": {
+      "h": 210.1,
+      "w": 1200,
+      "top": 1892.1,
+      "bottom": 2102.2,
+      "left": 114.1,
+      "right": 1314.1
+    },
+    "cards": [
+      {
+        "i": 0,
+        "card": {
+          "h": 353.1,
+          "w": 1200,
+          "top": 1123.5,
+          "bottom": 1476.6,
+          "left": 114.1,
+          "right": 1314.1
+        },
+        "img": {
+          "h": 350.1,
+          "w": 622.5,
+          "top": 1125,
+          "bottom": 1475.1,
+          "left": 115.6,
+          "right": 738
+        },
+        "imgOverflow": {
+          "sw": 622,
+          "cw": 622,
+          "sh": 350,
+          "ch": 350,
+          "overflow": "hidden"
+        },
+        "body": {
+          "h": 350.1,
+          "w": 574.6,
+          "top": 1125,
+          "bottom": 1475.1,
+          "left": 738,
+          "right": 1312.6
+        },
+        "bodyOverflow": {
+          "sw": 575,
+          "cw": 575,
+          "sh": 350,
+          "ch": 350,
+          "overflow": "visible"
+        },
+        "title": {
+          "h": 26.4,
+          "w": 510.6,
+          "top": 1180.6,
+          "bottom": 1207,
+          "left": 770,
+          "right": 1280.6
+        },
+        "titleClip": {
+          "sw": 511,
+          "cw": 511,
+          "sh": 27,
+          "ch": 26,
+          "okX": true,
+          "okY": true,
+          "overflow": "visible",
+          "overflowX": "visible",
+          "overflowY": "visible"
+        }
+      },
+      {
+        "i": 1,
+        "card": {
+          "h": 367.5,
+          "w": 590,
+          "top": 1496.6,
+          "bottom": 1864.1,
+          "left": 114.1,
+          "right": 704.1
+        },
+        "img": {
+          "h": 364.5,
+          "w": 246.6,
+          "top": 1498.1,
+          "bottom": 1862.6,
+          "left": 115.6,
+          "right": 362.1
+        },
+        "imgOverflow": {
+          "sw": 247,
+          "cw": 247,
+          "sh": 365,
+          "ch": 365,
+          "overflow": "hidden"
+        },
+        "body": {
+          "h": 364.5,
+          "w": 340.5,
+          "top": 1498.1,
+          "bottom": 1862.6,
+          "left": 362.1,
+          "right": 702.6
+        },
+        "bodyOverflow": {
+          "sw": 340,
+          "cw": 340,
+          "sh": 365,
+          "ch": 365,
+          "overflow": "visible"
+        },
+        "title": {
+          "h": 52.8,
+          "w": 297.3,
+          "top": 1516.5,
+          "bottom": 1569.3,
+          "left": 383.7,
+          "right": 681
+        },
+        "titleClip": {
+          "sw": 297,
+          "cw": 297,
+          "sh": 54,
+          "ch": 53,
+          "okX": true,
+          "okY": true,
+          "overflow": "visible",
+          "overflowX": "visible",
+          "overflowY": "visible"
+        }
+      },
+      {
+        "i": 2,
+        "card": {
+          "h": 367.5,
+          "w": 590,
+          "top": 1496.6,
+          "bottom": 1864.1,
+          "left": 724.1,
+          "right": 1314.1
+        },
+        "img": {
+          "h": 364.5,
+          "w": 246.6,
+          "top": 1498.1,
+          "bottom": 1862.6,
+          "left": 725.6,
+          "right": 972.1
+        },
+        "imgOverflow": {
+          "sw": 247,
+          "cw": 247,
+          "sh": 365,
+          "ch": 365,
+          "overflow": "hidden"
+        },
+        "body": {
+          "h": 364.5,
+          "w": 340.5,
+          "top": 1498.1,
+          "bottom": 1862.6,
+          "left": 972.1,
+          "right": 1312.6
+        },
+        "bodyOverflow": {
+          "sw": 341,
+          "cw": 341,
+          "sh": 365,
+          "ch": 365,
+          "overflow": "visible"
+        },
+        "title": {
+          "h": 26.4,
+          "w": 297.3,
+          "top": 1516.5,
+          "bottom": 1542.9,
+          "left": 993.7,
+          "right": 1291
+        },
+        "titleClip": {
+          "sw": 297,
+          "cw": 297,
+          "sh": 27,
+          "ch": 26,
+          "okX": true,
+          "okY": true,
+          "overflow": "visible",
+          "overflowX": "visible",
+          "overflowY": "visible"
+        }
+      }
+    ]
+  },
+  "skillsGroups": {
+    "h": 213.5,
+    "w": 1200,
+    "top": 4067.3,
+    "bottom": 4280.8,
+    "left": 114.1,
+    "right": 1314.1
+  },
+  "timeline": {
+    "h": 338.4,
+    "w": 1200,
+    "top": 3393.5,
+    "bottom": 3731.9,
+    "left": 114.1,
+    "right": 1314.1
+  },
+  "contactGrid": {
+    "h": 440.1,
+    "w": 1200,
+    "top": 4836.4,
+    "bottom": 5276.5,
+    "left": 114.1,
+    "right": 1314.1
+  },
+  "contactForm": {
+    "h": 440.1,
+    "w": 644,
+    "top": 4836.4,
+    "bottom": 5276.5,
+    "left": 670.1,
+    "right": 1314.1
+  },
+  "form": {
+    "fields": {
+      "nombre": true,
+      "email": true,
+      "mensaje": true
+    },
+    "textarea": {
+      "rows": 4,
+      "height": 110,
+      "lineH": 19.938461303710938,
+      "visibleRows": 4.23
+    },
+    "submit": {
+      "exists": true,
+      "text": "Enviar mensaje"
+    }
+  }
+}

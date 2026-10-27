@@ -1,0 +1,223 @@
+{
+  "scroll": {
+    "x": 0,
+    "y": 0
+  },
+  "doc": {
+    "scrollHeight": 5611,
+    "screens": 6.23
+  },
+  "hero": {
+    "section": {
+      "h": 900.2,
+      "w": 1428.2,
+      "top": 0,
+      "bottom": 900.2,
+      "left": 0,
+      "right": 1428.2
+    },
+    "offsetHeight": 900,
+    "fits": true,
+    "content": {
+      "h": 702,
+      "w": 1192.6,
+      "top": 83.1,
+      "bottom": 785.1,
+      "left": 117.8,
+      "right": 1310.4
+    },
+    "title": {
+      "h": 212.1,
+      "w": 1192.6,
+      "top": 191.3,
+      "bottom": 403.4,
+      "left": 117.8,
+      "right": 1310.4,
+      "sw": 1200,
+      "cw": 1200,
+      "sh": 227,
+      "ch": 213,
+      "okX": true,
+      "okY": false,
+      "overflow": "visible",
+      "lineHeight": "106.72px",
+      "lines": {
+        "rects": 10,
+        "clusters": 2
+      }
+    },
+    "badge": {
+      "h": 17.3,
+      "w": 310.7,
+      "top": 122.8,
+      "bottom": 140.1,
+      "left": 117.8,
+      "right": 428.5
+    },
+    "subtitle": {
+      "h": 68.7,
+      "w": 546,
+      "top": 401.3,
+      "bottom": 470,
+      "left": 117.8,
+      "right": 663.9
+    },
+    "role": {
+      "h": 36.1,
+      "w": 209.9,
+      "top": 504.4,
+      "bottom": 540.5,
+      "left": 117.8,
+      "right": 327.7
+    },
+    "actions": {
+      "h": 59.8,
+      "w": 422.6,
+      "top": 576.3,
+      "bottom": 636.1,
+      "left": 117.8,
+      "right": 540.4
+    },
+    "bento": {
+      "h": 101.2,
+      "w": 365.7,
+      "top": 683.8,
+      "bottom": 785.1,
+      "left": 117.8,
+      "right": 483.5,
+      "display": "grid"
+    },
+    "scrollIndicator": {
+      "h": 16.9,
+      "w": 70.1,
+      "top": 855.3,
+      "bottom": 872.2,
+      "left": 679,
+      "right": 749.1
+    },
+    "split": [
+      {
+        "i": 0,
+        "text": "Luis",
+        "wrapperH": 119.9,
+        "innerH": 106,
+        "overflowBottom": -13.83,
+        "overflowTop": 0
+      },
+      {
+        "i": 1,
+        "text": "Enrique",
+        "wrapperH": 119.9,
+        "innerH": 106,
+        "overflowBottom": -13.83,
+        "overflowTop": 0
+      },
+      {
+        "i": 2,
+        "text": "Cabrera",
+        "wrapperH": 119.9,
+        "innerH": 106,
+        "overflowBottom": -13.83,
+        "overflowTop": 0
+      },
+      {
+        "i": 3,
+        "text": "García",
+        "wrapperH": 119.9,
+        "innerH": 106,
+        "overflowBottom": -13.83,
+        "overflowTop": 0
+      }
+    ]
+  },
+  "sections": {
+    "proyectos": {
+      "h": 1419.8,
+      "w": 1428.2,
+      "top": 900.2,
+      "bottom": 2319.9,
+      "left": 0,
+      "right": 1428.2
+    },
+    "sobre-mi": {
+      "h": 850.2,
+      "w": 1428.2,
+      "top": 2319.9,
+      "bottom": 3170.2,
+      "left": 0,
+      "right": 1428.2
+    },
+    "formacion": {
+      "h": 673.8,
+      "w": 1428.2,
+      "top": 3170.2,
+      "bottom": 3843.9,
+      "left": 0,
+      "right": 1428.2
+    },
+    "habilidades": {
+      "h": 548.9,
+      "w": 1428.2,
+      "top": 3843.9,
+      "bottom": 4392.8,
+      "left": 0,
+      "right": 1428.2
+    },
+    "contacto": {
+      "h": 841.2,
+      "w": 1428.2,
+      "top": 4613,
+      "bottom": 5454.3,
+      "left": 0,
+      "right": 1428.2
+    }
+  },
+  "footer": {
+    "h": 157.1,
+    "w": 1428.2,
+    "top": 5454.3,
+    "bottom": 5611.4,
+    "left": 0,
+    "right": 1428.2
+  },
+  "marquee": {
+    "h": 220.2,
+    "w": 1428.2,
+    "top": 4392.8,
+    "bottom": 4613,
+    "left": 0,
+    "right": 1428.2
+  },
+  "skillsGroups": {
+    "h": 213.5,
+    "w": 1200,
+    "top": 4067.3,
+    "bottom": 4280.8,
+    "left": 114.1,
+    "right": 1314.1
+  },
+  "timeline": {
+    "h": 338.4,
+    "w": 1200,
+    "top": 3393.5,
+    "bottom": 3731.9,
+    "left": 114.1,
+    "right": 1314.1
+  },
+  "contactGrid": {
+    "h": 440.1,
+    "w": 1200,
+    "top": 4836.4,
+    "bottom": 5276.5,
+    "left": 114.1,
+    "right": 1314.1
+  },
+  "contactForm": {
+    "h": 440.1,
+    "w": 644,
+    "top": 4836.4,
+    "bottom": 5276.5,
+    "left": 670.1,
+    "right": 1314.1
+  }
+}

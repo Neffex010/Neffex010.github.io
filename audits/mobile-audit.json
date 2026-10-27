@@ -1,0 +1,489 @@
+{
+  "viewport": {
+    "w": 391,
+    "h": 844,
+    "cw": 391,
+    "scrollY": 0
+  },
+  "hero": {
+    "rect": {
+      "t": 0,
+      "b": 844.1,
+      "l": 0,
+      "r": 390.6,
+      "h": 844.1,
+      "w": 390.6
+    },
+    "offsetHeight": 844,
+    "fits": true,
+    "content": {
+      "t": 187.4,
+      "b": 672.7,
+      "l": 20,
+      "r": 370.6,
+      "h": 485.3,
+      "w": 350.6
+    },
+    "kids": [
+      {
+        "cls": "hero__badge",
+        "rect": {
+          "t": 227.4,
+          "b": 244.8,
+          "l": 20,
+          "r": 332.6,
+          "h": 17.4,
+          "w": 312.6
+        },
+        "clip": {
+          "sel": "p.hero__badge",
+          "sw": 313,
+          "cw": 313,
+          "sh": 17,
+          "ch": 17,
+          "ox": "visible",
+          "oy": "visible",
+          "clippedX": false,
+          "clippedY": false
+        }
+      },
+      {
+        "cls": "hero__title is-split",
+        "rect": {
+          "t": 268.8,
+          "b": 354.1,
+          "l": 20,
+          "r": 370.6,
+          "h": 85.4,
+          "w": 350.6
+        },
+        "clip": {
+          "sel": "h1.hero__title.is-split",
+          "sw": 351,
+          "cw": 351,
+          "sh": 91,
+          "ch": 85,
+          "ox": "visible",
+          "oy": "visible",
+          "clippedX": false,
+          "clippedY": false
+        }
+      },
+      {
+        "cls": "hero__subtitle",
+        "rect": {
+          "t": 378.1,
+          "b": 431.9,
+          "l": 20,
+          "r": 370.6,
+          "h": 53.7,
+          "w": 350.6
+        },
+        "clip": {
+          "sel": "p.hero__subtitle",
+          "sw": 351,
+          "cw": 351,
+          "sh": 54,
+          "ch": 54,
+          "ox": "visible",
+          "oy": "visible",
+          "clippedX": false,
+          "clippedY": false
+        }
+      },
+      {
+        "cls": "hero__role",
+        "rect": {
+          "t": 467.9,
+          "b": 504.2,
+          "l": 20,
+          "r": 231.2,
+          "h": 36.4,
+          "w": 211.2
+        },
+        "clip": {
+          "sel": "p#hero-role.hero__role",
+          "sw": 208,
+          "cw": 208,
+          "sh": 33,
+          "ch": 33,
+          "ox": "visible",
+          "oy": "visible",
+          "clippedX": false,
+          "clippedY": false
+        }
+      },
+      {
+        "cls": "hero__actions",
+        "rect": {
+          "t": 540.2,
+          "b": 672.7,
+          "l": 20,
+          "r": 370.6,
+          "h": 132.4,
+          "w": 350.6
+        },
+        "clip": {
+          "sel": "div.hero__actions",
+          "sw": 351,
+          "cw": 351,
+          "sh": 132,
+          "ch": 132,
+          "ox": "visible",
+          "oy": "visible",
+          "clippedX": false,
+          "clippedY": false
+        }
+      },
+      {
+        "cls": "hero__bento",
+        "rect": {
+          "t": 0,
+          "b": 0,
+          "l": 0,
+          "r": 0,
+          "h": 0,
+          "w": 0
+        },
+        "clip": {
+          "sel": "div.hero__bento",
+          "sw": 0,
+          "cw": 0,
+          "sh": 0,
+          "ch": 0,
+          "ox": "visible",
+          "oy": "visible",
+          "clippedX": false,
+          "clippedY": false
+        }
+      },
+      {
+        "cls": "hero__scroll",
+        "rect": {
+          "t": 0,
+          "b": 0,
+          "l": 0,
+          "r": 0,
+          "h": 0,
+          "w": 0
+        },
+        "clip": {
+          "sel": "a.hero__scroll",
+          "sw": 0,
+          "cw": 0,
+          "sh": 0,
+          "ch": 0,
+          "ox": "visible",
+          "oy": "visible",
+          "clippedX": false,
+          "clippedY": false
+        }
+      }
+    ],
+    "overlaps": [],
+    "split": [
+      {
+        "i": 0,
+        "text": "Luis",
+        "wrapperH": 48.2,
+        "innerH": 42.7,
+        "overflowBottom": -5.56,
+        "overflowTop": 0,
+        "overflow": "hidden"
+      },
+      {
+        "i": 1,
+        "text": "Enrique",
+        "wrapperH": 48.2,
+        "innerH": 42.7,
+        "overflowBottom": -5.56,
+        "overflowTop": 0,
+        "overflow": "hidden"
+      },
+      {
+        "i": 2,
+        "text": "Cabrera",
+        "wrapperH": 48.2,
+        "innerH": 42.7,
+        "overflowBottom": -5.56,
+        "overflowTop": 0,
+        "overflow": "hidden"
+      },
+      {
+        "i": 3,
+        "text": "García",
+        "wrapperH": 48.2,
+        "innerH": 42.7,
+        "overflowBottom": -5.56,
+        "overflowTop": 0,
+        "overflow": "hidden"
+      }
+    ]
+  },
+  "heroScrollVisible": {
+    "display": "none",
+    "visibility": "visible",
+    "opacity": "1",
+    "rect": {
+      "t": 0,
+      "b": 0,
+      "l": 0,
+      "r": 0,
+      "h": 0,
+      "w": 0
+    }
+  },
+  "textOverflow": [
+    {
+      "sel": "h1.hero__title.is-split",
+      "sw": 351,
+      "cw": 351,
+      "sh": 91,
+      "ch": 85,
+      "ox": "visible",
+      "oy": "visible",
+      "clippedX": false,
+      "clippedY": false,
+      "text": "Luis Enrique Cabrera García"
+    }
+  ],
+  "textClipped": [
+    {
+      "sel": "h1.hero__title.is-split",
+      "sw": 351,
+      "cw": 351,
+      "sh": 91,
+      "ch": 85,
+      "ox": "visible",
+      "oy": "visible",
+      "clippedX": false,
+      "clippedY": false
+    }
+  ],
+  "cards": [
+    {
+      "i": 0,
+      "rect": {
+        "t": 999.7,
+        "b": 1559.4,
+        "l": 20,
+        "r": 370.6,
+        "h": 559.7,
+        "w": 350.6
+      },
+      "img": {
+        "t": 1001.2,
+        "b": 1218.5,
+        "l": 21.5,
+        "r": 369.2,
+        "h": 217.3,
+        "w": 347.7
+      },
+      "body": {
+        "t": 1218.5,
+        "b": 1557.9,
+        "l": 21.5,
+        "r": 369.2,
+        "h": 339.5,
+        "w": 347.7
+      },
+      "title": {
+        "t": 1261.2,
+        "b": 1303.5,
+        "l": 40.7,
+        "r": 350,
+        "h": 42.2,
+        "w": 309.3
+      },
+      "desc": {
+        "t": 1310.7,
+        "b": 1399.9,
+        "l": 40.7,
+        "r": 350,
+        "h": 89.3,
+        "w": 309.3
+      },
+      "tech": {
+        "t": 1413.5,
+        "b": 1472,
+        "l": 40.7,
+        "r": 350,
+        "h": 58.5,
+        "w": 309.3
+      },
+      "links": {
+        "t": 1492.8,
+        "b": 1536.3,
+        "l": 40.7,
+        "r": 350,
+        "h": 43.6,
+        "w": 309.3
+      },
+      "bodyScroll": {
+        "sh": 339,
+        "ch": 339
+      },
+      "imgScroll": {
+        "sh": 217,
+        "ch": 217
+      }
+    },
+    {
+      "i": 1,
+      "rect": {
+        "t": 1583.4,
+        "b": 2157.3,
+        "l": 20,
+        "r": 370.6,
+        "h": 573.8,
+        "w": 350.6
+      },
+      "img": {
+        "t": 1584.9,
+        "b": 1802.2,
+        "l": 21.5,
+        "r": 369.2,
+        "h": 217.3,
+        "w": 347.7
+      },
+      "body": {
+        "t": 1802.2,
+        "b": 2155.8,
+        "l": 21.5,
+        "r": 369.2,
+        "h": 353.6,
+        "w": 347.7
+      },
+      "title": {
+        "t": 1821.4,
+        "b": 1863.6,
+        "l": 40.7,
+        "r": 350,
+        "h": 42.2,
+        "w": 309.3
+      },
+      "desc": {
+        "t": 1870.8,
+        "b": 1960.1,
+        "l": 40.7,
+        "r": 350,
+        "h": 89.3,
+        "w": 309.3
+      },
+      "tech": {
+        "t": 1973.7,
+        "b": 2032.1,
+        "l": 40.7,
+        "r": 350,
+        "h": 58.5,
+        "w": 309.3
+      },
+      "links": {
+        "t": 2052.9,
+        "b": 2096.5,
+        "l": 40.7,
+        "r": 350,
+        "h": 43.6,
+        "w": 309.3
+      },
+      "bodyScroll": {
+        "sh": 354,
+        "ch": 354
+      },
+      "imgScroll": {
+        "sh": 217,
+        "ch": 217
+      }
+    },
+    {
+      "i": 2,
+      "rect": {
+        "t": 2181.3,
+        "b": 2734,
+        "l": 20,
+        "r": 370.6,
+        "h": 552.7,
+        "w": 350.6
+      },
+      "img": {
+        "t": 2182.7,
+        "b": 2400,
+        "l": 21.5,
+        "r": 369.2,
+        "h": 217.3,
+        "w": 347.7
+      },
+      "body": {
+        "t": 2400,
+        "b": 2732.5,
+        "l": 21.5,
+        "r": 369.2,
+        "h": 332.5,
+        "w": 347.7
+      },
+      "title": {
+        "t": 2419.2,
+        "b": 2440.4,
+        "l": 40.7,
+        "r": 350,
+        "h": 21.1,
+        "w": 309.3
+      },
+      "desc": {
+        "t": 2447.6,
+        "b": 2536.8,
+        "l": 40.7,
+        "r": 350,
+        "h": 89.3,
+        "w": 309.3
+      },
+      "tech": {
+        "t": 2550.4,
+        "b": 2608.9,
+        "l": 40.7,
+        "r": 350,
+        "h": 58.5,
+        "w": 309.3
+      },
+      "links": {
+        "t": 2629.7,
+        "b": 2673.2,
+        "l": 40.7,
+        "r": 350,
+        "h": 43.6,
+        "w": 309.3
+      },
+      "bodyScroll": {
+        "sh": 332,
+        "ch": 332
+      },
+      "imgScroll": {
+        "sh": 217,
+        "ch": 217
+      }
+    }
+  ],
+  "cardOverlaps": [],
+  "grid": {
+    "t": 999.7,
+    "b": 2734,
+    "l": 20,
+    "r": 370.6,
+    "h": 1734.3,
+    "w": 350.6
+  },
+  "more": {
+    "t": 2762,
+    "b": 3054.9,
+    "l": 20,
+    "r": 370.6,
+    "h": 292.9,
+    "w": 350.6
+  },
+  "horizontal": {
+    "docSW": 391,
+    "docCW": 391,
+    "bodySW": 391,
+    "bodyCW": 391
+  }
+}

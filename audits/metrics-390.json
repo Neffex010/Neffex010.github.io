@@ -1,0 +1,492 @@
+{
+  "viewport": {
+    "w": 391,
+    "h": 844,
+    "dpr": 0.9999999917661526,
+    "clientW": 379,
+    "clientH": 844
+  },
+  "doc": {
+    "scrollHeight": 6670,
+    "scrollWidth": 379,
+    "bodyScrollHeight": 6670,
+    "bodyScrollWidth": 379,
+    "screens": 7.9
+  },
+  "scroll": {
+    "x": 0,
+    "y": 0
+  },
+  "sections": {
+    "inicio": {
+      "tag": "SECTION",
+      "cls": "hero",
+      "h": 844.1,
+      "w": 378.8,
+      "top": 0,
+      "bottom": 844.1,
+      "left": 0,
+      "right": 378.8
+    },
+    "proyectos": {
+      "tag": "SECTION",
+      "cls": "section proyectos",
+      "h": 2433.2,
+      "w": 378.8,
+      "top": 844.1,
+      "bottom": 3277.2,
+      "left": 0,
+      "right": 378.8
+    },
+    "sobre-mi": {
+      "tag": "SECTION",
+      "cls": "section sobre-mi",
+      "h": 589,
+      "w": 378.8,
+      "top": 3277.2,
+      "bottom": 3866.2,
+      "left": 0,
+      "right": 378.8
+    },
+    "formacion": {
+      "tag": "SECTION",
+      "cls": "section formacion",
+      "h": 887.4,
+      "w": 378.8,
+      "top": 3866.2,
+      "bottom": 4753.6,
+      "left": 0,
+      "right": 378.8
+    },
+    "habilidades": {
+      "tag": "SECTION",
+      "cls": "section habilidades",
+      "h": 787,
+      "w": 378.8,
+      "top": 4753.6,
+      "bottom": 5540.6,
+      "left": 0,
+      "right": 378.8
+    },
+    "contacto": {
+      "tag": "SECTION",
+      "cls": "section contacto",
+      "h": 928,
+      "w": 378.8,
+      "top": 5540.6,
+      "bottom": 6468.6,
+      "left": 0,
+      "right": 378.8
+    },
+    "footer": {
+      "tag": "footer",
+      "h": 201.2,
+      "w": 378.8,
+      "top": 6468.6,
+      "bottom": 6669.7,
+      "left": 0,
+      "right": 378.8
+    }
+  },
+  "marquee": {
+    "exists": false
+  },
+  "hero": {
+    "h": 844.1,
+    "w": 378.8,
+    "top": 0,
+    "bottom": 844.1,
+    "left": 0,
+    "right": 378.8,
+    "offsetHeight": 844,
+    "content": {
+      "h": 485.3,
+      "w": 338.8,
+      "top": 187.4,
+      "bottom": 672.7,
+      "left": 20,
+      "right": 358.8
+    },
+    "title": {
+      "h": 85.4,
+      "w": 338.8,
+      "top": 268.8,
+      "bottom": 354.1,
+      "left": 20,
+      "right": 358.8,
+      "innerHTML": "<span class=\"split-word\" style=\"--d: 0.000s;\"><span class=\"split-word-i\" aria-hidden=\"true\">Luis</span></span> <span class=\"split-word\" style=\"--d: 0.055s;\"><span class=\"split-word-i\" aria-hidden=\"true\">Enrique</span></span> <span class=\"split-word\" style=\"--d: 0.110s;\"><span class=\"split-word-i\" aria-hidden=\"true\">Cabrera</span></span> <span class=\"split-word\" style=\"--d: 0.165s;\"><span class=\"sp",
+      "fontSize": "46.4px",
+      "lineHeight": "42.688px",
+      "lines": {
+        "rects": 10,
+        "uniqueTops": 4,
+        "clusters": 2
+      },
+      "sw": 339,
+      "cw": 339,
+      "sh": 91,
+      "ch": 85,
+      "okX": true,
+      "okY": false,
+      "overflow": "visible",
+      "overflowX": "visible",
+      "overflowY": "visible"
+    },
+    "badge": {
+      "h": 17.4,
+      "w": 312.6,
+      "top": 227.4,
+      "bottom": 244.8,
+      "left": 20,
+      "right": 332.6
+    },
+    "subtitle": {
+      "h": 53.7,
+      "w": 338.8,
+      "top": 378.1,
+      "bottom": 431.9,
+      "left": 20,
+      "right": 358.8
+    },
+    "role": {
+      "h": 36.4,
+      "w": 211.2,
+      "top": 467.9,
+      "bottom": 504.2,
+      "left": 20,
+      "right": 231.2
+    },
+    "actions": {
+      "h": 132.4,
+      "w": 338.8,
+      "top": 540.2,
+      "bottom": 672.7,
+      "left": 20,
+      "right": 358.8
+    },
+    "bento": {
+      "h": 0,
+      "w": 0,
+      "top": 0,
+      "bottom": 0,
+      "left": 0,
+      "right": 0,
+      "display": "none",
+      "visibility": "visible"
+    },
+    "fits": true
+  },
+  "projects": {
+    "grid": {
+      "h": 1712.1,
+      "w": 338.8,
+      "top": 999.7,
+      "bottom": 2711.8,
+      "left": 20,
+      "right": 358.8
+    },
+    "more": {
+      "h": 292.9,
+      "w": 338.8,
+      "top": 2739.8,
+      "bottom": 3032.8,
+      "left": 20,
+      "right": 358.8
+    },
+    "gridCS": {
+      "display": "grid",
+      "gridTemplateColumns": "338.827px"
+    },
+    "cards": [
+      {
+        "i": 0,
+        "h": 552.3,
+        "w": 338.8,
+        "top": 999.7,
+        "bottom": 1552,
+        "left": 20,
+        "right": 358.8,
+        "img": {
+          "h": 209.9,
+          "w": 335.9,
+          "top": 1001.2,
+          "bottom": 1211.1,
+          "left": 21.5,
+          "right": 357.3
+        },
+        "body": {
+          "h": 339.5,
+          "w": 335.9,
+          "top": 1211.1,
+          "bottom": 1550.6,
+          "left": 21.5,
+          "right": 357.3
+        },
+        "title": {
+          "h": 42.2,
+          "w": 297.5,
+          "top": 1253.9,
+          "bottom": 1296.1,
+          "left": 40.7,
+          "right": 338.1
+        },
+        "titleClip": {
+          "sw": 297,
+          "cw": 297,
+          "sh": 43,
+          "ch": 42,
+          "okX": true,
+          "okY": true
+        }
+      },
+      {
+        "i": 1,
+        "h": 566.5,
+        "w": 338.8,
+        "top": 1576,
+        "bottom": 2142.5,
+        "left": 20,
+        "right": 358.8,
+        "img": {
+          "h": 209.9,
+          "w": 335.9,
+          "top": 1577.5,
+          "bottom": 1787.4,
+          "left": 21.5,
+          "right": 357.3
+        },
+        "body": {
+          "h": 353.6,
+          "w": 335.9,
+          "top": 1787.4,
+          "bottom": 2141,
+          "left": 21.5,
+          "right": 357.3
+        },
+        "title": {
+          "h": 42.2,
+          "w": 297.5,
+          "top": 1806.6,
+          "bottom": 1848.9,
+          "left": 40.7,
+          "right": 338.1
+        },
+        "titleClip": {
+          "sw": 297,
+          "cw": 297,
+          "sh": 43,
+          "ch": 42,
+          "okX": true,
+          "okY": true
+        }
+      },
+      {
+        "i": 2,
+        "h": 545.3,
+        "w": 338.8,
+        "top": 2166.5,
+        "bottom": 2711.8,
+        "left": 20,
+        "right": 358.8,
+        "img": {
+          "h": 209.9,
+          "w": 335.9,
+          "top": 2168,
+          "bottom": 2377.9,
+          "left": 21.5,
+          "right": 357.3
+        },
+        "body": {
+          "h": 332.5,
+          "w": 335.9,
+          "top": 2377.9,
+          "bottom": 2710.4,
+          "left": 21.5,
+          "right": 357.3
+        },
+        "title": {
+          "h": 21.1,
+          "w": 297.5,
+          "top": 2397.1,
+          "bottom": 2418.2,
+          "left": 40.7,
+          "right": 338.1
+        },
+        "titleClip": {
+          "sw": 297,
+          "cw": 297,
+          "sh": 21,
+          "ch": 21,
+          "okX": true,
+          "okY": true
+        }
+      }
+    ]
+  },
+  "skillsGroups": {
+    "h": 559.4,
+    "w": 338.8,
+    "top": 4909.3,
+    "bottom": 5468.6,
+    "left": 20,
+    "right": 358.8
+  },
+  "timeline": {
+    "h": 659.8,
+    "w": 338.8,
+    "top": 4021.8,
+    "bottom": 4681.6,
+    "left": 20,
+    "right": 358.8
+  },
+  "contactGrid": {
+    "h": 624.3,
+    "w": 338.8,
+    "top": 5696.3,
+    "bottom": 6320.6,
+    "left": 20,
+    "right": 358.8
+  },
+  "contactForm": {
+    "h": 461.1,
+    "w": 338.8,
+    "top": 5859.5,
+    "bottom": 6320.6,
+    "left": 20,
+    "right": 358.8
+  },
+  "sectionTitles": [
+    {
+      "i": 0,
+      "text": "Proyectos",
+      "h": 54.9,
+      "w": 338.8,
+      "top": 916.8,
+      "bottom": 971.7,
+      "left": 20,
+      "right": 358.8,
+      "sw": 339,
+      "cw": 339,
+      "sh": 55,
+      "ch": 55,
+      "okX": true,
+      "okY": true,
+      "overflow": "visible",
+      "overflowX": "visible",
+      "overflowY": "visible"
+    },
+    {
+      "i": 1,
+      "text": "Sobre mí",
+      "h": 76.2,
+      "w": 338.8,
+      "top": 3361.9,
+      "bottom": 3438.2,
+      "left": 20,
+      "right": 358.8,
+      "sw": 339,
+      "cw": 339,
+      "sh": 76,
+      "ch": 76,
+      "okX": true,
+      "okY": true,
+      "overflow": "visible",
+      "overflowX": "visible",
+      "overflowY": "visible"
+    },
+    {
+      "i": 2,
+      "text": "Trayectoria",
+      "h": 54.9,
+      "w": 338.8,
+      "top": 3939,
+      "bottom": 3993.9,
+      "left": 20,
+      "right": 358.8,
+      "sw": 339,
+      "cw": 339,
+      "sh": 55,
+      "ch": 55,
+      "okX": true,
+      "okY": true,
+      "overflow": "visible",
+      "overflowX": "visible",
+      "overflowY": "visible"
+    },
+    {
+      "i": 3,
+      "text": "Habilidades",
+      "h": 54.9,
+      "w": 338.8,
+      "top": 4826.4,
+      "bottom": 4881.3,
+      "left": 20,
+      "right": 358.8,
+      "sw": 339,
+      "cw": 339,
+      "sh": 55,
+      "ch": 55,
+      "okX": true,
+      "okY": true,
+      "overflow": "visible",
+      "overflowX": "visible",
+      "overflowY": "visible"
+    },
+    {
+      "i": 4,
+      "text": "Contacto",
+      "h": 54.9,
+      "w": 338.8,
+      "top": 5613.4,
+      "bottom": 5668.3,
+      "left": 20,
+      "right": 358.8,
+      "sw": 339,
+      "cw": 339,
+      "sh": 55,
+      "ch": 55,
+      "okX": true,
+      "okY": true,
+      "overflow": "visible",
+      "overflowX": "visible",
+      "overflowY": "visible"
+    }
+  ],
+  "overflow": {
+    "docScrollW": 379,
+    "docClientW": 379,
+    "bodyScrollW": 379,
+    "bodyClientW": 379,
+    "offenders": []
+  },
+  "form": {
+    "exists": true,
+    "fields": {
+      "nombre": true,
+      "email": true,
+      "mensaje": true
+    },
+    "textarea": {
+      "rowsAttr": 4,
+      "height": 109.99615478515625,
+      "fontSize": "16.8px",
+      "lineH": 19.938461303710938,
+      "paddingTop": "12.8px",
+      "paddingBottom": "12.8px",
+      "visibleRows": 4.23
+    },
+    "submit": {
+      "exists": true,
+      "text": "Enviar mensaje",
+      "type": "submit",
+      "rect": {
+        "h": 49.3,
+        "w": 196.7,
+        "top": 6221.3,
+        "bottom": 6270.6,
+        "left": 20,
+        "right": 216.7
+      }
+    }
+  }
+}

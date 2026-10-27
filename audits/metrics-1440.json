@@ -1,0 +1,602 @@
+{
+  "viewport": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 0.9999999917661526,
+    "clientW": 1428,
+    "clientH": 900
+  },
+  "doc": {
+    "scrollHeight": 5611,
+    "scrollWidth": 1428,
+    "bodyScrollHeight": 5611,
+    "bodyScrollWidth": 1428,
+    "screens": 6.23
+  },
+  "scroll": {
+    "x": 0,
+    "y": 0
+  },
+  "sections": {
+    "inicio": {
+      "tag": "SECTION",
+      "cls": "hero",
+      "h": 900.2,
+      "w": 1428.2,
+      "top": 0,
+      "bottom": 900.2,
+      "left": 0,
+      "right": 1428.2
+    },
+    "proyectos": {
+      "tag": "SECTION",
+      "cls": "section proyectos",
+      "h": 1419.8,
+      "w": 1428.2,
+      "top": 900.2,
+      "bottom": 2319.9,
+      "left": 0,
+      "right": 1428.2
+    },
+    "sobre-mi": {
+      "tag": "SECTION",
+      "cls": "section sobre-mi",
+      "h": 850.2,
+      "w": 1428.2,
+      "top": 2319.9,
+      "bottom": 3170.2,
+      "left": 0,
+      "right": 1428.2
+    },
+    "formacion": {
+      "tag": "SECTION",
+      "cls": "section formacion",
+      "h": 673.8,
+      "w": 1428.2,
+      "top": 3170.2,
+      "bottom": 3843.9,
+      "left": 0,
+      "right": 1428.2
+    },
+    "habilidades": {
+      "tag": "SECTION",
+      "cls": "section habilidades",
+      "h": 548.9,
+      "w": 1428.2,
+      "top": 3843.9,
+      "bottom": 4392.8,
+      "left": 0,
+      "right": 1428.2
+    },
+    "contacto": {
+      "tag": "SECTION",
+      "cls": "section contacto",
+      "h": 841.2,
+      "w": 1428.2,
+      "top": 4613,
+      "bottom": 5454.3,
+      "left": 0,
+      "right": 1428.2
+    },
+    "footer": {
+      "tag": "footer",
+      "h": 157.1,
+      "w": 1428.2,
+      "top": 5454.3,
+      "bottom": 5611.4,
+      "left": 0,
+      "right": 1428.2
+    }
+  },
+  "marquee": {
+    "exists": true,
+    "h": 220.2,
+    "w": 1428.2,
+    "top": 4392.8,
+    "bottom": 4613,
+    "left": 0,
+    "right": 1428.2,
+    "display": "flex",
+    "children": 2
+  },
+  "hero": {
+    "h": 900.2,
+    "w": 1428.2,
+    "top": 0,
+    "bottom": 900.2,
+    "left": 0,
+    "right": 1428.2,
+    "offsetHeight": 900,
+    "content": {
+      "h": 702,
+      "w": 1192.6,
+      "top": 83.1,
+      "bottom": 785.1,
+      "left": 117.8,
+      "right": 1310.4
+    },
+    "contentCS": {
+      "display": "grid",
+      "overflow": "visible"
+    },
+    "title": {
+      "h": 212.1,
+      "w": 1192.6,
+      "top": 191.3,
+      "bottom": 403.4,
+      "left": 117.8,
+      "right": 1310.4,
+      "fontSize": "116px",
+      "lineHeight": "106.72px",
+      "linesRange": 4,
+      "linesHeight": 1.99,
+      "sw": 1200,
+      "cw": 1200,
+      "sh": 227,
+      "ch": 213,
+      "okX": true,
+      "okY": false,
+      "text": "Luis Enrique Cabrera García"
+    },
+    "badge": {
+      "h": 17.3,
+      "w": 310.7,
+      "top": 122.8,
+      "bottom": 140.1,
+      "left": 117.8,
+      "right": 428.5
+    },
+    "subtitle": {
+      "h": 68.7,
+      "w": 546,
+      "top": 401.3,
+      "bottom": 470,
+      "left": 117.8,
+      "right": 663.9
+    },
+    "role": {
+      "h": 36.1,
+      "w": 209.9,
+      "top": 504.4,
+      "bottom": 540.5,
+      "left": 117.8,
+      "right": 327.7
+    },
+    "actions": {
+      "h": 59.8,
+      "w": 422.6,
+      "top": 576.3,
+      "bottom": 636.1,
+      "left": 117.8,
+      "right": 540.4
+    },
+    "bento": {
+      "h": 101.2,
+      "w": 365.7,
+      "top": 683.8,
+      "bottom": 785.1,
+      "left": 117.8,
+      "right": 483.5,
+      "display": "grid",
+      "visibility": "visible"
+    },
+    "fits": true
+  },
+  "projects": {
+    "grid": {
+      "h": 740.5,
+      "w": 1200,
+      "top": 1123.5,
+      "bottom": 1864.1,
+      "left": 114.1,
+      "right": 1314.1
+    },
+    "more": {
+      "h": 210.1,
+      "w": 1200,
+      "top": 1892.1,
+      "bottom": 2102.2,
+      "left": 114.1,
+      "right": 1314.1
+    },
+    "gridCS": {
+      "display": "grid",
+      "gridTemplateColumns": "589.996px 590.008px"
+    },
+    "cards": [
+      {
+        "i": 0,
+        "h": 353.1,
+        "w": 1200,
+        "top": 1123.5,
+        "bottom": 1476.6,
+        "left": 114.1,
+        "right": 1314.1,
+        "img": {
+          "h": 350.1,
+          "w": 622.5,
+          "top": 1125,
+          "bottom": 1475.1,
+          "left": 115.6,
+          "right": 738
+        },
+        "body": {
+          "h": 350.1,
+          "w": 574.6,
+          "top": 1125,
+          "bottom": 1475.1,
+          "left": 738,
+          "right": 1312.6
+        },
+        "title": {
+          "h": 26.4,
+          "w": 510.6,
+          "top": 1180.6,
+          "bottom": 1207,
+          "left": 770,
+          "right": 1280.6
+        },
+        "titleClip": {
+          "sw": 511,
+          "cw": 511,
+          "sh": 27,
+          "ch": 26
+        }
+      },
+      {
+        "i": 1,
+        "h": 367.5,
+        "w": 590,
+        "top": 1496.6,
+        "bottom": 1864.1,
+        "left": 114.1,
+        "right": 704.1,
+        "img": {
+          "h": 364.5,
+          "w": 246.6,
+          "top": 1498.1,
+          "bottom": 1862.6,
+          "left": 115.6,
+          "right": 362.1
+        },
+        "body": {
+          "h": 364.5,
+          "w": 340.5,
+          "top": 1498.1,
+          "bottom": 1862.6,
+          "left": 362.1,
+          "right": 702.6
+        },
+        "title": {
+          "h": 52.8,
+          "w": 297.3,
+          "top": 1516.5,
+          "bottom": 1569.3,
+          "left": 383.7,
+          "right": 681
+        },
+        "titleClip": {
+          "sw": 297,
+          "cw": 297,
+          "sh": 54,
+          "ch": 53
+        }
+      },
+      {
+        "i": 2,
+        "h": 367.5,
+        "w": 590,
+        "top": 1496.6,
+        "bottom": 1864.1,
+        "left": 724.1,
+        "right": 1314.1,
+        "img": {
+          "h": 364.5,
+          "w": 246.6,
+          "top": 1498.1,
+          "bottom": 1862.6,
+          "left": 725.6,
+          "right": 972.1
+        },
+        "body": {
+          "h": 364.5,
+          "w": 340.5,
+          "top": 1498.1,
+          "bottom": 1862.6,
+          "left": 972.1,
+          "right": 1312.6
+        },
+        "title": {
+          "h": 26.4,
+          "w": 297.3,
+          "top": 1516.5,
+          "bottom": 1542.9,
+          "left": 993.7,
+          "right": 1291
+        },
+        "titleClip": {
+          "sw": 297,
+          "cw": 297,
+          "sh": 27,
+          "ch": 26
+        }
+      }
+    ]
+  },
+  "skillsGroups": {
+    "h": 213.5,
+    "w": 1200,
+    "top": 4067.3,
+    "bottom": 4280.8,
+    "left": 114.1,
+    "right": 1314.1
+  },
+  "timeline": {
+    "h": 338.4,
+    "w": 1200,
+    "top": 3393.5,
+    "bottom": 3731.9,
+    "left": 114.1,
+    "right": 1314.1
+  },
+  "contactGrid": {
+    "h": 440.1,
+    "w": 1200,
+    "top": 4836.4,
+    "bottom": 5276.5,
+    "left": 114.1,
+    "right": 1314.1
+  },
+  "contactForm": {
+    "h": 440.1,
+    "w": 644,
+    "top": 4836.4,
+    "bottom": 5276.5,
+    "left": 670.1,
+    "right": 1314.1
+  },
+  "sectionTitles": [
+    {
+      "i": 0,
+      "text": "Proyectos",
+      "h": 82.6,
+      "w": 1200,
+      "top": 1012.9,
+      "bottom": 1095.6,
+      "left": 114.1,
+      "right": 1314.1,
+      "sw": 1200,
+      "cw": 1200,
+      "sh": 83,
+      "ch": 83,
+      "okX": true,
+      "okY": true
+    },
+    {
+      "i": 1,
+      "text": "Sobre mí",
+      "h": 104,
+      "w": 611.6,
+      "top": 2444.7,
+      "bottom": 2548.6,
+      "left": 702.5,
+      "right": 1314.1,
+      "sw": 612,
+      "cw": 612,
+      "sh": 104,
+      "ch": 104,
+      "okX": true,
+      "okY": true
+    },
+    {
+      "i": 2,
+      "text": "Trayectoria",
+      "h": 82.6,
+      "w": 1200,
+      "top": 3282.9,
+      "bottom": 3365.5,
+      "left": 114.1,
+      "right": 1314.1,
+      "sw": 1200,
+      "cw": 1200,
+      "sh": 83,
+      "ch": 83,
+      "okX": true,
+      "okY": true
+    },
+    {
+      "i": 3,
+      "text": "Habilidades",
+      "h": 82.6,
+      "w": 1200,
+      "top": 3956.7,
+      "bottom": 4039.3,
+      "left": 114.1,
+      "right": 1314.1,
+      "sw": 1200,
+      "cw": 1200,
+      "sh": 83,
+      "ch": 83,
+      "okX": true,
+      "okY": true
+    },
+    {
+      "i": 4,
+      "text": "Contacto",
+      "h": 82.6,
+      "w": 1200,
+      "top": 4725.8,
+      "bottom": 4808.4,
+      "left": 114.1,
+      "right": 1314.1,
+      "sw": 1200,
+      "cw": 1200,
+      "sh": 83,
+      "ch": 83,
+      "okX": true,
+      "okY": true
+    }
+  ],
+  "overflow": {
+    "docScrollW": 1428,
+    "docClientW": 1428,
+    "bodyScrollW": 1428,
+    "bodyClientW": 1428,
+    "offenders": [
+      {
+        "tag": "DIV",
+        "id": "",
+        "cls": "marquee__track marquee__track--rev",
+        "right": 11516.2,
+        "left": -3221.5,
+        "width": 14737.7
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "cls": "marquee__set",
+        "right": 11516.2,
+        "left": 4147.4,
+        "width": 7368.9
+      },
+      {
+        "tag": "SPAN",
+        "id": "",
+        "cls": "marquee__item",
+        "right": 11488.3,
+        "left": 11388,
+        "width": 100.2
+      },
+      {
+        "tag": "SPAN",
+        "id": "",
+        "cls": "marquee__sep",
+        "right": 11360,
+        "left": 11340.5,
+        "width": 19.6
+      },
+      {
+        "tag": "SPAN",
+        "id": "",
+        "cls": "marquee__item",
+        "right": 11312.5,
+        "left": 11159,
+        "width": 153.5
+      },
+      {
+        "tag": "SPAN",
+        "id": "",
+        "cls": "marquee__sep",
+        "right": 11131,
+        "left": 11111.4,
+        "width": 19.6
+      },
+      {
+        "tag": "SPAN",
+        "id": "",
+        "cls": "marquee__item",
+        "right": 11083.4,
+        "left": 10954.2,
+        "width": 129.3
+      },
+      {
+        "tag": "SPAN",
+        "id": "",
+        "cls": "marquee__sep",
+        "right": 10926.2,
+        "left": 10906.6,
+        "width": 19.6
+      },
+      {
+        "tag": "SPAN",
+        "id": "",
+        "cls": "marquee__item",
+        "right": 10878.6,
+        "left": 10571,
+        "width": 307.6
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "cls": "marquee__track",
+        "right": 10590.3,
+        "left": -4147.4,
+        "width": 14737.7
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "cls": "marquee__set",
+        "right": 10590.3,
+        "left": 3221.5,
+        "width": 7368.9
+      },
+      {
+        "tag": "SPAN",
+        "id": "",
+        "cls": "marquee__item",
+        "right": 10562.3,
+        "left": 10462.1,
+        "width": 100.2
+      },
+      {
+        "tag": "SPAN",
+        "id": "",
+        "cls": "marquee__sep",
+        "right": 10543,
+        "left": 10523.4,
+        "width": 19.6
+      },
+      {
+        "tag": "SPAN",
+        "id": "",
+        "cls": "marquee__item",
+        "right": 10495.4,
+        "left": 10139.6,
+        "width": 355.8
+      },
+      {
+        "tag": "SPAN",
+        "id": "",
+        "cls": "marquee__sep",
+        "right": 10434.1,
+        "left": 10414.5,
+        "width": 19.6
+      }
+    ]
+  },
+  "form": {
+    "exists": true,
+    "fields": {
+      "nombre": true,
+      "email": true,
+      "mensaje": true
+    },
+    "types": {
+      "nombre": "text",
+      "email": "email"
+    },
+    "textarea": {
+      "rowsAttr": 4,
+      "height": 109.99615478515625,
+      "lineHeight": "normal",
+      "fontSize": "16.8px",
+      "paddingTop": "12.8px",
+      "paddingBottom": "12.8px",
+      "visibleRows": null
+    },
+    "submit": {
+      "exists": true,
+      "text": "Enviar mensaje",
+      "type": "submit",
+      "rect": {
+        "h": 49.3,
+        "w": 196.7,
+        "top": 5198.2,
+        "bottom": 5247.5,
+        "left": 670.1,
+        "right": 866.8
+      }
+    }
+  }
+}
