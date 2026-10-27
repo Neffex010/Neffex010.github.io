@@ -76,9 +76,7 @@ portfolio/
                       3) AWS Academy — Cloud Foundations (Certificación)
                       4) CBTIS 8 — Técnico en Programación (Titulado)
 6. HABILIDADES     -> 3 grupos de tags: Front-end, IA y datos,
-                      Infraestructura y herramientas. El marquee se
-                      construye con todos los .skill-tag, solo en
-                      desktop (en móvil no se inserta).
+                      Infraestructura y herramientas.
 7. CONTACTO        -> email + copiar y formulario mailto en dos
                       columnas (desktop); redes sociales debajo.
 8. FOOTER          -> copyright dinámico + "Volver arriba".

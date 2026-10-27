@@ -41,9 +41,6 @@ Portfolio.App = class {
     const reveal = new Portfolio.Reveal({ textSplit });
     reveal.init();
 
-    const marquee = new Portfolio.Marquee();
-    marquee.init();
-
     const motion = new Portfolio.Motion({ smooth });
     motion.init();
 

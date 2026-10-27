@@ -267,17 +267,17 @@ body::after {
 .btn:focus-visible .btn__arrow { transform: translateX(5px); }
 
 .section {
-  padding: clamp(4.25rem, 7vw, 6.5rem) 0;
+  padding: clamp(2.75rem, 5vw, 4.25rem) 0;
   border-top: 1px solid var(--c-line); /* separador editorial, sin paneles */
 }
 
 .section__title {
-  font-size: clamp(2.2rem, 5vw, 3.9rem);
+  font-size: clamp(2.1rem, 4.5vw, 3.5rem);
   font-weight: 600;
   letter-spacing: -0.03em;
   line-height: 1.02;
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .section__title::after {
@@ -285,7 +285,7 @@ body::after {
   display: block;
   width: 44px;
   height: 3px;
-  margin: 0.85rem auto 0;
+  margin: 0.75rem auto 0;
   border-radius: var(--radius-sm);
   background: var(--c-accent);
 }
@@ -512,7 +512,7 @@ html[data-theme="dark"] .icon--moon { display: block; }
   display: grid;
   align-items: center;
   padding-top: var(--header-h);
-  padding-bottom: clamp(3rem, 8vw, 6rem);
+  padding-bottom: clamp(2rem, 5vw, 3.5rem);
   overflow: hidden;
 }
 
@@ -742,21 +742,16 @@ body.is-loaded .hero__content {
    ------------------------------------------------------------ */
 .sobre-mi__grid {
   display: grid;
-  gap: clamp(2rem, 5vw, 4.5rem);
-  align-items: start;
+  gap: clamp(2rem, 5vw, 3.5rem);
+  align-items: center;
 }
 
-/* Tarjeta de identidad (sin foto personal): sustituye al recuadro
-   vacío que quedaba como un bloque gris sin contenido. */
+/* Tarjeta de identidad compacta: equilibrada con la altura del texto */
 .sobre-mi__panel {
-  position: sticky;
-  top: calc(var(--header-h-scrolled) + 1.5rem);
-  aspect-ratio: 4 / 5;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 1.5rem;
-  padding: clamp(1.5rem, 4vw, 2.5rem);
+  gap: 1.15rem;
+  padding: clamp(1.25rem, 3vw, 1.75rem);
   background: var(--c-bg-alt);
   border: 2px solid var(--c-text);
   border-radius: var(--radius-md);
@@ -765,18 +760,18 @@ body.is-loaded .hero__content {
 }
 
 .sobre-mi__monogram {
-  font-size: clamp(4.5rem, 13vw, 8rem);
+  font-size: clamp(2.5rem, 5vw, 3.75rem);
   font-weight: 700;
-  line-height: 0.8;
-  letter-spacing: -0.06em;
+  line-height: 1;
+  letter-spacing: -0.04em;
   color: var(--c-accent);
 }
 
 .sobre-mi__id {
   display: flex;
   flex-direction: column;
-  gap: 0.45rem;
-  padding-top: 1.25rem;
+  gap: 0.35rem;
+  padding-top: 1rem;
   border-top: 2px solid var(--c-text);
 }
 
@@ -843,7 +838,7 @@ body.is-loaded .hero__content {
 
 @media (min-width: 768px) {
   .sobre-mi__grid {
-    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
   }
 }
 
@@ -853,8 +848,7 @@ body.is-loaded .hero__content {
 }
 
 /* Fallback para navegadores sin aspect-ratio (el panel no colapsa) */
-@supports not (aspect-ratio: 4 / 5) {
-  .sobre-mi__panel { height: clamp(26rem, 60vw, 34rem); }
+@supports not (aspect-ratio: 16 / 10) {
   .project-card__img { height: 14rem; }
 }
 
@@ -1232,11 +1226,11 @@ img.is-broken { opacity: 0; }
 /* Otros proyectos: filas compactas, sin portada. Mantienen el rango
    del portafolio sin ocupar una tarjeta entera. */
 .projects__more {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
 
 .projects__more-title {
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
   font-family: var(--font-mono);
   font-size: 0.7rem;
   font-weight: 600;
@@ -1255,7 +1249,7 @@ img.is-broken { opacity: 0; }
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
-  padding: 0.95rem 0;
+  padding: 0.75rem 0;
   border-top: 1px solid var(--c-line);
 }
 
@@ -1462,7 +1456,7 @@ img.is-broken { opacity: 0; }
    ------------------------------------------------------------ */
 .contact__grid {
   display: grid;
-  gap: 2rem;
+  gap: 1.75rem;
 }
 
 .contact__form {
@@ -1617,7 +1611,7 @@ img.is-broken { opacity: 0; }
   gap: 0.4rem 2rem;
 }
 
-.contact__grid + .social { margin-top: 2.5rem; }
+.contact__grid + .social { margin-top: 1.75rem; }
 
 .social__link {
   position: relative;
@@ -1688,7 +1682,7 @@ img.is-broken { opacity: 0; }
    11. FOOTER
    ------------------------------------------------------------ */
 .footer {
-  padding: 3rem 1rem 2rem;
+  padding: 2.25rem 1rem 1.75rem;
   text-align: center;
   border-top: 1px solid var(--c-line);
   background: var(--c-bg);
