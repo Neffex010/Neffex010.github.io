@@ -13,7 +13,9 @@ Portfolio.Marquee = class {
   }
 
   init() {
-    if (this.config.reducedMotion) return;
+    // Solo escritorio: en móvil la cinta repetía las mismas skills
+    // recién leídas y sumaba casi una pantalla de scroll.
+    if (this.config.reducedMotion || !this.config.desktop.matches) return;
     const { $, $$ } = this.utils;
     const tags = $$(".skill-tag")
       .map((t) => t.textContent.trim())

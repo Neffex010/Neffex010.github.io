@@ -45,7 +45,7 @@ portfolio/
    ├─ split.js         Text split + scrub de títulos
    ├─ reveal.js        Revelados con clip-path + stagger
    ├─ motion.js        Parallax multi-capa + scale del hero
-   ├─ marquee.js       Cinta infinita de skills
+   ├─ marquee.js       Cinta infinita de skills (solo desktop)
    ├─ cursor.js        Cursor personalizado + magnético
    ├─ tilt.js          Tilt 3D en tarjetas
    ├─ progress.js      Barra de progreso de scroll
@@ -77,7 +77,8 @@ portfolio/
                       4) CBTIS 8 — Técnico en Programación (Titulado)
 6. HABILIDADES     -> 3 grupos de tags: Front-end, IA y datos,
                       Infraestructura y herramientas. El marquee se
-                      construye con todos los .skill-tag.
+                      construye con todos los .skill-tag, solo en
+                      desktop (en móvil no se inserta).
 7. CONTACTO        -> email + copiar y formulario mailto en dos
                       columnas (desktop); redes sociales debajo.
 8. FOOTER          -> copyright dinámico + "Volver arriba".
@@ -211,8 +212,9 @@ Añadir un PROYECTO compacto (sin portada):
 
 Añadir una HABILIDAD:
   - index.html -> .skills__groups -> .skills__tags -> copiar un <span class="skill-tag">
-    El marquee de la parte inferior SE ACTUALIZA SOLO
-    (se construye desde los .skill-tag existentes).
+    El marquee de la parte inferior SE ACTUALIZA SOLO en escritorio
+    (se construye desde los .skill-tag existentes; en móvil no se
+    inserta para no repetir la lista ni alargar el scroll).
 
 Añadir un hito en la TIMELINE:
   - index.html -> #formacion -> copiar un <li class="timeline__item">.
@@ -251,7 +253,8 @@ Quitar un efecto (sin romper nada):
   aurora y número (01/02/03) en lugar de icono roto. Sube tus
   imágenes reales en assets/ para que se vea mejor.
 - El marquee usa tags tomados AL CARGAR la página: si cambias las
-  skills, recarga el navegador.
+  skills, recarga el navegador. Solo se construye en desktop (≥768px);
+  si redimensionas de móvil a escritorio, recarga para verlo.
 - No dupliques body.js-anim / body.is-loaded: son "switch" globales
   que usa el CSS para progressive enhancement.
 
