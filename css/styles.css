@@ -267,17 +267,17 @@ body::after {
 .btn:focus-visible .btn__arrow { transform: translateX(5px); }
 
 .section {
-  padding: clamp(6rem, 12vw, 9.5rem) 0;
+  padding: clamp(4.5rem, 8vw, 7rem) 0;
   border-top: 1px solid var(--c-line); /* separador editorial, sin paneles */
 }
 
 .section__title {
-  font-size: clamp(2.4rem, 6vw, 4.4rem);
+  font-size: clamp(2.2rem, 5vw, 3.9rem);
   font-weight: 600;
   letter-spacing: -0.03em;
   line-height: 1.02;
   text-align: center;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.75rem;
 }
 
 .section__title::after {
@@ -285,7 +285,7 @@ body::after {
   display: block;
   width: 44px;
   height: 3px;
-  margin: 1.4rem auto 0;
+  margin: 1rem auto 0;
   border-radius: var(--radius-sm);
   background: var(--c-accent);
 }
@@ -552,7 +552,7 @@ html[data-theme="dark"] .icon--moon { display: block; }
 }
 
 .hero__title {
-  font-size: clamp(3.6rem, 11vw, 8rem);
+  font-size: clamp(2.9rem, 9.5vw, 7.25rem);
   font-weight: 700;
   letter-spacing: -0.045em;
   line-height: 0.92;
@@ -561,11 +561,11 @@ html[data-theme="dark"] .icon--moon { display: block; }
 
 .hero__subtitle {
   max-width: 44ch;
-  font-size: clamp(1.15rem, 2.5vw, 1.5rem);
+  font-size: clamp(1.05rem, 2.2vw, 1.35rem);
   font-weight: 400;
   letter-spacing: -0.01em;
   color: var(--c-text-2);
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 
 .hero .btn {
@@ -612,11 +612,11 @@ html[data-theme="dark"] .icon--moon { display: block; }
 /* Bento mini-strip del hero */
 .hero__bento {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.75rem;
   width: 100%;
-  max-width: 34rem;
-  margin-top: 1.75rem;
+  max-width: 23rem;
+  margin-top: 1.5rem;
 }
 
 .hero__tile {
@@ -676,7 +676,9 @@ html[data-theme="dark"] .icon--moon { display: block; }
 }
 
 @media (max-width: 767px) {
-  .hero__bento { grid-template-columns: 1fr; max-width: 100%; }
+  /* En móvil el hero ya dice lo mismo (stack/enfoque) en el subtítulo
+     y el rol; los tiles solo sumaban casi una pantalla de alto. */
+  .hero__bento { display: none; }
   .hero__scroll { display: none; }
 }
 
