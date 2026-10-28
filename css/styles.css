@@ -1220,15 +1220,6 @@ img.is-broken { opacity: 0; }
   max-width: 68ch;
 }
 
-.mini-project__meta {
-  flex-shrink: 0;
-  color: var(--c-text-2);
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
 .mini-project__links {
   display: flex;
   gap: 1.1rem;
