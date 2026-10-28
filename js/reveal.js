@@ -18,10 +18,9 @@ Portfolio.Reveal = class {
 
   getCandidates() {
     return this.utils.$$(
-      ".section__title, .section__text, .sobre-mi__panel, " +
+      ".section__title, .section__text, " +
         ".timeline__item, .project-card, .mini-project, .skill-tag, .form__field, " +
-        ".contact__form .btn, .social__link, .footer__top, " +
-        ".hero__tile, .bento-tile"
+        ".contact__form .btn, .social__link, .footer__top"
     );
   }
 

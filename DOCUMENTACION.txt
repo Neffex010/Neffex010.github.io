@@ -22,7 +22,7 @@ Reglas de diseño (NO las rompas):
   - Cero librerías externas (sin GSAP, sin jQuery, sin Bootstrap)
   - Respetar prefers-reduced-motion SIEMPRE
   - Móvil (<768px o puntero táctil): sin smooth scroll, sin parallax,
-    sin cursor personalizado, sin tilt, sin preloader
+    sin cursor personalizado, sin tilt
 
 --------------------------------------------------------------------
 1) ESTRUCTURA DE ARCHIVOS
@@ -45,12 +45,11 @@ portfolio/
    ├─ split.js         Text split + scrub de títulos
    ├─ reveal.js        Revelados con clip-path + stagger
    ├─ motion.js        Parallax multi-capa + scale del hero
-   ├─ marquee.js       Cinta infinita de skills (solo desktop)
    ├─ cursor.js        Cursor personalizado + magnético
    ├─ tilt.js          Tilt 3D en tarjetas
    ├─ progress.js      Barra de progreso de scroll
    ├─ timeline.js      Línea que se dibuja en Trayectoria
-   ├─ intro.js         Preloader + entrada del hero (typewriter)
+   ├─ intro.js         Entrada del hero (typewriter)
    └─ app.js           Bootstrap: instancia todo (App.init)
 
 --------------------------------------------------------------------
@@ -62,13 +61,12 @@ portfolio/
                       hamburguesa (móvil).
 2. HERO (#inicio)  -> título (se divide palabra por palabra),
                       subtítulo, rol con typewriter (#hero-role),
-                      CTA "Ver mis proyectos".
+                      CTA "Ver mis proyectos" y "Hablemos".
 3. PROYECTOS       -> 5 proyectos reales en dos niveles:
                       3 tarjetas con portada (destacada a ancho
                       completo en desktop) + 2 filas compactas sin
                       imagen (.mini-project).
-4. SOBRE MÍ        -> tarjeta de identidad sticky en desktop +
-                      2 párrafos. En móvil se oculta la tarjeta.
+4. SOBRE MÍ        -> espacio para foto, 2 párrafos y enlace al CV.
 5. TRAYECTORIA     -> 4 hitos: timeline vertical en móvil y
                       rejilla 2x2 en desktop.
                       1) ITP — Ingeniería en TICs (En curso)
@@ -77,8 +75,8 @@ portfolio/
                       4) CBTIS 8 — Técnico en Programación (Titulado)
 6. HABILIDADES     -> 3 grupos de tags: Front-end, IA y datos,
                       Infraestructura y herramientas.
-7. CONTACTO        -> email + copiar y formulario mailto en dos
-                      columnas (desktop); redes sociales debajo.
+7. CONTACTO        -> formulario mailto (prepara el correo) y enlace
+                      a GitHub.
 8. FOOTER          -> copyright dinámico + "Volver arriba".
 
 Nuevas secciones se agregan dentro de <main>, con <section id="...">
@@ -94,19 +92,18 @@ encargan solos siempre que el id exista y exista el enlace.
   3  Utilidades              (.container, .btn, .section, ...)
   4  Header / nav            (estado is-scrolled, sin blur)
   5  Hero                    (+ animación hero-in gateada por body.is-loaded)
-  6  Sobre mí                (sticky + tarjeta de identidad; oculta en móvil)
+  6  Sobre mí                (foto, perfil y enlace al CV)
   7  Trayectoria             (timeline vertical en móvil / rejilla 2x2 en desktop)
   8  Proyectos               (3 tarjetas con portada + filas compactas, tilt)
   9  Habilidades             (3 grupos de tags)
   10 Contacto                (form + social)
   11 Footer
-  12 Preloader + scroll progress
+  12 Scroll progress
   13 Text split + scrub
   14 Relevamiento (clip-path reveals)
-  15 Marquee
-  16 Cursor personalizado + magnético
-  17 Smooth scroll (class js-smooth)
-  18 Accesibilidad / reduced motion / responsive
+  15 Cursor personalizado + magnético
+  16 Smooth scroll (class js-smooth)
+  17 Accesibilidad / reduced motion / responsive
 
 Tokens de color (edítalos aquí para cambiar toda la identidad):
   --c-bg, --c-bg-alt, --c-surface, --c-text, --c-text-2,
@@ -143,7 +140,7 @@ Patrón de cada módulo:
 Bootstrap (app.js -> Portfolio.App.init) crea las instancias en un
 orden pensado para sus dependencias:
   Theme -> SmoothScroll (solo desktop) -> Nav -> Contact -> TextSplit
-  -> Reveal -> Marquee -> Motion -> Cursor -> Tilt -> Progress
+  -> Reveal -> Motion -> Cursor -> Tilt -> Progress
   -> Timeline -> Intro.
 
 Dependencias que se pasan por constructor (inj. de dependencias):
@@ -161,9 +158,8 @@ Cómo fluye CADA ORQUESTACIÓN (no hay que tocar nada para que sigan):
   - TextSplit: divide palabras (<span.split-word><inner>); los títulos
     con data-scrub se "encienden" palabra por palabra según scroll
     (solo si el navegador soporta background-clip: text).
-  - Intro/Preloader: cuenta 00->100 (easeOutCubic, total=600ms),
-    hace wipe con clip-path y añade body.is-loaded (el CSS dispara la
-    animación del hero), luego divide el título y arranca el typewriter.
+  - Intro: añade body.is-loaded (el CSS dispara la animación del hero),
+    divide el título y arranca el typewriter.
   - Cursor: dot + ring sobre el navegador; targets magnéticos.
   - Tilt: solo si la tarjeta ya terminó su reveal.
 
@@ -172,7 +168,7 @@ Cómo fluye CADA ORQUESTACIÓN (no hay que tocar nada para que sigan):
 --------------------------------------------------------------------
 Cada gate respeta prefers-reduced-motion:
   - Reduced motion => : No smooth, no reveals (todo visible), no
-    parallax, no cursor, no marquee, no scrub, no preloader,
+    parallax, no cursor, no scrub,
     no typewriter (texto estático) y transiciones CSS a 0.01ms.
   - Móvil => no smooth, no parallax, no cursor, no tilt.
   - El HTML mantiene aria-labels (títulos divididos conservan el texto
@@ -184,10 +180,6 @@ Cada gate respeta prefers-reduced-motion:
 --------------------------------------------------------------------
 Cambiar tema / colores / tipografía:
   - Edit: css/styles.css -> secciones 1 y 2 (tokens :root y dark).
-
-Cambiar duración del preloader:
-  - js/intro.js: bus "total = 600" (milisegundos del contador).
-  - css/styles.css: ".preloader" transition (wipe de salida).
 
 Cambiar velocidades/easing global:
   - --t (0.45s ease) en :root. Para un efecto concreto, su propio
@@ -210,9 +202,6 @@ Añadir un PROYECTO compacto (sin portada):
 
 Añadir una HABILIDAD:
   - index.html -> .skills__groups -> .skills__tags -> copiar un <span class="skill-tag">
-    El marquee de la parte inferior SE ACTUALIZA SOLO en escritorio
-    (se construye desde los .skill-tag existentes; en móvil no se
-    inserta para no repetir la lista ni alargar el scroll).
 
 Añadir un hito en la TIMELINE:
   - index.html -> #formacion -> copiar un <li class="timeline__item">.
@@ -245,14 +234,9 @@ Quitar un efecto (sin romper nada):
 - No animar propiedades de layout (width/height/top): solo transform/
   opacity/clip-path/filter. Layout thrashing se evita leyendo rects
   antes de escribir.
-- body.is-loading (html.is-loading) congela el scroll durante el
-  preloader; se quita al terminar.
 - Imágenes faltantes: clase .is-broken muestra un placeholder con
   aurora y número (01/02/03) en lugar de icono roto. Sube tus
   imágenes reales en assets/ para que se vea mejor.
-- El marquee usa tags tomados AL CARGAR la página: si cambias las
-  skills, recarga el navegador. Solo se construye en desktop (≥768px);
-  si redimensionas de móvil a escritorio, recarga para verlo.
 - No dupliques body.js-anim / body.is-loaded: son "switch" globales
   que usa el CSS para progressive enhancement.
 

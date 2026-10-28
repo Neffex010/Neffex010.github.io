@@ -5,8 +5,7 @@
    - Easing único: cubic-bezier(0.16, 1, 0.3, 1)
    - Solo se anima transform / opacity / clip-path / filter
    - Efectos: smooth scroll (lerp), text split + scrub, clip
-     reveals, parallax multi-capa, sticky sequence, marquee,
-     cursor magnético ("VER"), border-draw, scramble
+     reveals, parallax multi-capa, cursor magnético ("VER")
 
    Reglas duras: cero glassmorphism (sin backdrop-filter),
    cero librerías. Los únicos "gradientes" permitidos son las
@@ -19,19 +18,18 @@
      3. Utilidades
      4. Header / nav (estado is-scrolled, sin blur)
      5. Hero
-     6. Sobre mí (sticky + sequence)
+     6. Sobre mí
      7. Formación (timeline)
      8. Proyectos
      9. Habilidades
      10. Contacto
      11. Footer
-     12. Preloader + scroll progress
+     12. Scroll progress
      13. Text split + scrub
      14. Relevamiento (clip-path reveals)
-     15. Marquee (solo desktop)
-     16. Cursor personalizado + magnético
-     17. Smooth scroll (class js-smooth)
-     18. Accesibilidad / reduced motion / responsive gating
+     15. Cursor personalizado + magnético
+     16. Smooth scroll (class js-smooth)
+     17. Accesibilidad / reduced motion / responsive gating
    ============================================================ */
 
 /* ------------------------------------------------------------
@@ -64,7 +62,7 @@
 
   --container-width: 1200px;
   --header-h: 64px;
-  --header-h-scrolled: 50px;
+  --header-h-scrolled: 56px;
   --radius-md: 4px;
   --radius-sm: 2px;
   --c-shadow: #111111;
@@ -205,6 +203,7 @@ body::after {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  white-space: nowrap;
   gap: 0.5rem;
   padding: 0.85rem 2rem;
   font-size: 1rem;
@@ -263,11 +262,18 @@ body::after {
 
 .btn__arrow svg { width: 15px; height: 15px; }
 
+.btn__icon {
+  display: inline-flex;
+  flex-shrink: 0;
+}
+
+.btn__icon svg { width: 15px; height: 15px; }
+
 .has-hover .btn:hover .btn__arrow,
 .btn:focus-visible .btn__arrow { transform: translateX(5px); }
 
 .section {
-  padding: clamp(2.75rem, 5vw, 4.25rem) 0;
+  padding: clamp(2.5rem, 4vw, 3.5rem) 0;
   border-top: 1px solid var(--c-line); /* separador editorial, sin paneles */
 }
 
@@ -277,7 +283,7 @@ body::after {
   letter-spacing: -0.03em;
   line-height: 1.02;
   text-align: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
 }
 
 .section__title::after {
@@ -352,7 +358,7 @@ body.is-scrolled .header {
 .nav__link {
   position: relative;
   display: inline-block;
-  padding: 0.5rem 0.85rem;
+  padding: 0.65rem;
   font-size: 0.92rem;
   color: var(--c-text-2);
   transition: transform var(--t), color 0.3s var(--ease);
@@ -370,8 +376,8 @@ body.is-scrolled .header {
 .nav__link.is-active::after {
   content: "";
   position: absolute;
-  left: 0.85rem;
-  right: 0.85rem;
+  left: 0.65rem;
+  right: 0.65rem;
   bottom: 0.2rem;
   height: 1.5px;
   border-radius: var(--radius-sm);
@@ -442,7 +448,7 @@ html[data-theme="dark"] .icon--moon { display: block; }
   transition: transform var(--t), opacity var(--t);
 }
 
-@media (max-width: 767px) {
+@media (max-width: 899px) {
   .nav__toggle {
     display: flex;
     align-items: center;
@@ -625,42 +631,6 @@ html[data-theme="dark"] .icon--moon { display: block; }
 
 .hero__actions .btn { margin-top: 0; }
 
-/* Bento mini-strip del hero */
-.hero__bento {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.75rem;
-  width: 100%;
-  max-width: 23rem;
-  margin-top: 1.5rem;
-}
-
-.hero__tile {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
-  padding: 0.9rem 1rem;
-  background: var(--c-bg);
-  border: 2px solid var(--c-text);
-  border-radius: var(--radius-sm);
-  box-shadow: var(--shadow-brutal-sm);
-}
-
-.hero__tile-label {
-  font-family: var(--font-mono);
-  font-size: 0.62rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--c-accent);
-}
-
-.hero__tile-value {
-  font-size: 0.95rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-}
-
 /* Cue de scroll */
 .hero__scroll {
   position: absolute;
@@ -692,9 +662,6 @@ html[data-theme="dark"] .icon--moon { display: block; }
 }
 
 @media (max-width: 767px) {
-  /* En móvil el hero ya dice lo mismo (stack/enfoque) en el subtítulo
-     y el rol; los tiles solo sumaban casi una pantalla de alto. */
-  .hero__bento { display: none; }
   .hero__scroll { display: none; }
 }
 
@@ -740,77 +707,44 @@ body.is-loaded .hero__content {
 /* ------------------------------------------------------------
    6. SOBRE MÍ — sticky + sequence
    ------------------------------------------------------------ */
-.sobre-mi__grid {
-  display: grid;
-  gap: clamp(2rem, 5vw, 3.5rem);
-  align-items: center;
+.sobre-mi__text {
+  min-width: 0;
 }
 
-/* Tarjeta de identidad compacta: equilibrada con la altura del texto */
-.sobre-mi__panel {
-  display: flex;
-  flex-direction: column;
-  gap: 1.15rem;
-  padding: clamp(1.25rem, 3vw, 1.75rem);
-  background: var(--c-bg-alt);
+.sobre-mi__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(2rem, 5vw, 3.5rem);
+}
+
+.sobre-mi__photo {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: min(100%, 280px);
+  aspect-ratio: 4 / 5;
+  justify-self: center;
+  overflow: hidden;
+  color: var(--c-text-2);
+  background:
+    radial-gradient(ellipse at 50% 35%, color-mix(in srgb, var(--c-accent) 12%, var(--c-bg-alt)), transparent 65%),
+    var(--c-bg-alt);
   border: 2px solid var(--c-text);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-brutal);
-  overflow: hidden;
 }
 
-.sobre-mi__monogram {
-  font-size: clamp(2.5rem, 5vw, 3.75rem);
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: -0.04em;
-  color: var(--c-accent);
-}
-
-.sobre-mi__id {
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
-  padding-top: 1rem;
-  border-top: 2px solid var(--c-text);
-}
-
-.sobre-mi__name {
-  font-size: clamp(1.05rem, 2.2vw, 1.3rem);
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  line-height: 1.15;
-}
-
-.sobre-mi__role {
+.sobre-mi__photo span {
+  padding: 0.4rem 0.65rem;
   font-family: var(--font-mono);
   font-size: 0.68rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--c-text-2);
+  background: var(--c-bg);
+  border: 1px solid var(--c-line);
+  border-radius: var(--radius-sm);
 }
-
-.sobre-mi__status {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  margin-top: 0.35rem;
-  font-family: var(--font-mono);
-  font-size: 0.62rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--c-text-2);
-}
-
-.sobre-mi__status-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--c-accent);
-  flex-shrink: 0;
-}
-
-.sobre-mi__text { padding-top: 0; }
 
 .sobre-mi__text .section__title::before {
   content: "presentación";
@@ -825,26 +759,24 @@ body.is-loaded .hero__content {
 }
 
 .sobre-mi__text .section__title {
-  text-align: left;
+  text-align: center;
   margin-bottom: 1.5rem;
 }
 
 .sobre-mi__text .section__title::after {
-  margin-left: 0;
-  margin-right: auto;
+  margin-inline: auto;
 }
 
 .section__text:not(:last-child) { margin-bottom: 1.15rem; }
 
+.sobre-mi__actions { margin-top: 1.5rem; }
+
 @media (min-width: 768px) {
   .sobre-mi__grid {
-    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    grid-template-columns: minmax(220px, 0.75fr) minmax(0, 1.25fr);
   }
-}
 
-/* En móvil el hero ya presenta nombre y rol: la tarjeta solo suma altura. */
-@media (max-width: 767px) {
-  .sobre-mi__panel { display: none; }
+  .sobre-mi__photo { width: min(100%, 320px); }
 }
 
 /* Fallback para navegadores sin aspect-ratio (el panel no colapsa) */
@@ -919,6 +851,9 @@ body.is-loaded .hero__content {
 }
 
 .timeline__period {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
   font-family: var(--font-mono);
   font-size: 0.7rem;
   font-weight: 500;
@@ -926,6 +861,12 @@ body.is-loaded .hero__content {
   text-transform: uppercase;
   color: var(--c-accent);
   margin-bottom: 0.4rem;
+}
+
+.timeline__period svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
 }
 
 .timeline__title {
@@ -988,13 +929,13 @@ body.is-loaded .hero__content {
 .projects__grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
+  gap: 1.25rem;
   counter-reset: project;
 }
 
 @media (min-width: 620px) and (max-width: 1023px) {
   .projects__grid {
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(6, minmax(0, 1fr));
     grid-auto-flow: dense;
   }
   .projects__grid > * { grid-column: span 3; }
@@ -1003,7 +944,7 @@ body.is-loaded .hero__content {
 
 @media (min-width: 1024px) {
   .projects__grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
     gap: 1.25rem;
   }
   /* Destacado a ancho completo y en horizontal: portada + ficha. */
@@ -1019,16 +960,16 @@ body.is-loaded .hero__content {
     padding: clamp(1.25rem, 2.4vw, 2rem);
   }
 
-  /* Secundarios en horizontal: portada panorámica + ficha compacta. */
+  /* Las tarjetas se mantienen compactas y el grid admite nuevos proyectos. */
   .projects__grid > .project-card:not(.project-card--featured) {
-    flex-direction: row;
+    flex-direction: column;
   }
   .projects__grid > .project-card:not(.project-card--featured) .project-card__img {
-    flex: 0 0 42%;
-    aspect-ratio: auto;
+    flex: 0 0 auto;
+    aspect-ratio: 16 / 10;
   }
   .projects__grid > .project-card:not(.project-card--featured) .project-card__body {
-    padding: 1.15rem 1.35rem;
+    padding: 1.1rem 1.2rem 1.25rem;
   }
 }
 
@@ -1211,16 +1152,25 @@ img.is-broken { opacity: 0; }
 
 .project-card__links {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.75rem;
   margin-top: 1rem;
 }
 
+.project-card__links .btn { flex: 0 0 auto; }
+
 /* Móvil: cada tarjeta medía casi una pantalla completa. Ficha más
    ajustada; la información es la misma. */
 @media (max-width: 619px) {
-  .project-card__body { padding: 1.2rem 1.2rem 1.35rem; }
-  .project-card__desc { font-size: 0.9rem; }
-  .project-card__links { margin-top: 0.85rem; }
+  .project-card__img { aspect-ratio: 16 / 9; }
+  .project-card__body {
+    gap: 0.35rem;
+    padding: 1.05rem 1.1rem 1.15rem;
+  }
+  .project-card__desc { font-size: 0.9rem; line-height: 1.45; }
+  .project-card__tech { gap: 0.35rem; margin-top: 0.25rem; }
+  .project-card__links { gap: 0.6rem; margin-top: 0.65rem; }
+  .project-card__note { margin-top: 0.45rem; }
 }
 
 /* Otros proyectos: filas compactas, sin portada. Mantienen el rango
@@ -1261,6 +1211,8 @@ img.is-broken { opacity: 0; }
   letter-spacing: -0.01em;
 }
 
+.mini-project > div:first-child { min-width: 0; }
+
 .mini-project__desc {
   margin-top: 0.15rem;
   color: var(--c-text-2);
@@ -1275,6 +1227,9 @@ img.is-broken { opacity: 0; }
 }
 
 .mini-project__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
   font-family: var(--font-mono);
   font-size: 0.72rem;
   letter-spacing: 0.14em;
@@ -1283,6 +1238,12 @@ img.is-broken { opacity: 0; }
   padding-bottom: 2px;
   border-bottom: 2px solid transparent;
   transition: color 0.3s var(--ease), border-color 0.3s var(--ease);
+}
+
+.mini-project__link svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
 }
 
 .has-hover .mini-project__link:hover {
@@ -1298,85 +1259,6 @@ img.is-broken { opacity: 0; }
   }
 }
 
-/* Tiles bento del grid de proyectos (stats + CTA) */
-.bento-tile {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-  padding: 1.25rem 1.35rem;
-  background: var(--c-bg-alt);
-  border: 2px solid var(--c-text);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-brutal);
-}
-
-/* Border-draw: la línea de acento se "dibuja" al revelarse el tile */
-.bento-tile::after,
-.hero__tile::after {
-  content: "";
-  position: absolute;
-  inset: -2px -2px auto;
-  height: 3px;
-  background: var(--c-accent);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.9s var(--ease);
-  transition-delay: calc(var(--i, 0) * 90ms + 0.35s);
-}
-
-.bento-tile.is-in::after,
-.hero__tile.is-in::after {
-  transform: scaleX(1);
-}
-
-.bento-tile__label {
-  font-family: var(--font-mono);
-  font-size: 0.66rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--c-accent);
-}
-
-/* Banner de contacto: superficie del tema (sin invertir), destacado
-   con borde de acento. */
-.bento-tile--cta {
-  background: var(--c-bg-alt);
-  border-color: var(--c-accent);
-}
-
-.bento-tile__lead {
-  font-size: clamp(1.15rem, 2.4vw, 1.45rem);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
-}
-
-.bento-tile--cta .btn {
-  align-self: flex-start;
-  margin-top: 0.35rem;
-}
-
-/* Franja bajo la rejilla de proyectos: un solo CTA a lo ancho,
-   en fila y centrado en vertical para no quedar desbalanceado. */
-.bento-strip {
-  display: grid;
-  grid-template-columns: 1fr;
-  margin-top: 1.5rem;
-}
-
-@media (min-width: 768px) {
-  .bento-tile--cta {
-    flex-direction: row;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 0.35rem 1.25rem;
-    padding: 1.1rem 1.6rem;
-  }
-  .bento-tile--cta .bento-tile__lead { margin-right: auto; }
-  .bento-tile--cta .btn { margin-top: 0; align-self: center; }
-}
-
 /* ------------------------------------------------------------
    9. HABILIDADES
    ------------------------------------------------------------ */
@@ -1388,8 +1270,7 @@ img.is-broken { opacity: 0; }
   margin-bottom: 2rem;
 }
 
-/* Habilidades agrupadas por área (el marquee sigue tomando todos
-   los .skill-tag automáticamente). */
+/* Habilidades agrupadas por área. */
 .skills__groups {
   display: grid;
   gap: 1.5rem;
@@ -1397,6 +1278,9 @@ img.is-broken { opacity: 0; }
 }
 
 .skill-group__title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   margin-bottom: 0.7rem;
   font-family: var(--font-mono);
   font-size: 0.7rem;
@@ -1406,10 +1290,33 @@ img.is-broken { opacity: 0; }
   color: var(--c-text-2);
 }
 
+.skill-group__title svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  color: var(--c-accent);
+}
+
 .skill-group .skills__tags {
   justify-content: flex-start;
   margin-bottom: 0;
   gap: 0.45rem;
+}
+
+.skills__note {
+  margin-top: 1.5rem;
+  color: var(--c-text-2);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.skills__note strong {
+  margin-right: 0.5rem;
+  color: var(--c-accent);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 @media (min-width: 900px) {
@@ -1454,6 +1361,15 @@ img.is-broken { opacity: 0; }
 /* ------------------------------------------------------------
    10. CONTACTO
    ------------------------------------------------------------ */
+.contact__intro {
+  text-align: center;
+  color: var(--c-text-2);
+  font-size: clamp(1rem, 1.6vw, 1.1rem);
+  margin-bottom: 2rem;
+  max-width: 52ch;
+  margin-inline: auto;
+}
+
 .contact__grid {
   display: grid;
   gap: 1.75rem;
@@ -1464,77 +1380,13 @@ img.is-broken { opacity: 0; }
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
-}
-
-/* Correo directo + copiar (reduce la fricción del mailto) */
-.contact__direct {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.65rem;
-  margin-bottom: 0;
-  text-align: center;
-}
-
-.contact__direct-label {
-  font-family: var(--font-mono);
-  font-size: 0.66rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--c-text-2);
-}
-
-.contact__email {
-  font-size: clamp(1.05rem, 3vw, 1.55rem);
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  color: var(--c-text);
-  text-decoration: underline;
-  text-decoration-color: var(--c-accent);
-  text-decoration-thickness: 2px;
-  text-underline-offset: 6px;
-  overflow-wrap: anywhere;
-  transition: color 0.3s var(--ease);
-}
-
-.has-hover .contact__email:hover { color: var(--c-accent); }
-
-.copy-btn {
-  font-family: var(--font-mono);
-  font-size: 0.66rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--c-text-2);
-  padding: 0.45rem 0.8rem;
-  border: 1px solid var(--c-line);
-  border-radius: var(--radius-sm);
-  transition: color 0.3s var(--ease), border-color 0.3s var(--ease),
-              background-color 0.3s var(--ease);
-}
-
-.has-hover .copy-btn:hover {
-  color: var(--c-accent);
-  border-color: var(--c-accent);
-}
-
-.copy-btn.is-copied {
-  color: var(--c-on-accent);
-  background: var(--c-accent);
-  border-color: var(--c-accent);
-}
-
-.form__note {
-  margin-top: 0.15rem;
-  font-size: 0.82rem;
-  color: var(--c-text-2);
-  opacity: 0.8;
+  gap: 1rem;
 }
 
 .form__field {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.4rem;
 }
 
 .form__field label {
@@ -1554,13 +1406,13 @@ img.is-broken { opacity: 0; }
   border: none;
   border-bottom: 1px solid var(--c-line);
   border-radius: 0;
-  padding: 0.8rem 0;
+  padding: 0.65rem 0;
   transition: border-color 0.3s var(--ease);
 }
 
 .form__field textarea {
   resize: vertical;
-  min-height: 110px;
+  min-height: 90px;
 }
 
 .form__field input::placeholder,
@@ -1608,7 +1460,8 @@ img.is-broken { opacity: 0; }
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.4rem 2rem;
+  align-items: center;
+  gap: 0.5rem 1.25rem;
 }
 
 .contact__grid + .social { margin-top: 1.75rem; }
@@ -1617,17 +1470,42 @@ img.is-broken { opacity: 0; }
   position: relative;
   display: inline-flex;
   align-items: center;
+  min-width: 0;
+  max-width: 100%;
   gap: 0.55rem;
   padding: 0.4rem 0;
   font-family: var(--font-mono);
   font-size: 0.82rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  letter-spacing: 0.08em;
   color: var(--c-text-2);
   transition: color 0.3s var(--ease), transform var(--t);
 }
 
-.social__link svg { width: 15px; height: 15px; opacity: 0.6; }
+.social__link span { overflow-wrap: anywhere; }
+
+.social__link--email {
+  display: inline-grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: 0.55rem;
+  row-gap: 0.05rem;
+}
+
+.social__link--email svg { grid-row: 1 / span 2; }
+
+.social__link--email .social__detail {
+  grid-column: 2;
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+  opacity: 0.68;
+}
+
+.social__link svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  color: var(--c-accent);
+  opacity: 0.75;
+}
 
 .social__link::after {
   content: "";
@@ -1658,24 +1536,25 @@ img.is-broken { opacity: 0; }
   }
 }
 
-/* Desktop: email a la izquierda y formulario a la derecha. */
+/* En pantallas amplias, el formulario mantiene un ancho cómodo y centrado. */
 @media (min-width: 900px) {
-  .contact__grid {
-    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
-    gap: clamp(2.5rem, 6vw, 5rem);
-    align-items: center;
-  }
+  .contacto.section { padding-block: 3rem; }
 
-  .contact__direct {
-    align-items: flex-start;
-    margin-bottom: 0;
-    text-align: left;
+  .contact__intro { margin-bottom: 1.25rem; }
+
+  .contact__grid {
+    grid-template-columns: 1fr;
   }
 
   .contact__form {
-    max-width: none;
-    margin: 0;
+    max-width: 640px;
+    gap: 0.75rem;
+    margin: 0 auto;
   }
+
+  .contact__form .btn { margin-top: 0.15rem; }
+
+  .contact__grid + .social { margin-top: 0.75rem; }
 }
 
 /* ------------------------------------------------------------
@@ -1707,73 +1586,8 @@ img.is-broken { opacity: 0; }
 }
 
 /* ============================================================
-   12. PRELOADER + SCROLL PROGRESS
-   ------------------------------------------------------------
-   Preloader: overlay fijo con contador; al terminar hace wipe
-   con clip-path. body.is-loaded dispara la entrada del hero.
-   html.is-loading congela el scroll mientras carga.
+   12. SCROLL PROGRESS
    ============================================================ */
-.preloader {
-  position: fixed;
-  inset: 0;
-  z-index: 4000;
-  display: grid;
-  place-items: center;
-  background: var(--c-bg);
-  clip-path: inset(0 0 0 0);
-  transition: clip-path 0.8s var(--ease);
-}
-
-.preloader.is-done {
-  clip-path: inset(0 0 100% 0);
-  pointer-events: none;
-}
-
-.preloader__inner {
-  display: grid;
-  justify-items: center;
-  gap: 1.25rem;
-}
-
-.preloader__count {
-  font-family: var(--font-display);
-  font-size: clamp(4rem, 14vw, 8rem);
-  font-weight: 700;
-  letter-spacing: -0.05em;
-  line-height: 1;
-  font-variant-numeric: tabular-nums;
-  color: var(--c-text);
-}
-
-.preloader__label {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  font-weight: 500;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--c-text-2);
-}
-
-.preloader__bar {
-  width: min(240px, 60vw);
-  height: 2px;
-  border-radius: var(--radius-sm);
-  background: var(--c-line);
-  overflow: hidden;
-}
-
-.preloader__bar-fill {
-  display: block;
-  width: 100%;
-  height: 100%;
-  background: var(--c-accent);
-  transform: scaleX(0);
-  transform-origin: left;
-  will-change: transform;
-}
-
-html.is-loading { overflow: hidden; }
-
 .scroll-progress {
   position: fixed;
   top: 0;
@@ -1846,81 +1660,8 @@ body.js-anim [data-reveal].is-in {
   transform: translateY(0);
 }
 
-/* La tarjeta de Sobre mí revela en horizontal (wipe L→R) */
-body.js-anim [data-reveal].sobre-mi__panel {
-  clip-path: inset(0 100% 0 0);
-  transform: translateY(2rem) translateX(-0.5rem);
-}
-
-body.js-anim [data-reveal].sobre-mi__panel.is-in {
-  clip-path: inset(0 0 0 0);
-  transform: translateY(0) translateX(0);
-}
-
 /* ============================================================
-   15. MARQUEE INFINITO
-   ------------------------------------------------------------
-   La cinta la construye JS con las skills existentes.
-   Dos sets idénticos → translateX(-50%) = loop perfecto.
-   Set 2 en contorno ("ghost") para profundidad editorial.
-   ============================================================ */
-.marquee {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  overflow: hidden;
-  border-top: 2px solid var(--c-text);
-  border-bottom: 2px solid var(--c-text);
-  padding: 1.1rem 0;
-  background: var(--c-bg);
-}
-
-.marquee__track {
-  display: flex;
-  width: max-content;
-  animation: marquee 26s linear infinite;
-  will-change: transform;
-}
-
-/* Segunda fila en sentido contrario */
-.marquee__track--rev { animation-direction: reverse; }
-
-.has-hover .marquee:hover .marquee__track { animation-play-state: paused; }
-
-.marquee__set {
-  display: flex;
-  align-items: center;
-  gap: 1.75rem;
-  padding-right: 1.75rem;
-}
-
-.marquee__item {
-  white-space: nowrap;
-  font-family: var(--font-display);
-  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  text-transform: uppercase;
-  color: var(--c-text);
-}
-
-/* El segundo set en contorno (ghost) */
-.marquee__set:nth-child(2) .marquee__item {
-  color: transparent;
-  -webkit-text-stroke: 1px var(--c-text-2);
-}
-
-.marquee__sep {
-  color: var(--c-accent);
-  font-size: clamp(1rem, 2.4vw, 1.5rem);
-}
-
-@keyframes marquee {
-  to { transform: translateX(-50%); }
-}
-
-/* ============================================================
-   16. CURSOR PERSONALIZADO + MAGNÉTICO
+   15. CURSOR PERSONALIZADO + MAGNÉTICO
    ------------------------------------------------------------
    JS inyecta .cursor-dot y .cursor-ring (pointer-events:none).
    Solo con puntero fino (desktop). Sin glassmorphism: relleno
@@ -1935,7 +1676,6 @@ body.has-cursor input[type="submit"] {
   cursor: none;
 }
 
-body.has-cursor .btn,
 body.has-cursor .nav__link,
 body.has-cursor .social__link,
 body.has-cursor .footer__top {
@@ -2005,9 +1745,8 @@ body.has-cursor-visible.is-over-card .cursor-label { opacity: 1; }
 body.has-cursor-visible.is-over-card .cursor-dot,
 body.has-cursor-visible.is-over-card .cursor-ring { opacity: 0; }
 
-/* Elementos magnéticos: JS controla transform; aquí solo
-   les quitamos la transición de transform para no duplicar. */
-body.has-cursor .btn,
+/* Enlaces magnéticos: JS controla transform; aquí quitamos su transición
+   de transform para evitar que compita con la posición del cursor. */
 body.has-cursor .nav__link,
 body.has-cursor .social__link,
 body.has-cursor .footer__top {
@@ -2018,7 +1757,6 @@ body.has-cursor .footer__top {
 /* Al soltar el elemento, el JS borra el transform inline. Esta clase
    reactiva la transición de transform solo durante esa vuelta para
    que el texto aterrice suave en vez de saltar de golpe. */
-body.has-cursor .btn.is-unmagnetizing,
 body.has-cursor .nav__link.is-unmagnetizing,
 body.has-cursor .social__link.is-unmagnetizing,
 body.has-cursor .footer__top.is-unmagnetizing {
@@ -2028,7 +1766,7 @@ body.has-cursor .footer__top.is-unmagnetizing {
 }
 
 /* ============================================================
-   17. SMOOTH SCROLL (class js-smooth, puesta por JS)
+   16. SMOOTH SCROLL (class js-smooth, puesta por JS)
    ------------------------------------------------------------
    JS tweenea window.scrollTo en rAF; la clase fuerza
    scroll-behavior:auto para que no peleen ambos sistemas.
@@ -2039,7 +1777,7 @@ html.js-smooth {
 }
 
 /* ============================================================
-   18. ACCESIBILIDAD / REDUCED MOTION / RESPONSIVE
+   17. ACCESIBILIDAD / REDUCED MOTION / RESPONSIVE
    ============================================================ */
 :focus-visible {
   outline: 2px solid var(--c-accent);
@@ -2057,7 +1795,6 @@ html.js-smooth {
 .theme-toggle:focus-visible,
 .skill-tag:focus-visible,
 .social__link:focus-visible,
-.copy-btn:focus-visible,
 .footer__top:focus-visible {
   outline: 2px solid var(--c-accent);
   outline-offset: 3px;
@@ -2074,8 +1811,6 @@ html.js-smooth {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-
-  .marquee__track { animation: none; }
 
   /* Sin paralaje/scale/estelas inline */
   [data-parallax] { transform: none !important; }

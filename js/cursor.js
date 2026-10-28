@@ -13,7 +13,7 @@ Portfolio.Cursor = class {
     this.config = Portfolio.config;
     this.body = document.body;
     this.magnetic = this.utils
-      .$$(".btn:not(.is-disabled), .nav__link, .social__link, .footer__top")
+      .$$(".nav__link, .social__link, .footer__top")
       .map((el) => ({ el, on: false }));
     this.x = -100;
     this.y = -100;

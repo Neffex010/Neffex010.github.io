@@ -43,7 +43,10 @@ Portfolio.Nav = class {
   setupAnchors() {
     this.utils.$$('a[href^="#"]').forEach((link) => {
       link.addEventListener("click", (event) => {
-        if (!link.hash || link.hash === "#") return; // href="#" no es ancla
+        if (!link.hash || link.hash === "#") {
+          event.preventDefault();
+          return;
+        }
         event.preventDefault();
         const target = this.utils.$(link.hash);
         if (!target) return;
@@ -153,17 +156,6 @@ Portfolio.Nav = class {
     });
   }
 
-  /* Botones con href="#" (enlaces pendientes): se deshabilitan
-     para no provocar saltos inesperados a tope de página. */
-  setupPendingLinks() {
-    this.utils.$$('a[href="#"]').forEach((link) => {
-      link.classList.add("is-disabled");
-      link.setAttribute("aria-disabled", "true");
-      link.setAttribute("tabindex", "-1");
-      link.addEventListener("click", (event) => event.preventDefault());
-    });
-  }
-
   init() {
     if (this.yearEl) this.yearEl.textContent = new Date().getFullYear();
     this.setupAnchors();
@@ -171,7 +163,6 @@ Portfolio.Nav = class {
     this.setupMenu();
     this.setupScrollSpy();
     this.setupBrokenImages();
-    this.setupPendingLinks();
     window.addEventListener("scroll", this._updateHeader, { passive: true });
     this.updateHeader();
   }

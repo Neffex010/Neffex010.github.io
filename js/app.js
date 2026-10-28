@@ -5,8 +5,7 @@
    ES para funcionar también vía file://):
 
    core → theme → smooth → nav → contact → split → reveal →
-   marquee → motion → cursor → tilt → progress → timeline →
-   scramble → intro → app
+   motion → cursor → tilt → progress → timeline → intro → app
 
    Cada clase define un único init(); esta clase solo las
    instancia en el orden correcto según sus dependencias.
@@ -55,9 +54,6 @@ Portfolio.App = class {
 
     const timeline = new Portfolio.Timeline();
     timeline.init();
-
-    const scramble = new Portfolio.Scramble();
-    scramble.init();
 
     const intro = new Portfolio.Intro({ textSplit });
     intro.init();

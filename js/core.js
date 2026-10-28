@@ -76,9 +76,6 @@ Portfolio.ticker = (() => {
       fns.add(fn);
       start();
     },
-    remove(fn) {
-      fns.delete(fn);
-    },
     start,
     stop,
   };
