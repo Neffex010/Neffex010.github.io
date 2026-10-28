@@ -1220,6 +1220,15 @@ img.is-broken { opacity: 0; }
   max-width: 68ch;
 }
 
+.mini-project__meta {
+  flex-shrink: 0;
+  color: var(--c-text-2);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
 .mini-project__links {
   display: flex;
   gap: 1.1rem;
@@ -1324,7 +1333,6 @@ img.is-broken { opacity: 0; }
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 2.25rem 3rem;
   }
-  .skill-group:last-child { grid-column: span 2; }
 }
 
 .skill-tag {
