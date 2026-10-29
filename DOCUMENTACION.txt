@@ -31,7 +31,8 @@ portfolio/
 ├─ index.html          Semántica + contenido + scripts en orden
 ├─ assets/             Portadas JPG optimizadas: entrevistalab.jpg,
 │                      net-tools.jpg, manualidades-lua.jpg,
-│                      galactic-swarm.jpg, clima.jpg + og-cover.jpg
+│                      galactic-swarm.jpg, clima.jpg, traductor-ia.jpg,
+│                      agente-buscador.jpg + og-cover.jpg
 │                      (1200x630). Si falta una, el placeholder
 │                      animado "is-broken" la sustituye.
 ├─ css/
