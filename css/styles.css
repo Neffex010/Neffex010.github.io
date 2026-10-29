@@ -722,11 +722,14 @@ body.is-loaded .hero__content {
   position: relative;
   display: grid;
   place-items: center;
+  align-content: center;
+  gap: 1rem;
   width: min(100%, 280px);
   aspect-ratio: 4 / 5;
   justify-self: center;
   overflow: hidden;
   color: var(--c-text-2);
+  isolation: isolate;
   background:
     radial-gradient(ellipse at 50% 35%, color-mix(in srgb, var(--c-accent) 12%, var(--c-bg-alt)), transparent 65%),
     var(--c-bg-alt);
@@ -735,11 +738,31 @@ body.is-loaded .hero__content {
   box-shadow: var(--shadow-brutal);
 }
 
-.sobre-mi__photo span {
+.sobre-mi__photo::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 68%;
+  aspect-ratio: 1;
+  border: 1px solid color-mix(in srgb, var(--c-accent) 28%, var(--c-line));
+  border-radius: 50%;
+}
+
+.sobre-mi__monogram {
+  padding: 0;
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 8vw, 6rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.08em;
+  color: var(--c-accent);
+}
+
+.sobre-mi__photo-label {
   padding: 0.4rem 0.65rem;
   font-family: var(--font-mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.18em;
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   background: var(--c-bg);
   border: 1px solid var(--c-line);
@@ -1481,22 +1504,6 @@ img.is-broken { opacity: 0; }
 }
 
 .social__link span { overflow-wrap: anywhere; }
-
-.social__link--email {
-  display: inline-grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  column-gap: 0.55rem;
-  row-gap: 0.05rem;
-}
-
-.social__link--email svg { grid-row: 1 / span 2; }
-
-.social__link--email .social__detail {
-  grid-column: 2;
-  font-size: 0.72rem;
-  letter-spacing: 0.02em;
-  opacity: 0.68;
-}
 
 .social__link svg {
   width: 15px;
