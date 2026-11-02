@@ -1028,6 +1028,35 @@ body.is-loaded .hero__content {
               box-shadow var(--t);
 }
 
+/* Reserva visual para sumar un proyecto sin simular que ya existe. */
+.project-card--upcoming {
+  border-style: dashed;
+  border-color: var(--c-line);
+  box-shadow: none;
+  background: color-mix(in srgb, var(--c-surface) 72%, var(--c-bg-alt));
+}
+
+.project-card--upcoming .project-card__img--upcoming {
+  display: grid;
+  place-items: center;
+  background: var(--c-bg-alt);
+}
+
+.project-card--upcoming .project-card__img::before { content: none; }
+.project-card--upcoming .project-card__kicker { color: var(--c-text-2); }
+
+.upcoming-mark {
+  display: grid;
+  place-items: center;
+  width: 3.5rem;
+  aspect-ratio: 1;
+  border: 1px dashed var(--c-line);
+  border-radius: 50%;
+  color: var(--c-accent);
+  font-size: 2rem;
+  font-weight: 300;
+}
+
 .has-hover .project-card:hover {
   transform: translate(-2px, -2px);
   border-color: var(--c-accent);
@@ -1227,6 +1256,26 @@ img.is-broken { opacity: 0; }
 }
 
 .mini-project:last-child { border-bottom: 1px solid var(--c-line); }
+
+.mini-project--upcoming {
+  color: var(--c-text-2);
+  border-bottom: 1px dashed var(--c-line);
+}
+
+.mini-project--upcoming .mini-project__title { color: var(--c-text-2); }
+
+.mini-project__plus {
+  display: grid;
+  place-items: center;
+  width: 1.8rem;
+  height: 1.8rem;
+  flex: 0 0 auto;
+  border: 1px dashed var(--c-line);
+  border-radius: 50%;
+  color: var(--c-accent);
+  font-size: 1.2rem;
+  line-height: 1;
+}
 
 .mini-project__title {
   font-size: 1.05rem;
