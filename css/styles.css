@@ -952,7 +952,7 @@ body.is-loaded .hero__content {
 .projects__grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.25rem;
+  gap: 0.9rem;
   counter-reset: project;
 }
 
@@ -974,7 +974,7 @@ body.is-loaded .hero__content {
 @media (min-width: 1024px) {
   .projects__grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1rem;
+    gap: 0.8rem;
   }
   /* Bento: destacado en dos celdas y tarjetas compactas en tres columnas. */
   .projects__grid > .project-card--featured {
@@ -982,11 +982,11 @@ body.is-loaded .hero__content {
     flex-direction: row;
   }
   .project-card--featured .project-card__img {
-    flex: 0 0 42%;
-    aspect-ratio: 16 / 10;
+    flex: 0 0 38%;
+    aspect-ratio: 16 / 9;
   }
   .project-card--featured .project-card__body {
-    padding: 1rem 1.1rem;
+    padding: 0.75rem 0.9rem;
   }
 
   /* Las tarjetas se mantienen compactas y el grid admite nuevos proyectos. */
@@ -995,16 +995,16 @@ body.is-loaded .hero__content {
   }
   .projects__grid > .project-card:not(.project-card--featured) .project-card__img {
     flex: 0 0 auto;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 16 / 8.5;
   }
   .projects__grid > .project-card:not(.project-card--featured) .project-card__body {
-    padding: 0.9rem 1rem 1rem;
+    padding: 0.75rem 0.85rem 0.85rem;
   }
 }
 
 .project-card__kicker {
   font-family: var(--font-mono);
-  font-size: 0.64rem;
+  font-size: 0.6rem;
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -1052,20 +1052,20 @@ body.is-loaded .hero__content {
 .project-card--upcoming .project-card__kicker { color: var(--c-text-2); }
 
 @media (min-width: 1024px) {
-  .project-card--upcoming .project-card__img--upcoming { aspect-ratio: 16 / 7; }
-  .project-card--upcoming .project-card__body { padding: 0.85rem 1rem 1rem; }
-  .project-card--upcoming .project-card__desc { font-size: 0.84rem; }
+  .project-card--upcoming .project-card__img--upcoming { aspect-ratio: 16 / 6; }
+  .project-card--upcoming .project-card__body { padding: 0.65rem 0.8rem 0.8rem; }
+  .project-card--upcoming .project-card__desc { font-size: 0.8rem; }
 }
 
 .upcoming-mark {
   display: grid;
   place-items: center;
-  width: 3.5rem;
+  width: 2.8rem;
   aspect-ratio: 1;
   border: 1px dashed var(--c-line);
   border-radius: 50%;
   color: var(--c-accent);
-  font-size: 2rem;
+  font-size: 1.7rem;
   font-weight: 300;
 }
 
@@ -1094,7 +1094,7 @@ body.is-loaded .hero__content {
 
 .project-card__img {
   position: relative;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 8.5;
   overflow: hidden;
   background: var(--c-bg-alt);
 }
@@ -1153,12 +1153,12 @@ img.is-broken { opacity: 0; }
   display: flex;
   flex-direction: column;
   flex: 1;
-  gap: 0.35rem;
-  padding: 1rem 1.1rem 1.15rem;
+  gap: 0.28rem;
+  padding: 0.8rem 0.9rem 0.9rem;
 }
 
 .project-card__title {
-  font-size: clamp(1.12rem, 1.8vw, 1.35rem);
+  font-size: clamp(1.05rem, 1.65vw, 1.28rem);
   font-weight: 600;
   letter-spacing: -0.02em;
   line-height: 1.1;
@@ -1166,21 +1166,21 @@ img.is-broken { opacity: 0; }
 
 .project-card__desc {
   color: var(--c-text-2);
-  font-size: 0.88rem;
-  line-height: 1.45;
+  font-size: 0.84rem;
+  line-height: 1.4;
   flex: 1;
 }
 
 .project-card__tech {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.4rem;
-  margin-top: 0.2rem;
+  gap: 0.3rem;
+  margin-top: 0.1rem;
 }
 
 .project-card__tech span {
   font-family: var(--font-mono);
-  font-size: 0.66rem;
+  font-size: 0.62rem;
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -1188,7 +1188,7 @@ img.is-broken { opacity: 0; }
   background: var(--c-bg-alt);
   border: 1px solid var(--c-line);
   border-radius: var(--radius-sm);
-  padding: 0.24rem 0.55rem;
+  padding: 0.18rem 0.42rem;
   transition: color 0.3s var(--ease), border-color 0.3s var(--ease);
 }
 
@@ -1218,7 +1218,7 @@ img.is-broken { opacity: 0; }
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
-  margin-top: 0.7rem;
+  margin-top: 0.5rem;
 }
 
 .project-card__links .btn { flex: 0 0 auto; }
@@ -1226,25 +1226,25 @@ img.is-broken { opacity: 0; }
 /* Móvil: cada tarjeta medía casi una pantalla completa. Ficha más
    ajustada; la información es la misma. */
 @media (max-width: 619px) {
-  .project-card__img { aspect-ratio: 16 / 8.5; }
+  .project-card__img { aspect-ratio: 16 / 7.8; }
   .project-card__body {
-    gap: 0.3rem;
-    padding: 0.9rem 1rem 1rem;
+    gap: 0.25rem;
+    padding: 0.75rem 0.85rem 0.85rem;
   }
-  .project-card__desc { font-size: 0.9rem; line-height: 1.45; }
-  .project-card__tech { gap: 0.35rem; margin-top: 0.25rem; }
-  .project-card__links { gap: 0.6rem; margin-top: 0.65rem; }
+  .project-card__desc { font-size: 0.86rem; line-height: 1.4; }
+  .project-card__tech { gap: 0.3rem; margin-top: 0.15rem; }
+  .project-card__links { gap: 0.5rem; margin-top: 0.45rem; }
   .project-card__note { margin-top: 0.45rem; }
 }
 
 /* Otros proyectos: filas compactas, sin portada. Mantienen el rango
    del portafolio sin ocupar una tarjeta entera. */
 .projects__more {
-  margin-top: 1.5rem;
+  margin-top: 1.1rem;
 }
 
 .projects__more-title {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.35rem;
   font-family: var(--font-mono);
   font-size: 0.7rem;
   font-weight: 600;
@@ -1256,15 +1256,15 @@ img.is-broken { opacity: 0; }
 .projects__more-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  column-gap: 1.5rem;
+  column-gap: 1.1rem;
 }
 
 .mini-project {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1.5rem;
-  padding: 0.55rem 0;
+  gap: 1rem;
+  padding: 0.4rem 0;
   border-top: 1px solid var(--c-line);
 }
 
@@ -1291,7 +1291,7 @@ img.is-broken { opacity: 0; }
 }
 
 .mini-project__title {
-  font-size: 1.05rem;
+  font-size: 0.98rem;
   font-weight: 600;
   letter-spacing: -0.01em;
 }
@@ -1299,9 +1299,9 @@ img.is-broken { opacity: 0; }
 .mini-project > div:first-child { min-width: 0; }
 
 .mini-project__desc {
-  margin-top: 0.15rem;
+  margin-top: 0.1rem;
   color: var(--c-text-2);
-  font-size: 0.9rem;
+  font-size: 0.84rem;
   max-width: 68ch;
 }
 
