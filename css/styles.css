@@ -958,29 +958,35 @@ body.is-loaded .hero__content {
 
 @media (min-width: 620px) and (max-width: 1023px) {
   .projects__grid {
-    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-auto-flow: dense;
   }
-  .projects__grid > * { grid-column: span 3; }
-  .projects__grid > .project-card--featured { grid-column: span 6; }
-}
-
-@media (min-width: 1024px) {
-  .projects__grid {
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
-    gap: 1.25rem;
-  }
-  /* Destacado a ancho completo y en horizontal: portada + ficha. */
   .projects__grid > .project-card--featured {
     grid-column: 1 / -1;
     flex-direction: row;
   }
   .project-card--featured .project-card__img {
-    flex: 0 0 52%;
-    aspect-ratio: 16 / 9;
+    flex: 0 0 42%;
+    aspect-ratio: 4 / 3;
+  }
+}
+
+@media (min-width: 1024px) {
+  .projects__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+  /* Bento: destacado en dos celdas y tarjetas compactas en tres columnas. */
+  .projects__grid > .project-card--featured {
+    grid-column: span 2;
+    flex-direction: row;
+  }
+  .project-card--featured .project-card__img {
+    flex: 0 0 42%;
+    aspect-ratio: 4 / 3;
   }
   .project-card--featured .project-card__body {
-    padding: clamp(1.25rem, 2.4vw, 2rem);
+    padding: 1rem 1.1rem;
   }
 
   /* Las tarjetas se mantienen compactas y el grid admite nuevos proyectos. */
@@ -1044,6 +1050,12 @@ body.is-loaded .hero__content {
 
 .project-card--upcoming .project-card__img::before { content: none; }
 .project-card--upcoming .project-card__kicker { color: var(--c-text-2); }
+
+@media (min-width: 1024px) {
+  .project-card--upcoming .project-card__img--upcoming { aspect-ratio: 16 / 7; }
+  .project-card--upcoming .project-card__body { padding: 0.85rem 1rem 1rem; }
+  .project-card--upcoming .project-card__desc { font-size: 0.84rem; }
+}
 
 .upcoming-mark {
   display: grid;
@@ -1242,8 +1254,9 @@ img.is-broken { opacity: 0; }
 }
 
 .projects__more-list {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 1.5rem;
 }
 
 .mini-project {
@@ -1324,6 +1337,7 @@ img.is-broken { opacity: 0; }
 }
 
 @media (max-width: 640px) {
+  .projects__more-list { grid-template-columns: 1fr; }
   .mini-project {
     flex-direction: column;
     align-items: flex-start;
