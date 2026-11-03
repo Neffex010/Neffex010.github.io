@@ -63,11 +63,11 @@ portfolio/
 2. HERO (#inicio)  -> título (se divide palabra por palabra),
                       subtítulo, rol con typewriter (#hero-role),
                       CTA "Ver mis proyectos" y "Hablemos".
-3. PROYECTOS       -> 5 proyectos reales en dos niveles:
-                      3 tarjetas con portada (destacada a ancho
-                      completo en desktop) + 2 filas compactas sin
-                      imagen (.mini-project).
-4. SOBRE MÍ        -> espacio para foto, 2 párrafos y enlace al CV.
+3. PROYECTOS       -> 9 proyectos reales en dos niveles:
+                      6 tarjetas principales (incluye Prompt Hub) +
+                      3 proyectos compactos (incluye Generador QR).
+                      Hay un espacio reservado por nivel.
+4. SOBRE MÍ        -> retrato, presentación y enlace al CV.
 5. TRAYECTORIA     -> 4 hitos: timeline vertical en móvil y
                       rejilla 2x2 en desktop.
                       1) ITP — Ingeniería en TICs (En curso)
@@ -259,7 +259,7 @@ Consejos:
 --------------------------------------------------------------------
 9) HOJA DE RUTA SUGERIDA PARA ESCALAR
 --------------------------------------------------------------------
-  - [Hecho] 5 proyectos reales con enlaces verificados.
+  - [Hecho] 9 proyectos reales con enlaces a demos y código.
   - [Hecho] Tarjeta destacada (.project-card--featured) + SEO/OG.
   - Pendiente: testimonios/referencias de clientes o profesores.
   - Pendiente: preview en video/GIF de cada demo al hover.

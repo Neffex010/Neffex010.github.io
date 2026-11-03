@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800" viewBox="0 0 1280 800" role="img" aria-labelledby="title desc">
+  <title id="title">Prompt Hub</title>
+  <desc id="desc">Portada gráfica de un explorador de prompts con búsqueda, filtros y tarjetas.</desc>
+  <rect width="1280" height="800" fill="#ffe600"/>
+  <g fill="#171717" opacity=".12">
+    <circle cx="48" cy="48" r="4"/><circle cx="96" cy="48" r="4"/><circle cx="144" cy="48" r="4"/>
+    <circle cx="1136" cy="752" r="4"/><circle cx="1184" cy="752" r="4"/><circle cx="1232" cy="752" r="4"/>
+  </g>
+  <rect x="42" y="42" width="1196" height="716" rx="8" fill="#f5f1e8" stroke="#171717" stroke-width="5"/>
+  <rect x="42" y="42" width="1196" height="126" rx="8" fill="#ffe600" stroke="#171717" stroke-width="5"/>
+  <path d="M42 160h1196" stroke="#171717" stroke-width="5"/>
+  <rect x="72" y="76" width="58" height="58" fill="#171717"/>
+  <path d="m88 91 14 14-14 14m25 0h14" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="square"/>
+  <text x="152" y="116" fill="#171717" font-family="Arial, sans-serif" font-size="54" font-weight="900" letter-spacing="-2">PROMPT<tspan fill="#fff" stroke="#171717" stroke-width="2">.HUB</tspan></text>
+  <rect x="890" y="80" width="300" height="50" fill="#fff" stroke="#171717" stroke-width="4"/>
+  <circle cx="918" cy="105" r="9" fill="#11c7d8" stroke="#171717" stroke-width="2"/>
+  <text x="941" y="113" fill="#171717" font-family="Arial, sans-serif" font-size="21" font-weight="800" letter-spacing="2">2,700+ PROMPTS</text>
+  <rect x="74" y="204" width="330" height="490" fill="#fff" stroke="#171717" stroke-width="4"/>
+  <text x="102" y="258" fill="#171717" font-family="Arial, sans-serif" font-size="26" font-weight="900">BÚSQUEDA RÁPIDA</text>
+  <rect x="100" y="282" width="278" height="66" fill="#f5f1e8" stroke="#171717" stroke-width="3"/>
+  <circle cx="126" cy="310" r="10" fill="none" stroke="#171717" stroke-width="4"/><path d="m134 318 9 9" stroke="#171717" stroke-width="4"/>
+  <text x="156" y="319" fill="#777" font-family="Arial, sans-serif" font-size="18">Busca un prompt...</text>
+  <text x="102" y="396" fill="#555" font-family="Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="2">FILTRA POR CATEGORÍA</text>
+  <rect x="100" y="418" width="105" height="42" fill="#171717"/><text x="121" y="446" fill="#fff" font-family="Arial, sans-serif" font-size="16" font-weight="800">TODOS</text>
+  <rect x="216" y="418" width="162" height="42" fill="#fff" stroke="#171717" stroke-width="3"/><text x="231" y="446" fill="#171717" font-family="Arial, sans-serif" font-size="16" font-weight="800">DEV / CÓDIGO</text>
+  <rect x="100" y="474" width="150" height="42" fill="#fff" stroke="#171717" stroke-width="3"/><text x="117" y="502" fill="#171717" font-family="Arial, sans-serif" font-size="16" font-weight="800">ESCRITURA</text>
+  <rect x="261" y="474" width="117" height="42" fill="#fff" stroke="#171717" stroke-width="3"/><text x="282" y="502" fill="#171717" font-family="Arial, sans-serif" font-size="16" font-weight="800">TUTOR</text>
+  <path d="M100 550h278" stroke="#171717" stroke-width="2" stroke-dasharray="8 8"/>
+  <text x="102" y="594" fill="#171717" font-family="Arial, sans-serif" font-size="23" font-weight="900">PLAYGROUND</text>
+  <rect x="100" y="612" width="278" height="54" fill="#11c7d8" stroke="#171717" stroke-width="3"/>
+  <text x="122" y="646" fill="#171717" font-family="Arial, sans-serif" font-size="17" font-weight="800">CONFIGURA Y PRUEBA</text>
+  <rect x="440" y="204" width="760" height="68" fill="#fff" stroke="#171717" stroke-width="4"/>
+  <text x="470" y="248" fill="#171717" font-family="Arial, sans-serif" font-size="20" font-weight="800">EXPLORA · GUARDA · COMPARTE</text>
+  <rect x="440" y="302" width="360" height="370" fill="#fff" stroke="#171717" stroke-width="4"/>
+  <rect x="830" y="302" width="370" height="370" fill="#fff" stroke="#171717" stroke-width="4"/>
+  <text x="468" y="350" fill="#171717" font-family="Arial, sans-serif" font-size="24" font-weight="900">DESARROLLADOR WEB</text>
+  <path d="M468 369h302" stroke="#171717" stroke-width="3"/>
+  <rect x="468" y="389" width="70" height="30" fill="#171717"/><text x="486" y="410" fill="#fff" font-family="Arial, sans-serif" font-size="14" font-weight="800">DEV</text>
+  <g fill="#555" font-family="monospace" font-size="16">
+    <text x="468" y="463">Actúa como un desarrollador</text><text x="468" y="490">con experiencia. Ayúdame a</text><text x="468" y="517">resolver un reto técnico paso</text><text x="468" y="544">a paso, explicando tus decisiones</text><text x="468" y="571">y proponiendo buenas prácticas.</text>
+  </g>
+  <rect x="468" y="608" width="128" height="42" fill="#11c7d8" stroke="#171717" stroke-width="3"/><text x="496" y="636" fill="#171717" font-family="Arial, sans-serif" font-size="15" font-weight="900">PROBAR</text>
+  <rect x="858" y="344" width="314" height="276" fill="#f5f1e8" stroke="#171717" stroke-width="2"/>
+  <text x="884" y="394" fill="#171717" font-family="Arial, sans-serif" font-size="19" font-weight="900">MI WORKSPACE</text>
+  <rect x="884" y="420" width="260" height="54" fill="#ffe600" stroke="#171717" stroke-width="3"/>
+  <text x="905" y="454" fill="#171717" font-family="Arial, sans-serif" font-size="16" font-weight="800">★ FAVORITOS</text>
+  <rect x="884" y="492" width="260" height="54" fill="#11c7d8" stroke="#171717" stroke-width="3"/>
+  <text x="905" y="526" fill="#171717" font-family="Arial, sans-serif" font-size="16" font-weight="800">↗ ENLACES DIRECTOS</text>
+  <text x="884" y="584" fill="#555" font-family="Arial, sans-serif" font-size="15" font-weight="700">PWA · FUNCIONA SIN CONEXIÓN</text>
+</svg>
