@@ -17,15 +17,19 @@ Portfolio.Intro = class {
 
   heroIntro() {
     if (this.heroTitle) this.textSplit.split(this.heroTitle);
-    if (!this.roleEl || this.config.reducedMotion) return;
+    if (!this.roleEl) return;
 
-    const roles = [
-      "Desarrollo web",
-      "IA aplicada",
-      "Soporte técnico",
-    ];
-    let ri = 0, ci = roles[0].length, deleting = true;
+    const rolesEs = ["Desarrollo web", "IA aplicada", "Soporte técnico"];
+    const rolesEn = ["Web development", "Applied AI", "Technical support"];
+    let roles = Portfolio.language && Portfolio.language.current === "en" ? rolesEn : rolesEs;
+    let ri = 0, ci = roles[0].length, deleting = true, timer;
     this.roleEl.textContent = roles[0];
+    if (this.config.reducedMotion) {
+      document.addEventListener("portfolio:languagechange", (event) => {
+        this.roleEl.textContent = event.detail.language === "en" ? rolesEn[0] : rolesEs[0];
+      });
+      return;
+    }
     const step = () => {
       const word = roles[ri];
       if (deleting) ci--;
@@ -40,9 +44,16 @@ Portfolio.Intro = class {
         ri = (ri + 1) % roles.length;
         delay = 400;
       }
-      setTimeout(step, delay);
+      timer = setTimeout(step, delay);
     };
-    setTimeout(step, 2100);
+    timer = setTimeout(step, 2100);
+    document.addEventListener("portfolio:languagechange", (event) => {
+      clearTimeout(timer);
+      roles = event.detail.language === "en" ? rolesEn : rolesEs;
+      ri = 0; ci = roles[0].length; deleting = true;
+      this.roleEl.textContent = roles[0];
+      timer = setTimeout(step, 2100);
+    });
   }
 
   init() {

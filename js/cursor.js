@@ -137,6 +137,9 @@ Portfolio.Cursor = class {
     this.label.className = "cursor-label";
     this.label.setAttribute("aria-hidden", "true");
     this.label.textContent = "VER";
+    document.addEventListener("portfolio:languagechange", (event) => {
+      this.label.textContent = event.detail.language === "en" ? "VIEW" : "VER";
+    });
     this.body.append(this.dot, this.ring, this.label);
 
     // Estado "VER" sobre las tarjetas de proyecto.

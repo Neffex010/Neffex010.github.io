@@ -24,22 +24,23 @@ Portfolio.Contact = class {
       if (!this.form.reportValidity()) return;
       event.preventDefault();
       const data = new FormData(this.form);
+      const english = Portfolio.language && Portfolio.language.current === "en";
       const to = "cabrera.luisenrique008@gmail.com";
       const subject = encodeURIComponent(
-        `Portafolio — mensaje de ${data.get("nombre") || "contacto"}`
+        english ? `Portfolio — message from ${data.get("nombre") || "visitor"}` : `Portafolio — mensaje de ${data.get("nombre") || "contacto"}`
       );
       const body = encodeURIComponent(
-        `Nombre: ${data.get("nombre")}\nEmail: ${data.get("email")}\n\n${data.get("mensaje")}`
+        english ? `Name: ${data.get("nombre")}\nEmail: ${data.get("email")}\n\n${data.get("mensaje")}` : `Nombre: ${data.get("nombre")}\nEmail: ${data.get("email")}\n\n${data.get("mensaje")}`
       );
       try {
         window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
         this.show(
-          "Abriendo tu cliente de correo… el mensaje se enviará desde ahí. Tus datos solo se usan para responderte.",
+          english ? "Opening your email app… the message will be sent from there. Your details are only used to reply." : "Abriendo tu cliente de correo… el mensaje se enviará desde ahí. Tus datos solo se usan para responderte.",
           true
         );
       } catch (e) {
         this.show(
-          "No se pudo abrir el correo. Escríbeme a cabrera.luisenrique008@gmail.com",
+          english ? "Could not open your email app. Write to cabrera.luisenrique008@gmail.com" : "No se pudo abrir el correo. Escríbeme a cabrera.luisenrique008@gmail.com",
           false
         );
       }

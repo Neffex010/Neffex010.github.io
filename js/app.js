@@ -36,6 +36,10 @@ Portfolio.App = class {
     // TextSplit es compartido por Reveal (títulos de sección) e
     // Intro (título del hero).
     const textSplit = new Portfolio.TextSplit();
+    Portfolio.textSplit = textSplit;
+    const language = new Portfolio.Language({ textSplit });
+    language.init();
+    Portfolio.language = language;
 
     const reveal = new Portfolio.Reveal({ textSplit });
     reveal.init();

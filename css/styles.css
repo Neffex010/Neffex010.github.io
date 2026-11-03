@@ -427,6 +427,23 @@ body.is-scrolled .header {
   transition: color var(--t), transform var(--t);
 }
 
+.language-toggle {
+  min-width: 44px;
+  height: 44px;
+  padding: 0 0.55rem;
+  border: 1px solid var(--c-border, #d8dfdc);
+  border-radius: var(--radius-sm);
+  color: var(--c-text-2);
+  font: 600 0.72rem var(--font-mono);
+  letter-spacing: 0.08em;
+  transition: color var(--t), border-color var(--t), transform var(--t);
+}
+.has-hover .language-toggle:hover {
+  color: var(--c-accent);
+  border-color: var(--c-accent);
+  transform: translateY(-1px);
+}
+
 .theme-toggle .icon { width: 17px; height: 17px; }
 .has-hover .theme-toggle:hover { color: var(--c-text); transform: scale(1.08); }
 
@@ -1855,6 +1872,7 @@ html.js-smooth {
 .nav__logo:focus-visible,
 .nav__toggle:focus-visible,
 .theme-toggle:focus-visible,
+.language-toggle:focus-visible,
 .skill-tag:focus-visible,
 .social__link:focus-visible,
 .footer__top:focus-visible {

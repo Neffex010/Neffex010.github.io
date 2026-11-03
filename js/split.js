@@ -64,6 +64,14 @@ Portfolio.TextSplit = class {
     setTimeout(show, 1200);
   }
 
+  refresh(el, text) {
+    this.scrubList = this.scrubList.filter((item) => item.el !== el);
+    el.classList.remove("is-split");
+    el.removeAttribute("data-split");
+    el.textContent = text;
+    this.split(el);
+  }
+
   scrubFrame(dt) {
     if (!this.scrubList.length) return;
     const { clamp } = this.utils;

@@ -23,7 +23,7 @@ Portfolio.Nav = class {
     if (this.navMenu) this.navMenu.classList.remove("is-open");
     if (this.navToggle) {
       this.navToggle.setAttribute("aria-expanded", "false");
-      this.navToggle.setAttribute("aria-label", "Abrir menú");
+      this.navToggle.setAttribute("aria-label", Portfolio.language ? Portfolio.language.t("Abrir menú") : "Abrir menú");
     }
   }
 
@@ -79,7 +79,7 @@ Portfolio.Nav = class {
       this.navToggle.setAttribute("aria-expanded", String(open));
       this.navToggle.setAttribute(
         "aria-label",
-        open ? "Cerrar menú" : "Abrir menú"
+        Portfolio.language ? Portfolio.language.t(open ? "Cerrar menú" : "Abrir menú") : (open ? "Cerrar menú" : "Abrir menú")
       );
     });
     document.addEventListener("click", (event) => {
