@@ -273,7 +273,7 @@ body::after {
 .btn:focus-visible .btn__arrow { transform: translateX(5px); }
 
 .section {
-  padding: clamp(2.5rem, 4vw, 3.5rem) 0;
+  padding: clamp(2.1rem, 3.5vw, 3rem) 0;
   border-top: 1px solid var(--c-line); /* separador editorial, sin paneles */
 }
 
@@ -283,7 +283,7 @@ body::after {
   letter-spacing: -0.03em;
   line-height: 1.02;
   text-align: center;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
 }
 
 .section__title::after {
@@ -729,52 +729,8 @@ body.is-loaded .hero__content {
 }
 
 .sobre-mi__grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  align-items: center;
-  gap: clamp(2rem, 5vw, 3.5rem);
-}
-
-.sobre-mi__photo {
-  position: relative;
-  display: block;
-  width: min(100%, 280px);
-  aspect-ratio: 4 / 5;
-  justify-self: center;
-  overflow: hidden;
-  background: var(--c-bg-alt);
-  border: 2px solid var(--c-text);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-brutal),
-              0 0 0 5px color-mix(in srgb, var(--c-accent) 12%, transparent);
-}
-
-.sobre-mi__photo::before {
-  content: "";
-  position: absolute;
-  z-index: 1;
-  inset: 0.65rem;
-  border: 1px solid color-mix(in srgb, var(--c-accent) 55%, transparent);
-  border-radius: var(--radius-md);
-  pointer-events: none;
-}
-
-.sobre-mi__photo::after {
-  content: "";
-  position: absolute;
-  z-index: 1;
-  inset: auto 0 0;
-  height: 18%;
-  background: linear-gradient(transparent, rgb(0 0 0 / 18%));
-  pointer-events: none;
-}
-
-.sobre-mi__portrait {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 48%;
-  filter: saturate(0.96) contrast(1.02);
+  max-width: 760px;
+  margin-inline: auto;
 }
 
 .sobre-mi__text .section__title::before {
@@ -789,9 +745,13 @@ body.is-loaded .hero__content {
   margin-bottom: 0.6rem;
 }
 
+html[lang="en"] .sobre-mi__text .section__title::before {
+  content: "profile";
+}
+
 .sobre-mi__text .section__title {
   text-align: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .sobre-mi__text .section__title::after {
@@ -800,15 +760,7 @@ body.is-loaded .hero__content {
 
 .section__text:not(:last-child) { margin-bottom: 1.15rem; }
 
-.sobre-mi__actions { margin-top: 1.5rem; }
-
-@media (min-width: 768px) {
-  .sobre-mi__grid {
-    grid-template-columns: minmax(220px, 0.75fr) minmax(0, 1.25fr);
-  }
-
-  .sobre-mi__photo { width: min(100%, 320px); }
-}
+.sobre-mi__actions { margin-top: 1rem; }
 
 /* Fallback para navegadores sin aspect-ratio (el panel no colapsa) */
 @supports not (aspect-ratio: 16 / 10) {
@@ -847,6 +799,18 @@ body.is-loaded .hero__content {
 }
 
 .timeline__line.is-in::after { transform: scaleY(1); }
+
+.timeline__group + .timeline__group { margin-top: 1.4rem; }
+
+.timeline__group-title {
+  margin-bottom: 0.65rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--c-accent);
+}
 
 .timeline__list {
   display: flex;
@@ -927,7 +891,7 @@ body.is-loaded .hero__content {
    en móvil se conserva la línea de tiempo vertical. */
 @media (min-width: 900px) {
   .timeline {
-    max-width: none;
+    max-width: 1000px;
     padding-left: 0;
   }
 
@@ -939,6 +903,8 @@ body.is-loaded .hero__content {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1rem 1.75rem;
   }
+
+  .timeline__group + .timeline__group { margin-top: 1.25rem; }
 
   .timeline__item { padding-bottom: 0; }
 
@@ -1042,41 +1008,6 @@ body.is-loaded .hero__content {
   box-shadow: var(--shadow-brutal);
   transition: transform var(--t), border-color 0.4s var(--ease),
               box-shadow var(--t);
-}
-
-/* Reserva visual para sumar un proyecto sin simular que ya existe. */
-.project-card--upcoming {
-  border-style: dashed;
-  border-color: var(--c-line);
-  box-shadow: none;
-  background: color-mix(in srgb, var(--c-surface) 72%, var(--c-bg-alt));
-}
-
-.project-card--upcoming .project-card__img--upcoming {
-  display: grid;
-  place-items: center;
-  background: var(--c-bg-alt);
-}
-
-.project-card--upcoming .project-card__img::before { content: none; }
-.project-card--upcoming .project-card__kicker { color: var(--c-text-2); }
-
-@media (min-width: 1024px) {
-  .project-card--upcoming .project-card__img--upcoming { aspect-ratio: 16 / 6; }
-  .project-card--upcoming .project-card__body { padding: 0.65rem 0.8rem 0.8rem; }
-  .project-card--upcoming .project-card__desc { font-size: 0.8rem; }
-}
-
-.upcoming-mark {
-  display: grid;
-  place-items: center;
-  width: 2.8rem;
-  aspect-ratio: 1;
-  border: 1px dashed var(--c-line);
-  border-radius: 50%;
-  color: var(--c-accent);
-  font-size: 1.7rem;
-  font-weight: 300;
 }
 
 .has-hover .project-card:hover {
@@ -1279,26 +1210,6 @@ img.is-broken { opacity: 0; }
 }
 
 .mini-project:last-child { border-bottom: 1px solid var(--c-line); }
-
-.mini-project--upcoming {
-  color: var(--c-text-2);
-  border-bottom: 1px dashed var(--c-line);
-}
-
-.mini-project--upcoming .mini-project__title { color: var(--c-text-2); }
-
-.mini-project__plus {
-  display: grid;
-  place-items: center;
-  width: 1.8rem;
-  height: 1.8rem;
-  flex: 0 0 auto;
-  border: 1px dashed var(--c-line);
-  border-radius: 50%;
-  color: var(--c-accent);
-  font-size: 1.2rem;
-  line-height: 1;
-}
 
 .mini-project__title {
   font-size: 0.98rem;

@@ -8,6 +8,7 @@
 
 Portfolio.Intro = class {
   constructor({ textSplit }) {
+    this.utils = Portfolio.utils;
     this.config = Portfolio.config;
     this.textSplit = textSplit;
     this.body = document.body;
