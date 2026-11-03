@@ -728,7 +728,28 @@ body.is-loaded .hero__content {
   background: var(--c-bg-alt);
   border: 2px solid var(--c-text);
   border-radius: var(--radius-md);
-  box-shadow: var(--shadow-brutal);
+  box-shadow: var(--shadow-brutal),
+              0 0 0 5px color-mix(in srgb, var(--c-accent) 12%, transparent);
+}
+
+.sobre-mi__photo::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: 0.65rem;
+  border: 1px solid color-mix(in srgb, var(--c-accent) 55%, transparent);
+  border-radius: calc(var(--radius-md) - 0.35rem);
+  pointer-events: none;
+}
+
+.sobre-mi__photo::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: auto 0 0;
+  height: 18%;
+  background: linear-gradient(transparent, rgb(0 0 0 / 18%));
+  pointer-events: none;
 }
 
 .sobre-mi__portrait {
@@ -736,6 +757,7 @@ body.is-loaded .hero__content {
   height: 100%;
   object-fit: cover;
   object-position: center 48%;
+  filter: saturate(0.96) contrast(1.02);
 }
 
 .sobre-mi__text .section__title::before {
