@@ -887,6 +887,8 @@ html[lang="en"] .sobre-mi__text .section__title::before {
   max-width: 48ch;
 }
 
+.timeline__actions { margin-top: 0.8rem; }
+
 /* Desktop: 2x2 sin línea vertical. Cada hito es una ficha compacta;
    en móvil se conserva la línea de tiempo vertical. */
 @media (min-width: 900px) {
