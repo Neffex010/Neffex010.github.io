@@ -967,19 +967,19 @@ body.is-loaded .hero__content {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 0.8rem;
   }
-  /* Bento: destacado en dos celdas y tarjetas compactas en tres columnas. */
+  /* Franja destacada independiente; evita huecos en la primera fila del bento. */
   .projects__grid > .project-card--featured {
-    grid-column: span 2;
+    grid-column: 1 / -1;
     flex-direction: row;
     align-self: start;
   }
   .project-card--featured .project-card__img {
-    flex: 0 0 38%;
+    flex: 0 0 32%;
     align-self: center;
     aspect-ratio: 16 / 10;
   }
   .project-card--featured .project-card__body {
-    padding: 0.75rem 0.9rem;
+    padding: 0.75rem 1rem;
   }
 
   /* Las tarjetas se mantienen compactas y el grid admite nuevos proyectos. */
