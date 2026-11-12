@@ -20,8 +20,8 @@ Portfolio.Intro = class {
     if (this.heroTitle) this.textSplit.split(this.heroTitle);
     if (!this.roleEl) return;
 
-    const rolesEs = ["Desarrollo web", "IA aplicada", "Soporte técnico"];
-    const rolesEn = ["Web development", "Applied AI", "Technical support"];
+    const rolesEs = ["Full-Stack Web", "IA aplicada", "Soporte técnico"];
+    const rolesEn = ["Full-Stack Web", "Applied AI", "Technical support"];
     let roles = Portfolio.language && Portfolio.language.current === "en" ? rolesEn : rolesEs;
     let ri = 0, ci = roles[0].length, deleting = true, timer;
     this.roleEl.textContent = roles[0];
