@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume — Luis Enrique Cabrera García</title>
+  <meta name="description"
+    content="Resume of Luis Enrique Cabrera García: full-stack web development, AI integration, databases, networking, and cloud infrastructure.">
+  <meta name="robots" content="index, follow">
+  <style>
+    :root {
+      --ink: #111111;
+      --body: #1f1f1f;
+      --muted: #555555;
+      --rule: #c9c9c9;
+      --paper: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 2rem 1.25rem 3.5rem;
+      background: #f2f3f3;
+      color: var(--body);
+      font-family: Calibri, "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+      font-size: 14px;
+      line-height: 1.42;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .sheet {
+      max-width: 8.5in;
+      margin: 0 auto;
+      padding: 0.7in 0.75in;
+      background: var(--paper);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, .06), 0 18px 40px -24px rgba(0, 0, 0, .35);
+    }
+
+    header { text-align: center; }
+
+    h1 {
+      margin: 0;
+      font-size: 1.65rem;
+      line-height: 1.15;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: var(--ink);
+    }
+
+    .headline {
+      margin: 0.2rem 0 0.35rem;
+      font-size: 0.92rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      color: var(--ink);
+    }
+
+    .contact {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .contact li { display: inline; }
+
+    .contact li + li::before {
+      content: "|";
+      margin: 0 0.45rem;
+      color: var(--rule);
+    }
+
+    .contact a { color: var(--muted); text-decoration: none; }
+    .contact a:hover { color: var(--ink); text-decoration: underline; }
+
+    section { margin-top: 0.85rem; }
+
+    h2 {
+      margin: 0 0 0.35rem;
+      padding-bottom: 0.15rem;
+      border-bottom: 1px solid var(--ink);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink);
+    }
+
+    p { margin: 0 0 0.25rem; }
+    ul { margin: 0.15rem 0 0; padding-left: 1.05rem; }
+    li { margin-bottom: 0.12rem; }
+    li::marker { color: var(--ink); }
+
+    .entry { margin-bottom: 0.5rem; }
+    .entry:last-child { margin-bottom: 0; }
+
+    .entry__head {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.1rem 0.75rem;
+    }
+
+    .entry__title {
+      margin: 0;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .entry__meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+      white-space: nowrap;
+      text-align: right;
+    }
+
+    .entry__sub {
+      margin: 0.05rem 0 0.15rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .stack {
+      font-size: 0.82rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .links {
+      margin-top: 0.1rem;
+      font-size: 0.82rem;
+    }
+
+    .links a { color: var(--ink); text-decoration: underline; }
+
+    dl.skills { margin: 0; }
+    dl.skills div { margin-bottom: 0.12rem; }
+    dl.skills dt {
+      display: inline;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    dl.skills dd { display: inline; margin: 0; }
+
+    .print-bar {
+      max-width: 8.5in;
+      margin: 0 auto 1rem;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .print-bar button {
+      border: 1px solid var(--ink);
+      border-radius: 0;
+      background: var(--ink);
+      color: #fff;
+      font: inherit;
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: .04em;
+      padding: .5rem 1.1rem;
+      cursor: pointer;
+    }
+
+    .print-bar button:hover { background: #333; }
+
+    .lang-switch {
+      margin: 0.4rem 0 0;
+      font-size: 0.78rem;
+    }
+
+    .lang-switch a { color: var(--muted); }
+
+    @page { size: letter; margin: 0.6in 0.65in; }
+
+    @media print {
+      body {
+        padding: 0;
+        background: #fff;
+        font-size: 9.6pt;
+        line-height: 1.32;
+        color: #000;
+      }
+
+      .sheet {
+        max-width: none;
+        padding: 0;
+        box-shadow: none;
+      }
+
+      .print-bar,
+      .lang-switch { display: none; }
+
+      h1 { font-size: 17pt; }
+      .headline { font-size: 9.5pt; margin: .15rem 0 .3rem; }
+
+      .contact { font-size: 8.4pt; }
+
+      h2 { font-size: 9pt; margin-bottom: 2pt; padding-bottom: 1.5pt; }
+      section { margin-top: 7pt; }
+      .entry { margin-bottom: 3.5pt; }
+      .entry__title { font-size: 10pt; }
+      .entry__meta, .entry__sub, .stack, .links { font-size: 8.4pt; }
+      p { margin-bottom: 1.5pt; }
+      ul { margin-top: 1pt; }
+      li { margin-bottom: .5pt; }
+      dl.skills div { margin-bottom: .5pt; }
+
+      a { color: #000; text-decoration: none; }
+
+      section, .entry, li { break-inside: avoid; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="print-bar">
+    <button type="button" onclick="window.print()">Print / save PDF</button>
+  </div>
+
+  <main class="sheet">
+    <header>
+      <h1>Luis Enrique Cabrera García</h1>
+      <p class="headline">Full-Stack Web &amp; AI Developer</p>
+      <ul class="contact">
+        <li>Pachuca, Hidalgo, Mexico</li>
+        <li><a href="mailto:cabrera.luisenrique008@gmail.com">cabrera.luisenrique008@gmail.com</a></li>
+        <li><a href="https://wa.me/527717761908" target="_blank" rel="noopener">+52 771 776 1908</a></li>
+      </ul>
+      <ul class="contact">
+        <li><a href="https://github.com/Neffex010" target="_blank" rel="noopener">github.com/Neffex010</a></li>
+        <li><a href="https://www.linkedin.com/in/luis-enrique-cabrera-garcia-a66113326/" target="_blank"
+            rel="noopener">linkedin.com/in/luis-enrique-cabrera-garcia</a></li>
+        <li><a href="https://neffex010.github.io/" target="_blank" rel="noopener">neffex010.github.io</a></li>
+      </ul>
+      <p class="lang-switch"><a href="Luis-Enrique-Cabrera-Garcia-CV.html">Versión en español</a></p>
+    </header>
+
+    <section>
+      <h2>Education</h2>
+      <div class="entry">
+        <div class="entry__head">
+          <h3 class="entry__title">Instituto Tecnológico de Pachuca</h3>
+          <span class="entry__meta">Pachuca, Hidalgo · Expected graduation 2027</span>
+        </div>
+        <p class="entry__sub">B.Eng. in Information and Communications Technologies</p>
+        <p class="stack">Relevant coursework: web development, databases, networking, object-oriented programming,
+          and cloud infrastructure.</p>
+      </div>
+      <div class="entry">
+        <div class="entry__head">
+          <h3 class="entry__title">CBTIS 8</h3>
+          <span class="entry__meta">Graduated · 2020</span>
+        </div>
+        <p class="entry__sub">Programming Technician</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Experience</h2>
+      <div class="entry">
+        <div class="entry__head">
+          <h3 class="entry__title">Web catalog — Manualidades Lua (demo)</h3>
+          <span class="entry__meta">Local business collaboration · Remote</span>
+        </div>
+        <ul>
+          <li>Designed and built a functional demo catalog for a crochet business, with four categories, filters,
+            and WhatsApp quote requests for the selected product.</li>
+          <li>Built the interface with React, Vite, and Tailwind CSS, assisted by AI agents; the demo is published on
+            Netlify.</li>
+        </ul>
+        <p class="links"><a href="https://manualidades-lua.netlify.app/" target="_blank" rel="noopener">Demo</a> ·
+          <a href="https://github.com/Neffex010/catalogo-manualidades-lua" target="_blank" rel="noopener">Code</a>
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+
+      <div class="entry">
+        <div class="entry__head">
+          <h3 class="entry__title">EntrevistaLab — AI technical interview simulator</h3>
+          <span class="entry__meta">JavaScript · OpenAI API · Netlify</span>
+        </div>
+        <ul>
+          <li>Simulator with 15 practice profiles across 9 industries, 6- and 12-question modes, and three stages per
+            session.</li>
+          <li>Scores each answer with AI (1–5 scale), summarizes performance by stage, and generates a final report.</li>
+        </ul>
+        <p class="links"><a href="https://neffex010.github.io/SimuladorEntrevistas/" target="_blank"
+            rel="noopener">Demo</a> · <a href="https://simuladorentre.netlify.app" target="_blank"
+            rel="noopener">Demo with backend</a> · <a href="https://github.com/Neffex010/SimuladorEntrevistas"
+            target="_blank" rel="noopener">Code</a></p>
+      </div>
+
+      <div class="entry">
+        <div class="entry__head">
+          <h3 class="entry__title">Prompt Hub — Open-source prompt explorer</h3>
+          <span class="entry__meta">PWA · JavaScript · LocalStorage</span>
+        </div>
+        <ul>
+          <li>Explorer for more than 2,700 prompts fetched from an API, with filters, editable variables, favorites,
+            and PWA installation.</li>
+        </ul>
+        <p class="links"><a href="https://neffex010.github.io/prompt-hub/" target="_blank" rel="noopener">Demo</a> ·
+          <a href="https://github.com/Neffex010/prompt-hub" target="_blank" rel="noopener">Code</a>
+        </p>
+      </div>
+
+      <div class="entry">
+        <div class="entry__head">
+          <h3 class="entry__title">IT Research Agent — Web-sourced research</h3>
+          <span class="entry__meta">Python · Flask · OpenAI API · Vercel</span>
+        </div>
+        <ul>
+          <li>Flask agent that uses OpenAI web search to research, cross-check live sources, and generate structured
+            reports with references.</li>
+        </ul>
+        <p class="links"><a href="https://agente-investigador-tic-gules.vercel.app/" target="_blank"
+            rel="noopener">Demo</a> · <a href="https://github.com/Neffex010/agente-investigador-tic" target="_blank"
+            rel="noopener">Code</a></p>
+      </div>
+
+      <div class="entry">
+        <div class="entry__head">
+          <h3 class="entry__title">Net Tools Web — PWA for network inventory and diagnostics</h3>
+          <span class="entry__meta">JavaScript · Canvas 2D · PWA</span>
+        </div>
+        <ul>
+          <li>Outlet and connection inventory, link tests, floor plans, and QR labels; works offline.</li>
+        </ul>
+        <p class="links"><a href="https://neffex010.github.io/net-tools-web/" target="_blank" rel="noopener">Demo</a> ·
+          <a href="https://github.com/Neffex010/net-tools-web" target="_blank" rel="noopener">Code</a>
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Technical Skills</h2>
+      <dl class="skills">
+        <div>
+          <dt>Languages:</dt>
+          <dd>JavaScript, Python, C#/.NET, Java, SQL</dd>
+        </div>
+        <div>
+          <dt>Frontend:</dt>
+          <dd>HTML5, CSS3, React, Tailwind CSS, Canvas 2D</dd>
+        </div>
+        <div>
+          <dt>Backend &amp; APIs:</dt>
+          <dd>Flask, REST APIs, Postman</dd>
+        </div>
+        <div>
+          <dt>Applied AI:</dt>
+          <dd>OpenAI API, Gemini, DeepSeek, prompt design, research agents</dd>
+        </div>
+        <div>
+          <dt>Databases:</dt>
+          <dd>MySQL, PostgreSQL, AWS RDS</dd>
+        </div>
+        <div>
+          <dt>Cloud &amp; infrastructure:</dt>
+          <dd>AWS EC2, Linux, Windows Server, VirtualBox, VMware, Hyper-V</dd>
+        </div>
+        <div>
+          <dt>Tools:</dt>
+          <dd>Git/GitHub, Vite, Figma, deployment on GitHub Pages, Netlify, and Vercel</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section>
+      <h2>Certifications</h2>
+      <ul>
+        <li>AWS Academy — Cloud Foundations. Course completed; badge issued by AWS.
+          <a href="https://www.credly.com/badges/41ce684e-a128-4d86-81a2-b97dbd1663a6/linked_in_profile"
+            target="_blank" rel="noopener">View badge</a>
+        </li>
+        <li>Finder — Capacítate para el Empleo, Carlos Slim Foundation. 26-hour course completed in June 2026.
+          <a href="https://capacitateparaelempleo.org/verifica/9dcaa67b-49fc-4219-bc91-9b83ff80f74e/1ec427d5-b4ac-42ba-a4d5-bb040e28113d"
+            target="_blank" rel="noopener">View certificate</a>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Languages</h2>
+      <p>Spanish native · English B2 (university certificate in progress)</p>
+    </section>
+  </main>
+</body>
+
+</html>

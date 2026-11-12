@@ -173,6 +173,13 @@
 
     .print-bar button:hover { background: #333; }
 
+    .lang-switch {
+      margin: 0.4rem 0 0;
+      font-size: 0.78rem;
+    }
+
+    .lang-switch a { color: var(--muted); }
+
     /* ---------- Impresión ---------- */
     @page { size: letter; margin: 0.6in 0.65in; }
 
@@ -191,7 +198,8 @@
         box-shadow: none;
       }
 
-      .print-bar { display: none; }
+      .print-bar,
+      .lang-switch { display: none; }
 
       h1 { font-size: 17pt; }
       .headline { font-size: 9.5pt; margin: .15rem 0 .3rem; }
@@ -235,6 +243,7 @@
             rel="noopener">linkedin.com/in/luis-enrique-cabrera-garcia</a></li>
         <li><a href="https://neffex010.github.io/" target="_blank" rel="noopener">neffex010.github.io</a></li>
       </ul>
+      <p class="lang-switch"><a href="Luis-Enrique-Cabrera-Garcia-CV-EN.html">English version</a></p>
     </header>
 
     <section>
@@ -261,28 +270,18 @@
       <h2>Experiencia</h2>
       <div class="entry">
         <div class="entry__head">
-          <h3 class="entry__title">Catálogo web — Manualidades Lua</h3>
-          <span class="entry__meta">Negocio local · Remoto</span>
+          <h3 class="entry__title">Catálogo web — Manualidades Lua (demo)</h3>
+          <span class="entry__meta">Colaboración para negocio local · Remoto</span>
         </div>
         <ul>
-          <li>Diseñé y desarrollé un catálogo en línea para un negocio de crochet, con cuatro categorías, filtros y
-            cotización por WhatsApp con el producto seleccionado.</li>
-          <li>Desarrollé la interfaz con React, Vite y Tailwind CSS, con apoyo de agentes de IA; el sitio está
-            publicado en Netlify.</li>
+          <li>Diseñé y desarrollé una demo funcional de catálogo para un negocio de crochet, con cuatro categorías,
+            filtros y cotización por WhatsApp con el producto seleccionado.</li>
+          <li>Construí la interfaz con React, Vite y Tailwind CSS, con apoyo de agentes de IA; la demo está publicada
+            en Netlify.</li>
         </ul>
         <p class="links"><a href="https://manualidades-lua.netlify.app/" target="_blank" rel="noopener">Demo</a> ·
           <a href="https://github.com/Neffex010/catalogo-manualidades-lua" target="_blank" rel="noopener">Código</a>
         </p>
-      </div>
-      <div class="entry">
-        <div class="entry__head">
-          <h3 class="entry__title">Servicio social y atención al cliente</h3>
-          <span class="entry__meta">Instituto Tecnológico de Pachuca · Comercio local</span>
-        </div>
-        <ul>
-          <li>Apoyo en actividades institucionales y atención directa a usuarios y clientes, con seguimiento de
-            solicitudes y resolución de consultas.</li>
-        </ul>
       </div>
     </section>
 
@@ -292,14 +291,16 @@
       <div class="entry">
         <div class="entry__head">
           <h3 class="entry__title">EntrevistaLab — Simulador de entrevistas técnicas con IA</h3>
-          <span class="entry__meta">JavaScript · OpenAI API</span>
+          <span class="entry__meta">JavaScript · OpenAI API · Netlify</span>
         </div>
         <ul>
-          <li>Genera preguntas según el puesto, evalúa las respuestas con IA y exporta un informe en PDF.</li>
+          <li>Simulador con 15 perfiles en 9 sectores, modos de 6 y 12 preguntas y tres etapas por sesión.</li>
+          <li>Evalúa cada respuesta con IA (escala 1–5), calcula el desempeño por etapa y genera un informe final.</li>
         </ul>
         <p class="links"><a href="https://neffex010.github.io/SimuladorEntrevistas/" target="_blank"
-            rel="noopener">Demo</a> · <a href="https://github.com/Neffex010/SimuladorEntrevistas" target="_blank"
-            rel="noopener">Código</a></p>
+            rel="noopener">Demo</a> · <a href="https://simuladorentre.netlify.app" target="_blank"
+            rel="noopener">Demo con backend</a> · <a href="https://github.com/Neffex010/SimuladorEntrevistas"
+            target="_blank" rel="noopener">Código</a></p>
       </div>
 
       <div class="entry">
@@ -308,8 +309,8 @@
           <span class="entry__meta">PWA · JavaScript · LocalStorage</span>
         </div>
         <ul>
-          <li>Explorador de más de 2,700 prompts con filtros, variables editables, favoritos e instalación como PWA.
-          </li>
+          <li>Explorador de más de 2,700 prompts obtenidos vía API, con filtros, variables editables, favoritos e
+            instalación como PWA.</li>
         </ul>
         <p class="links"><a href="https://neffex010.github.io/prompt-hub/" target="_blank" rel="noopener">Demo</a> ·
           <a href="https://github.com/Neffex010/prompt-hub" target="_blank" rel="noopener">Código</a>
@@ -319,10 +320,11 @@
       <div class="entry">
         <div class="entry__head">
           <h3 class="entry__title">Agente Investigador TIC — Investigación con fuentes web</h3>
-          <span class="entry__meta">Python · Flask · OpenAI API</span>
+          <span class="entry__meta">Python · Flask · OpenAI API · Vercel</span>
         </div>
         <ul>
-          <li>Busca y contrasta fuentes en línea sobre temas TIC y genera reportes con referencias.</li>
+          <li>Agente en Flask que usa la búsqueda web de OpenAI para investigar, contrastar fuentes en vivo y generar
+            reportes estructurados con referencias.</li>
         </ul>
         <p class="links"><a href="https://agente-investigador-tic-gules.vercel.app/" target="_blank"
             rel="noopener">Demo</a> · <a href="https://github.com/Neffex010/agente-investigador-tic" target="_blank"
@@ -393,7 +395,7 @@
 
     <section>
       <h2>Idiomas</h2>
-      <p>Español nativo · Inglés B2</p>
+      <p>Español nativo · Inglés B2 (constancia universitaria en trámite)</p>
     </section>
   </main>
 </body>

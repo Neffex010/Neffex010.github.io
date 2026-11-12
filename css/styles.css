@@ -1226,6 +1226,57 @@ img.is-broken { opacity: 0; }
 
 .project-card__links .btn { flex: 0 0 auto; }
 
+/* Caso de estudio desplegable dentro de la tarjeta */
+.project-card__case {
+  margin-top: 0.55rem;
+  padding-top: 0.45rem;
+  border-top: 1px solid var(--c-line);
+}
+
+.project-card__case summary {
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--c-accent);
+}
+
+.project-card__case summary::-webkit-details-marker { display: none; }
+
+.project-card__case summary::before { content: "+ "; }
+
+.project-card__case[open] summary::before { content: "− "; }
+
+.project-card__case summary:focus-visible {
+  outline: 2px solid var(--c-accent);
+  outline-offset: 3px;
+}
+
+.project-card__case-body {
+  display: grid;
+  gap: 0.4rem;
+  margin-top: 0.55rem;
+}
+
+.project-card__case-body h4 {
+  margin-bottom: 0.1rem;
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--c-text-2);
+}
+
+.project-card__case-body p {
+  color: var(--c-text-2);
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
 /* Móvil: cada tarjeta medía casi una pantalla completa. Ficha más
    ajustada; la información es la misma. */
 @media (max-width: 619px) {
